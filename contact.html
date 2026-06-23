@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QERIS | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="mission.html" aria-label="QERIS home">
+        <img src="assets/qeris-logo.png" alt="QERIS" />
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="mission.html">Mission</a>
+        <a href="prototype.html">Prototype</a>
+        <a href="technology.html">Technology</a>
+        <a href="team.html">Team</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <p class="eyebrow">Contact</p>
+        <h1>Contact</h1>
+      </section>
+
+      <section class="contact-layout contact-form-only">
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5"></textarea>
+          </label>
+          <button type="submit">Transmit inquiry</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

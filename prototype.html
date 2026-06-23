@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QERIS | Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="mission.html" aria-label="QERIS home">
+        <img src="assets/qeris-logo.png" alt="QERIS" />
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="mission.html">Mission</a>
+        <a class="active" href="prototype.html">Prototype</a>
+        <a href="technology.html">Technology</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="prototype-page">
+      <section class="prototype-screen prototype-overview">
+        <p class="eyebrow">Prototype</p>
+        <h1>Autonomous and full-chain solution for point defense, last 1-2km.</h1>
+
+        <div class="prototype-layout">
+          <div class="prototype-visual">
+            <div class="prototype-render" aria-label="Prototype rendering placeholder">
+              <span>Rendering of prototype</span>
+            </div>
+          </div>
+
+          <ol class="prototype-chain" aria-label="Detection to intercept chain">
+            <li>
+              <strong>Detection &amp; tracking:</strong>
+              Detect incoming RF-silent sUAVs with low-cost sensor fusion across EO/IR and
+              acoustic sensors below US$ 5k, with coverage up to 1.5 km.
+            </li>
+            <li>
+              <strong>Launch:</strong>
+              Low-cost interceptors, US$ 1.5-3k, launched upon threat detection from ground
+              launchpads.
+            </li>
+            <li>
+              <strong>Engagement orchestration:</strong>
+              Central control continuously forecasts threats' likely paths, optimizes defenders'
+              placement and engagement roles to contain inbound threats, and adapts approach to
+              straight-line attacks or evasive trajectories.
+            </li>
+            <li>
+              <strong>Autonomous pursuit:</strong>
+              Defenders autonomously navigate, track, and intercept assigned targets using AI.
+            </li>
+          </ol>
+        </div>
+
+        <div class="prototype-benefits">
+          <article>
+            <h2>Low cost</h2>
+            <p>Built entirely on cheap, off-the-shelf airframes, sensors, and simple launchpads.</p>
+            <p>Kit delivered under US$ 30k.</p>
+          </article>
+          <article>
+            <h2>Compact and easy to deploy</h2>
+            <p>Can be ground-emplaced or vehicle mounted.</p>
+            <p>Composed of small and lightweight components.</p>
+          </article>
+          <article>
+            <h2>End-to-end solution</h2>
+            <p>Integrates the full chain, from detection, tracking, and final intercept.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="prototype-screen prototype-evidence">
+        <div class="prototype-threat-copy">
+          <p><strong>Our prototype neutralizes small, evasive, RF-silent drones...</strong></p>
+          <p>...striking deeper now, up to 100km, far beyond the frontline...</p>
+          <p><strong>...exposing high-value assets everywhere, both military and civilian.</strong></p>
+        </div>
+
+        <div class="prototype-video-grid" aria-label="Prototype reference videos">
+          <div class="prototype-video-slot prototype-video-embed" aria-label="Iron Dome video reference">
+            <iframe
+              src="https://www.youtube.com/embed/jEWLWmgZ9qo"
+              title="Iron Dome video reference"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="prototype-video-slot prototype-video-embed" aria-label="Baghdad base video reference">
+            <iframe
+              src="https://www.youtube.com/embed/yTOR2HhXiNI"
+              title="Baghdad base video reference"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="prototype-video-slot prototype-video-embed" aria-label="FPV tank attack video reference">
+            <iframe
+              src="https://www.youtube.com/embed/vO1-Rkx3WFs"
+              title="FPV tank attack video reference"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
