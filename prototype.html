@@ -33,9 +33,7 @@
 
         <div class="prototype-layout">
           <div class="prototype-visual">
-            <div class="prototype-render" aria-label="Prototype rendering placeholder">
-              <span>Rendering of prototype</span>
-            </div>
+            <div class="prototype-render" aria-label="Prototype rendering"></div>
           </div>
 
           <ol class="prototype-chain" aria-label="Detection to intercept chain">
@@ -115,5 +113,37 @@
         </div>
       </section>
     </main>
+
+    <script>
+      (function () {
+        var chain = document.querySelector('.prototype-chain');
+        if (!chain) return;
+
+        var items = Array.from(chain.querySelectorAll('li'));
+        var delays = [250, 700, 1150, 1580];
+
+        chain.classList.add('will-animate');
+        items.forEach(function (li) {
+          li.classList.add('will-animate');
+          li.style.opacity = '0';
+          li.style.transition = 'opacity 0.42s ease-out';
+        });
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            chain.classList.add('animate-in');
+            items.forEach(function (li, i) {
+              setTimeout(function () {
+                li.style.opacity = '1';
+                li.classList.add('revealed');
+              }, delays[i]);
+            });
+            obs.disconnect();
+          }
+        }, { threshold: 0.1 });
+
+        obs.observe(chain);
+      })();
+    </script>
   </body>
 </html>

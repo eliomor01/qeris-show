@@ -47,7 +47,7 @@
           <article>
             <h2>Terrain-hugging and hiding</h2>
             <div class="threat-img-placeholder">
-              <img src="assets/Above ground 2.png" alt="Drone flying above ground terrain" />
+              <img src="assets/Above ground 3.png" alt="Drone flying above ground terrain" />
             </div>
             <p>Flying just above the ground allows threats to hide in terrain and background objects</p>
             <strong>Late detection and line-of-sight systems bring high collateral risk</strong>
@@ -55,7 +55,7 @@
           <article>
             <h2>Evasive maneuvers</h2>
             <div class="threat-img-placeholder">
-              <img src="assets/Evasive 2.png" alt="Drone executing evasive maneuvers above terrain" />
+              <img src="assets/Evasive.png" alt="Drone executing evasive maneuvers above terrain" />
             </div>
             <p>Quick and unpredictable changes in speed, altitude, and direction complicate interception</p>
             <strong>Lasers cannot hold precise aimpoint as target jinks; guns lead-prediction breaks against erratic flight</strong>
@@ -63,7 +63,7 @@
           <article>
             <h2>Coordinated swarm</h2>
             <div class="threat-img-placeholder">
-              <img src="assets/Swarm 2.png" alt="Coordinated drone swarm with network mesh" />
+              <img src="assets/Swarm.png" alt="Coordinated drone swarm with network mesh" />
             </div>
             <p>Simultaneous attacks adopt different roles, including decoys, relays, strikes, and ingression tactics</p>
             <strong>Lasers and guns cannot engage multiple directions at once</strong>
@@ -77,24 +77,23 @@
         </h2>
 
         <div class="mission-response">
-          <div class="mission-copy">
-            <p>
-              Interceptors navigate within meters of the ground hunting for threats that hide behind
-              terrain
-            </p>
-            <p>Multiple drones maximize coverage and handle swarm attacks</p>
+          <div class="mission-left">
+            <div class="mission-copy">
+              <p>
+                Interceptors navigate within meters of the ground hunting for threats that hide behind
+                terrain
+              </p>
+              <p>Multiple drones maximize coverage and handle swarm attacks</p>
+            </div>
+            <div class="mission-principles" aria-label="Mission principles">
+              <ul class="vision-checklist">
+                <li>Low-altitude flight</li>
+                <li>Autonomous</li>
+                <li>Collaborative</li>
+              </ul>
+            </div>
           </div>
-          <div class="mission-principles" aria-label="Mission principles">
-            <ul class="vision-checklist">
-              <li>Low-altitude flight</li>
-              <li>Autonomous</li>
-              <li>Collaborative</li>
-            </ul>
-          </div>
-          <a class="mission-simulation" href="#" aria-label="Simulation rendering placeholder">
-            <span>Simulation rendering placeholder</span>
-            <span class="play-mark"></span>
-          </a>
+          <a class="mission-simulation" href="#" aria-label="Simulation placeholder"></a>
         </div>
 
         <div class="mission-applications">
@@ -182,6 +181,83 @@
         }, { threshold: 0.15 });
 
         obs.observe(document.querySelector('.mission-solution-title'));
+      })();
+
+      (function () {
+        var section = document.querySelector('.mission-applications');
+        if (!section) return;
+
+        var items = Array.from(section.querySelectorAll('.eyebrow, .application-grid h2, .application-grid li'));
+
+        items.forEach(function (el) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateX(-72px)';
+          el.style.transition = 'opacity 0.38s ease-out, transform 0.42s cubic-bezier(0.22, 1, 0.36, 1)';
+        });
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            items.forEach(function (el, i) {
+              setTimeout(function () {
+                el.style.opacity = '1';
+                el.style.transform = 'translateX(0)';
+              }, i * 72);
+            });
+            obs.disconnect();
+          }
+        }, { threshold: 0.1 });
+
+        obs.observe(section);
+      })();
+
+      (function () {
+        var boxes = Array.from(document.querySelectorAll('.mission-principles .vision-checklist li'));
+        if (!boxes.length) return;
+
+        boxes.forEach(function (li) {
+          li.style.opacity = '0';
+          li.style.transform = 'scale(0.82)';
+          li.style.transition = 'opacity 0.38s ease-out, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+        });
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            boxes.forEach(function (li, i) {
+              setTimeout(function () {
+                li.style.opacity = '1';
+                li.style.transform = 'scale(1)';
+              }, i * 180);
+            });
+            obs.disconnect();
+          }
+        }, { threshold: 0.3 });
+
+        obs.observe(document.querySelector('.mission-principles'));
+      })();
+
+      (function () {
+        var circles = Array.from(document.querySelectorAll('.threat-img-placeholder'));
+        if (!circles.length) return;
+
+        circles.forEach(function (c) {
+          c.style.opacity = '0';
+          c.style.transform = 'scale(0.78)';
+          c.style.transition = 'opacity 0.5s ease-out, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
+        });
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            circles.forEach(function (c, i) {
+              setTimeout(function () {
+                c.style.opacity = '1';
+                c.style.transform = 'scale(1)';
+              }, i * 160);
+            });
+            obs.disconnect();
+          }
+        }, { threshold: 0.1 });
+
+        obs.observe(document.querySelector('.mission-threats'));
       })();
     </script>
   </body>

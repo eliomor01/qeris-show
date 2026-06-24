@@ -815,6 +815,69 @@ h3,
   font-weight: 800;
 }
 
+.prototype-chain.will-animate::before {
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 1.8s cubic-bezier(0.4, 0, 0.4, 1);
+}
+
+.prototype-chain.animate-in::before {
+  transform: scaleY(1);
+}
+
+.prototype-chain.will-animate::after {
+  opacity: 0;
+  transition: opacity 0.35s ease-out 1.75s;
+}
+
+.prototype-chain.animate-in::after {
+  opacity: 1;
+}
+
+.prototype-chain li.will-animate::before {
+  transform: scale(0);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prototype-chain li.revealed::before {
+  transform: scale(1);
+}
+
+.mission-principles .vision-checklist li {
+  background-color: rgba(5, 5, 5, 0.05);
+  background-image:
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--ink), var(--ink));
+  background-size:
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px;
+  background-position:
+    0 0,       0 0,
+    100% 0,    100% 0,
+    0 100%,    0 100%,
+    100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  color: var(--ink);
+  display: block;
+  font-size: clamp(0.84rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: clamp(10px, 1.8vh, 16px) clamp(16px, 2.2vw, 26px);
+  text-transform: uppercase;
+}
+
+.mission-principles .vision-checklist li::before {
+  display: none;
+}
+
 .prototype-evidence {
   align-items: center;
   background: var(--paper);
@@ -1054,7 +1117,6 @@ h3,
 }
 
 .vision-checklist {
-  align-self: center;
   font-weight: 800;
   list-style: none;
   padding-left: 0;
@@ -1063,7 +1125,7 @@ h3,
 .vision-checklist li {
   align-items: center;
   display: flex;
-  font-size: clamp(1.1rem, 1.5vw, 1.65rem);
+  font-size: clamp(0.84rem, 1vw, 1rem);
   gap: 16px;
 }
 
@@ -1211,7 +1273,7 @@ h3,
 
 .threat-img-placeholder {
   aspect-ratio: 1;
-  background: #1c1e1a;
+  background: var(--field);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   justify-self: center;
@@ -1250,16 +1312,25 @@ h3,
 .mission-response {
   display: grid;
   gap: clamp(20px, 3.5vw, 48px);
-  grid-template-columns: 1fr 1fr 1.6fr;
+  grid-template-columns: 1fr 1.6fr;
   padding: 0 0 clamp(28px, 5vh, 52px);
 }
 
+.mission-left {
+  display: grid;
+  gap: clamp(20px, 3.5vw, 48px);
+  grid-template-columns: 1fr 1fr;
+}
+
 .mission-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-left: 0;
 }
 
 .mission-copy p {
-  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  font-size: clamp(0.85rem, 1.1vw, 1.3rem);
   line-height: 1.45;
   max-width: 640px;
 }
@@ -1297,14 +1368,15 @@ h3,
 }
 
 .mission-principles {
-  align-items: flex-start;
   display: flex;
+  flex-direction: column;
 }
 
 .mission-principles .vision-checklist {
-  display: grid;
-  gap: clamp(18px, 3vh, 32px);
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -1316,7 +1388,7 @@ h3,
 
 .mission-applications .eyebrow {
   color: var(--ink);
-  font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+  font-size: clamp(1.5rem, 1.85vw, 2.175rem);
   font-weight: 500;
   opacity: 1;
   text-transform: none;
@@ -1341,7 +1413,7 @@ h3,
 .application-grid h2 {
   background: var(--field);
   color: #ffffff;
-  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  font-size: clamp(0.85rem, 1.1vw, 1.3rem);
   font-weight: 600;
   margin-bottom: 24px;
   padding: 10px 18px;
@@ -1357,7 +1429,7 @@ h3,
 
 .application-grid li {
   color: var(--ink);
-  font-size: 0.95rem;
+  font-size: clamp(0.84rem, 1vw, 1rem);
   font-weight: 700;
   line-height: 1.35;
   padding-left: 22px;
@@ -1365,8 +1437,8 @@ h3,
 }
 
 .application-grid li::before {
-  content: "✓";
-  font-weight: 800;
+  content: "→";
+  font-weight: 400;
   left: 0;
   position: absolute;
 }
