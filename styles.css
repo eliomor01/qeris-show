@@ -1183,6 +1183,7 @@ h3,
   font-weight: 500;
   margin: 0;
   padding-top: clamp(24px, 4vh, 52px);
+  text-align: center;
 }
 
 .mission-threats p,
@@ -1195,15 +1196,17 @@ h3,
 .mission-threats p {
   color: rgba(255, 255, 255, 0.75);
   font-weight: 600;
-  margin: 0;
+  margin: 0 auto;
   max-width: 56%;
+  text-align: center;
 }
 
 .mission-threats strong {
   color: rgba(255, 255, 255, 0.38);
   font-weight: 400;
-  margin: 0;
+  margin: 0 auto;
   max-width: 56%;
+  text-align: center;
 }
 
 .threat-img-placeholder {
@@ -1211,6 +1214,7 @@ h3,
   background: #1c1e1a;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
+  justify-self: center;
   overflow: hidden;
   width: 75%;
 }
