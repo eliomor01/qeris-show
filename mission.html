@@ -72,14 +72,24 @@
       </section>
 
       <section class="mission-screen mission-solution">
+        <h2 class="mission-solution-title" aria-label="Our AI-enabled interceptors detect and chase threats within terrain">
+          <span id="missionTitle2"></span><span class="typewriter-cursor ink-cursor" aria-hidden="true"></span>
+        </h2>
+
         <div class="mission-response">
           <div class="mission-copy">
-            <h2>Our AI-enabled interceptors detect and chase threats within terrain</h2>
             <p>
               Interceptors navigate within meters of the ground hunting for threats that hide behind
               terrain
-</p>
+            </p>
             <p>Multiple drones maximize coverage and handle swarm attacks</p>
+          </div>
+          <div class="mission-principles" aria-label="Mission principles">
+            <ul class="vision-checklist">
+              <li>Low-altitude flight</li>
+              <li>Autonomous</li>
+              <li>Collaborative</li>
+            </ul>
           </div>
           <a class="mission-simulation" href="#" aria-label="Simulation rendering placeholder">
             <span>Simulation rendering placeholder</span>
@@ -87,35 +97,27 @@
           </a>
         </div>
 
-        <div class="mission-principles" aria-label="Mission principles">
-          <ul class="vision-checklist">
-            <li>Low-altitude flight</li>
-            <li>Autonomous</li>
-            <li>Collaborative</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="mission-screen mission-applications">
-        <p class="eyebrow">Applications</p>
-        <div class="application-grid">
-          <article>
-            <h2>Defense</h2>
-            <ul>
-              <li>Base and perimeter protection for patrol fences, lines, dead zones, and under canopy</li>
-              <li>Countering low-flying drones</li>
-              <li>Convoy route safety mapping and clearance support</li>
-            </ul>
-          </article>
-          <article>
-            <h2>Civilian</h2>
-            <ul>
-              <li>Search and rescue</li>
-              <li>Vehicle and pedestrian pursuit in dense urban environments</li>
-              <li>Crash and crime-scene first responders</li>
-              <li>Border patrol and area denial for prisons and airports</li>
-            </ul>
-          </article>
+        <div class="mission-applications">
+          <p class="eyebrow">Applications</p>
+          <div class="application-grid">
+            <article>
+              <h2>Defense</h2>
+              <ul>
+                <li>Base and perimeter protection for patrol fences, lines, dead zones, and under canopy</li>
+                <li>Countering low-flying drones</li>
+                <li>Convoy route safety mapping and clearance support</li>
+              </ul>
+            </article>
+            <article>
+              <h2>Civilian</h2>
+              <ul>
+                <li>Search and rescue</li>
+                <li>Vehicle and pedestrian pursuit in dense urban environments</li>
+                <li>Crash and crime-scene first responders</li>
+                <li>Border patrol and area denial for prisons and airports</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -149,6 +151,37 @@
         }, { threshold: 0.15 });
 
         obs.observe(document.querySelector('.mission-intro'));
+      })();
+
+      (function () {
+        var FULL = "Our AI-enabled interceptors detect and chase threats within terrain";
+        var el = document.getElementById('missionTitle2');
+        var cursor = el.nextElementSibling;
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          el.textContent = FULL.slice(0, idx);
+          if (idx < FULL.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.mission-solution-title'));
       })();
     </script>
   </body>
