@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -30,36 +30,39 @@
       <section class="mission-screen mission-threat-screen">
         <div class="mission-intro">
           <p class="eyebrow">Mission</p>
-          <h1>
-            The next generation of intelligent drones and munitions test the limits of today's
-            counter-drone systems.
+          <h1 aria-label="The next generation of intelligent drones and munitions test the limits of today's counter-drone systems">
+            The next generation of intelligent drones and munitions <span id="missionTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span>
           </h1>
         </div>
 
         <div class="mission-threats" aria-label="Threat landscape">
           <article>
+            <div class="threat-img-placeholder" aria-hidden="true"></div>
             <h2>Difficult to detect</h2>
-            <p>Small, slow, and operating without emissions, including fiber-optic drones and gliders.</p>
-            <span class="threat-arrow" aria-hidden="true"></span>
-            <strong>Detection by RF and soft-kill jamming is ineffective; radar is limited.</strong>
+            <p>Small, slow, and operating without emissions, including fiber-optic drones and gliders</p>
+            <strong>Detection by RF and soft-kill jamming is ineffective; radar is limited</strong>
           </article>
           <article>
+            <div class="threat-img-placeholder" aria-hidden="true"></div>
             <h2>Terrain-hugging and hiding</h2>
-            <p>Flying just above the ground allows threats to hide in terrain and background objects.</p>
-            <span class="threat-arrow" aria-hidden="true"></span>
-            <strong>Late detection and line-of-sight systems bring high collateral risk.</strong>
+            <p>Flying just above the ground allows threats to hide in terrain and background objects</p>
+            <strong>Late detection and line-of-sight systems bring high collateral risk</strong>
           </article>
           <article>
+            <div class="threat-img-placeholder">
+              <img src="assets/Evasive.png" alt="Drone executing evasive maneuvers above terrain" />
+            </div>
             <h2>Evasive maneuvers</h2>
-            <p>Quick and unpredictable changes in speed, altitude, and direction complicate interception.</p>
-            <span class="threat-arrow" aria-hidden="true"></span>
-            <strong>Lasers cannot hold precise aimpoint as target jinks; guns lead-prediction breaks against erratic flight.</strong>
+            <p>Quick and unpredictable changes in speed, altitude, and direction complicate interception</p>
+            <strong>Lasers cannot hold precise aimpoint as target jinks; guns lead-prediction breaks against erratic flight</strong>
           </article>
           <article>
+            <div class="threat-img-placeholder">
+              <img src="assets/Swarm.png" alt="Coordinated drone swarm with network mesh" />
+            </div>
             <h2>Coordinated swarm</h2>
-            <p>Simultaneous attacks adopt different roles, including decoys, relays, strikes, and ingression tactics.</p>
-            <span class="threat-arrow" aria-hidden="true"></span>
-            <strong>Lasers and guns cannot engage multiple directions at once.</strong>
+            <p>Simultaneous attacks adopt different roles, including decoys, relays, strikes, and ingression tactics</p>
+            <strong>Lasers and guns cannot engage multiple directions at once</strong>
           </article>
         </div>
       </section>
@@ -67,12 +70,12 @@
       <section class="mission-screen mission-solution">
         <div class="mission-response">
           <div class="mission-copy">
-            <h2>Our AI-enabled interceptors detect and chase threats within terrain.</h2>
+            <h2>Our AI-enabled interceptors detect and chase threats within terrain</h2>
             <p>
               Interceptors navigate within meters of the ground hunting for threats that hide behind
-              terrain.
-            </p>
-            <p>Multiple drones maximize coverage and handle swarm attacks.</p>
+              terrain
+</p>
+            <p>Multiple drones maximize coverage and handle swarm attacks</p>
           </div>
           <a class="mission-simulation" href="#" aria-label="Simulation rendering placeholder">
             <span>Simulation rendering placeholder</span>
@@ -95,22 +98,54 @@
           <article>
             <h2>Defense</h2>
             <ul>
-              <li>Base and perimeter protection for patrol fences, lines, dead zones, and under canopy.</li>
-              <li>Countering low-flying drones.</li>
-              <li>Convoy route safety mapping and clearance support.</li>
+              <li>Base and perimeter protection for patrol fences, lines, dead zones, and under canopy</li>
+              <li>Countering low-flying drones</li>
+              <li>Convoy route safety mapping and clearance support</li>
             </ul>
           </article>
           <article>
             <h2>Civilian</h2>
             <ul>
-              <li>Search and rescue.</li>
-              <li>Vehicle and pedestrian pursuit in dense urban environments.</li>
-              <li>Crash and crime-scene first responders.</li>
-              <li>Border patrol and area denial for prisons and airports.</li>
+              <li>Search and rescue</li>
+              <li>Vehicle and pedestrian pursuit in dense urban environments</li>
+              <li>Crash and crime-scene first responders</li>
+              <li>Border patrol and area denial for prisons and airports</li>
             </ul>
           </article>
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        var FULL = "test the limits of today’s counter-drone systems";
+        var el = document.getElementById('missionTitle');
+        var cursor = document.querySelector('.typewriter-cursor');
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          el.textContent = FULL.slice(0, idx);
+          if (idx < FULL.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.mission-intro'));
+      })();
+    </script>
   </body>
 </html>

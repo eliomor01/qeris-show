@@ -6,8 +6,8 @@
   --white: #ffffff;
   --signal: #cfc9b5;
   --field: #10110f;
-  --font-body: Inter, Arial, sans-serif;
-  --font-display: "Space Grotesk", Inter, Arial, sans-serif;
+  --font-body: "Space Grotesk", Arial, sans-serif;
+  --font-display: "Space Grotesk", Arial, sans-serif;
 }
 
 * {
@@ -1109,40 +1109,61 @@ h3,
 }
 
 .mission-threat-screen {
-  background: var(--paper);
+  background: var(--field);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: clamp(26px, 4vw, 46px);
+  padding-bottom: 0;
+  padding-left: clamp(8px, 1vw, 12px);
+  padding-right: clamp(8px, 1vw, 12px);
   padding-top: 116px;
 }
 
+.mission-threat-screen .eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .mission-intro {
-  padding-bottom: clamp(44px, 8vh, 96px);
+  padding-bottom: clamp(16px, 3vh, 32px);
+  padding-left: clamp(12px, 3vw, 60px);
 }
 
 .mission-intro h1 {
+  color: #ffffff;
   font-family: var(--font-body);
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size: clamp(2.6rem, 3.4vw, 4rem);
   font-weight: 500;
-  line-height: 1.28;
+  line-height: 1.15;
   margin: 0;
   max-width: 1420px;
 }
 
+.typewriter-cursor {
+  animation: cursor-blink 0.65s step-end infinite;
+  border-right: 0.07em solid rgba(255, 255, 255, 0.85);
+  display: inline-block;
+  height: 0.85em;
+  margin-left: 2px;
+  vertical-align: baseline;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .mission-threats {
-  border-bottom: 3px solid var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   display: grid;
   flex: 1;
-  gap: clamp(24px, 4vw, 68px);
+  gap: clamp(6px, 0.8vw, 10px);
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding-bottom: clamp(20px, 4vh, 40px);
+  padding-bottom: clamp(16px, 3vh, 28px);
 }
 
 .mission-threats article {
-  align-content: start;
-  display: grid;
-  grid-template-rows: auto minmax(64px, auto) minmax(54px, auto) auto;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
@@ -1154,9 +1175,12 @@ h3,
 }
 
 .mission-threats h2 {
-  font-size: clamp(1.45rem, 2.1vw, 2.25rem);
+  color: #ffffff;
+  font-size: clamp(1.3rem, 1.7vw, 2rem);
   font-weight: 500;
   margin-bottom: 18px;
+  margin-top: clamp(16px, 3vh, 28px);
+  padding-left: clamp(4px, 0.5vw, 8px);
 }
 
 .mission-threats p,
@@ -1167,23 +1191,34 @@ h3,
 }
 
 .mission-threats p {
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
   margin-bottom: 18px;
+  padding-left: clamp(4px, 0.5vw, 8px);
 }
 
 .mission-threats strong {
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.38);
+  font-weight: 400;
   max-width: 270px;
+  padding-left: clamp(4px, 0.5vw, 8px);
 }
 
-.threat-arrow {
-  background: var(--ink);
-  clip-path: polygon(35% 0, 65% 0, 65% 56%, 100% 56%, 50% 100%, 0 56%, 35% 56%);
-  display: block;
-  height: clamp(28px, 4vh, 40px);
-  justify-self: center;
-  margin: 0 0 22px;
-  width: clamp(20px, 2vw, 30px);
+.threat-img-placeholder {
+  aspect-ratio: 1;
+  background: #1c1e1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  margin-bottom: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.threat-img-placeholder img {
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
 }
 
 .mission-solution {
@@ -1440,7 +1475,7 @@ h3,
   }
 
   .mission-threats article {
-    grid-template-rows: auto;
+    flex-direction: column;
   }
 
   .mission-solution {
