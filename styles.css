@@ -565,6 +565,20 @@ h3,
   justify-items: start;
 }
 
+@keyframes icon-pop {
+  0% { opacity: 0; transform: scale(0.5); }
+  65% { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.technology-icon-img {
+  animation: icon-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  display: block;
+  height: 76px;
+  object-fit: contain;
+  width: 112px;
+}
+
 .technology-icon {
   align-items: center;
   background:
@@ -659,17 +673,17 @@ h3,
 }
 
 .technology-simulation:has(img) {
-  background: none;
+  background: transparent;
   border: none;
+  min-height: auto;
   padding: 0;
 }
 
 .technology-simulation img {
   display: block;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  width: 56%;
 }
 
 .technology-simulation::before {
