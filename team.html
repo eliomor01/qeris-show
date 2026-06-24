@@ -29,7 +29,7 @@
     <main class="team-page">
       <section class="team-intro">
         <p class="eyebrow">Team</p>
-        <h1>We combine deep UAS, AI, and business expertise</h1>
+        <h1>We combine deep<span id="teamTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
       </section>
 
       <section class="founder-grid" aria-label="Founding team">
@@ -73,5 +73,38 @@
         </article>
       </section>
     </main>
+    <script>
+      (function () {
+        var FULL = ' UAS, AI, and business expertise';
+        var el = document.getElementById('teamTitle');
+        var cursor = el.nextElementSibling;
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          el.textContent = FULL.slice(0, idx);
+          if (idx < FULL.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.team-intro h1'));
+      })();
+    </script>
+    <script src="chrome.js"></script>
   </body>
 </html>

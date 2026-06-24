@@ -29,7 +29,7 @@
     <main class="prototype-page">
       <section class="prototype-screen prototype-overview">
         <p class="eyebrow">Prototype</p>
-        <h1>Autonomous and full-chain solution for point defense, last 1-2km</h1>
+        <h1>Autonomous and full-chain solution<span id="protoTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
 
         <div class="prototype-layout">
           <div class="prototype-visual">
@@ -61,19 +61,25 @@
         </div>
 
         <div class="prototype-benefits">
-          <article>
-            <h2>Low cost</h2>
-            <p>Built entirely on cheap, off-the-shelf airframes, sensors, and simple launchpads</p>
-            <p>Kit delivered under US$ 30k</p>
+          <article class="benefit-card">
+            <div class="benefit-label">Low cost</div>
+            <div class="benefit-desc">
+              <p>Built on cheap, off-the-shelf airframes, sensors, and simple launchpads</p>
+              <p>Kit delivered under US$ 30k</p>
+            </div>
           </article>
-          <article>
-            <h2>Compact and easy to deploy</h2>
-            <p>Can be ground-emplaced or vehicle mounted</p>
-            <p>Composed of small and lightweight components</p>
+          <article class="benefit-card">
+            <div class="benefit-label">Compact and easy to deploy</div>
+            <div class="benefit-desc">
+              <p>Ground-emplaced or vehicle mounted</p>
+              <p>Small, lightweight, modular components</p>
+            </div>
           </article>
-          <article>
-            <h2>End-to-end solution</h2>
-            <p>Integrates the full chain, from detection, tracking, and final intercept</p>
+          <article class="benefit-card">
+            <div class="benefit-label">End-to-end solution</div>
+            <div class="benefit-desc">
+              <p>Covers the full engagement chain — detection, onboard tracking, and intercept</p>
+            </div>
           </article>
         </div>
       </section>
@@ -88,7 +94,7 @@
         <div class="prototype-video-grid" aria-label="Prototype reference videos">
           <div class="prototype-video-slot prototype-video-embed" aria-label="Iron Dome video reference">
             <iframe
-              src="https://www.youtube.com/embed/jEWLWmgZ9qo"
+              src="https://www.youtube.com/embed/jEWLWmgZ9qo?autoplay=1&mute=1&modestbranding=1&rel=0"
               title="Iron Dome video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -96,7 +102,7 @@
           </div>
           <div class="prototype-video-slot prototype-video-embed" aria-label="Baghdad base video reference">
             <iframe
-              src="https://www.youtube.com/embed/yTOR2HhXiNI"
+              src="https://www.youtube.com/embed/yTOR2HhXiNI?autoplay=1&mute=1&modestbranding=1&rel=0"
               title="Baghdad base video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -104,7 +110,7 @@
           </div>
           <div class="prototype-video-slot prototype-video-embed" aria-label="FPV tank attack video reference">
             <iframe
-              src="https://www.youtube.com/embed/vO1-Rkx3WFs"
+              src="https://www.youtube.com/embed/vO1-Rkx3WFs?autoplay=1&mute=1&modestbranding=1&rel=0"
               title="FPV tank attack video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -115,6 +121,37 @@
     </main>
 
     <script>
+      (function () {
+        var FULL = ' for point defense, last 1-2km';
+        var el = document.getElementById('protoTitle');
+        var cursor = el.nextElementSibling;
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          el.textContent = FULL.slice(0, idx);
+          if (idx < FULL.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.prototype-overview > h1'));
+      })();
+
       (function () {
         var chain = document.querySelector('.prototype-chain');
         if (!chain) return;
@@ -145,5 +182,6 @@
         obs.observe(chain);
       })();
     </script>
+    <script src="chrome.js"></script>
   </body>
 </html>
