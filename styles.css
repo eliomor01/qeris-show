@@ -728,14 +728,18 @@ h3,
   margin: 0;
 }
 
+.technology-row--wide-sim {
+  grid-template-columns: minmax(180px, 0.5fr) minmax(200px, 0.7fr) minmax(0, 1fr);
+}
+
 .technology-simulation-pair {
   display: flex;
-  gap: clamp(8px, 1vw, 14px);
+  gap: clamp(6px, 0.8vw, 10px);
 }
 
 .technology-simulation-pair .technology-simulation {
   flex: 1 1 0;
-  min-height: clamp(130px, 18vh, 200px);
+  min-height: clamp(120px, 16vh, 190px);
 }
 
 .technology-simulation--video {
@@ -745,12 +749,35 @@ h3,
   padding: 0;
 }
 
+.technology-simulation--captioned {
+  position: relative;
+}
+
+.tech-video-caption {
+  background: rgba(10, 20, 60, 0.82);
+  color: var(--paper);
+  font-size: clamp(0.58rem, 0.7vw, 0.68rem);
+  left: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.38;
+  margin: 0;
+  padding: 6px 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
 .technology-simulation--video video,
 .technology-simulation--video img {
   display: block;
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.technology-simulation-pair .technology-simulation--video video {
+  object-fit: contain;
 }
 
 .technology-simulation::before {
@@ -813,7 +840,7 @@ h3,
 }
 
 .prototype-render-caption {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(10, 20, 60, 0.78);
   color: var(--paper);
   font-size: clamp(0.7rem, 0.85vw, 0.82rem);
   left: 0;
