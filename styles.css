@@ -699,6 +699,7 @@ h3,
 
 .technology-label {
   align-items: center;
+  align-self: start;
   display: flex;
   gap: 14px;
 }
@@ -806,8 +807,24 @@ h3,
   position: relative;
 }
 
+
 .prototype-render::before {
   display: none;
+}
+
+.prototype-render-caption {
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--paper);
+  font-size: clamp(0.7rem, 0.85vw, 0.82rem);
+  left: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  margin: 0;
+  padding: 10px 14px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
 }
 
 .prototype-render-img {
@@ -1002,10 +1019,10 @@ h3,
 .prototype-evidence-title {
   color: var(--white);
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.3vw, 1.4rem);
+  font-size: clamp(1.45rem, 2vw, 2rem);
   font-weight: 400;
   grid-column: 1 / -1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   line-height: 1.28;
   margin: 0 0 clamp(8px, 2vh, 16px);
   max-width: 1320px;
