@@ -729,7 +729,7 @@ h3,
 }
 
 .technology-row--wide-sim {
-  grid-template-columns: minmax(180px, 0.5fr) minmax(200px, 0.7fr) minmax(0, 1fr);
+  grid-template-columns: minmax(220px, 0.62fr) minmax(200px, 0.7fr) minmax(0, 1fr);
 }
 
 .technology-simulation-pair {
