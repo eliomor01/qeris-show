@@ -2089,10 +2089,10 @@ body::after  { right: 36px; }
 }
 
 .mission-hero-banner-bg {
-  height: 100%;
+  height: 111%;
   inset: 0;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   position: absolute;
   width: 100%;
 }
