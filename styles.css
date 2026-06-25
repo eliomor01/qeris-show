@@ -830,6 +830,7 @@ h3,
 .prototype-render {
   background: #000;
   border: none;
+  min-height: clamp(200px, 30vh, 420px);
   overflow: hidden;
   position: relative;
 }
