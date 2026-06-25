@@ -872,10 +872,14 @@ h3,
 }
 
 .prototype-benefits {
-  display: grid;
-  gap: clamp(14px, 2vw, 22px);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  gap: 0;
+  justify-content: space-between;
   padding: clamp(36px, 6vh, 64px) 0 0;
+}
+
+.prototype-benefits .benefit-card {
+  flex: 0 0 30%;
 }
 
 .prototype-benefits article {
