@@ -2111,6 +2111,7 @@ body::after  { right: 36px; }
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .mission-hero-banner-label {
