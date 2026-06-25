@@ -2109,7 +2109,7 @@ body::after  { right: 36px; }
   animation: banner-logo-fade 3.5s ease-out forwards;
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 2vh, 22px);
+  gap: clamp(32px, 5vh, 48px);
   left: 50%;
   position: absolute;
   top: 50%;
@@ -2121,17 +2121,18 @@ body::after  { right: 36px; }
   display: block;
   filter: invert(1);
   height: auto;
-  width: clamp(210px, 31.5vw, 455px);
+  width: clamp(260px, 36vw, 520px);
 }
 
 .mission-hero-banner-tagline {
   color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(0.75rem, 1.1vw, 1.05rem);
+  font-size: clamp(0.6rem, 0.88vw, 0.84rem);
   font-weight: 400;
   letter-spacing: 0.18em;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 @keyframes banner-logo-fade {
