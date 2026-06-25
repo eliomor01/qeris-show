@@ -693,6 +693,16 @@ h3,
   width: 56%;
 }
 
+.technology-simulation-pair {
+  display: flex;
+  gap: clamp(8px, 1vw, 14px);
+}
+
+.technology-simulation-pair .technology-simulation {
+  flex: 1 1 0;
+  min-height: clamp(130px, 18vh, 200px);
+}
+
 .technology-simulation--video {
   background: #000;
   border: none;
