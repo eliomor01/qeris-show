@@ -1891,6 +1891,7 @@ h3,
   .technology-screen,
   .vision-page,
   .mission-screen,
+  .mission-hero-banner,
   .prototype-screen {
     padding-left: clamp(18px, 5vw, 32px);
     padding-right: clamp(18px, 5vw, 32px);
@@ -2126,7 +2127,6 @@ body::after  { right: 36px; }
   line-height: 1.4;
   margin: 0;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .mission-hero-banner-label {
