@@ -800,32 +800,23 @@ h3,
 }
 
 .prototype-render {
-  align-items: center;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
-    var(--field);
-  border: 1px solid rgba(245, 245, 241, 0.22);
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  min-height: clamp(300px, 50vh, 470px);
-  padding: 28px;
+  background: #000;
+  border: none;
+  overflow: hidden;
   position: relative;
 }
 
 .prototype-render::before {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  content: "";
-  inset: 12px;
-  position: absolute;
+  display: none;
 }
 
 .prototype-render-img {
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  position: absolute;
+  display: block;
+  height: auto;
+  position: relative;
+  transform: scale(1.018);
   width: 100%;
+  z-index: 1;
 }
 
 .prototype-render span {
