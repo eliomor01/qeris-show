@@ -2090,9 +2090,8 @@ body::after  { right: 36px; }
   align-items: center;
   background: #000;
   display: flex;
-  justify-content: center;
-  min-height: 38vh;
-  padding: clamp(48px, 8vh, 96px) clamp(18px, 20vw, 380px);
+  min-height: 19vh;
+  padding: clamp(48px, 8vh, 96px) clamp(18px, 20vw, 380px) clamp(18px, 2.5vh, 28px);
 }
 
 .mission-hero-banner-kicker {
@@ -2109,7 +2108,6 @@ body::after  { right: 36px; }
   letter-spacing: 0.06em;
   line-height: 1.4;
   margin: 0;
-  text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
 }
