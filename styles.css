@@ -698,7 +698,8 @@ h3,
   padding: 0;
 }
 
-.technology-simulation--video video {
+.technology-simulation--video video,
+.technology-simulation--video img {
   display: block;
   height: 100%;
   object-fit: cover;
@@ -771,6 +772,14 @@ h3,
   content: "";
   inset: 12px;
   position: absolute;
+}
+
+.prototype-render-img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
 }
 
 .prototype-render span {
