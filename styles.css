@@ -693,6 +693,40 @@ h3,
   width: 56%;
 }
 
+.technology-stack {
+  counter-reset: tech-step;
+}
+
+.technology-label {
+  align-items: baseline;
+  display: flex;
+  gap: 14px;
+}
+
+.technology-label::before {
+  color: rgba(68, 117, 245, 0.75);
+  content: counter(tech-step);
+  counter-increment: tech-step;
+  flex-shrink: 0;
+  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding-top: 0.2em;
+}
+
+.technology-simulation-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.technology-simulation-caption {
+  color: var(--muted);
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
 .technology-simulation-pair {
   display: flex;
   gap: clamp(8px, 1vw, 14px);
