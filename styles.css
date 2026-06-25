@@ -1395,7 +1395,8 @@ h3,
   padding-top: 116px;
 }
 
-.mission-threat-screen .eyebrow {
+.mission-threat-screen .eyebrow,
+.mission-solution .eyebrow {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -2103,16 +2104,34 @@ body::after  { right: 36px; }
   position: absolute;
 }
 
-.mission-hero-banner-logo {
+.mission-hero-banner-lockup {
+  align-items: center;
   animation: banner-logo-fade 3.5s ease-out forwards;
-  filter: invert(1);
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vh, 22px);
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(210px, 31.5vw, 455px);
   z-index: 2;
+}
+
+.mission-hero-banner-logo {
+  display: block;
+  filter: invert(1);
+  height: auto;
+  width: clamp(210px, 31.5vw, 455px);
+}
+
+.mission-hero-banner-tagline {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(0.75rem, 1.1vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 @keyframes banner-logo-fade {

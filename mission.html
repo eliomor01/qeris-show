@@ -30,14 +30,17 @@
       <section class="mission-hero-banner">
         <img src="assets/BANNER.png" alt="" aria-hidden="true" class="mission-hero-banner-bg" />
         <div class="mission-hero-banner-overlay"></div>
-        <img src="assets/qeris-logo.png" alt="QERIS" class="mission-hero-banner-logo" aria-hidden="true" />
+        <div class="mission-hero-banner-lockup">
+          <img src="assets/qeris-logo.png" alt="QERIS" class="mission-hero-banner-logo" />
+          <p class="mission-hero-banner-tagline">Autonomous drones, cooperating, unhindered by terrain and obstacles</p>
+        </div>
       </section>
 
       <section class="mission-screen mission-threat-screen">
         <div class="mission-intro">
-          <p class="eyebrow">Mission</p>
-          <h1 aria-label="Smart drones. Coordinated. Unhindered by terrain">
-            Smart drones. Coordinated.<span id="missionTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span>
+          <p class="eyebrow">The problem</p>
+          <h1 aria-label="The next generation of intelligent drones and munitions test the limits of today's counter-drone systems">
+            The next generation of intelligent drones and munitions<span id="missionTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span>
           </h1>
         </div>
 
@@ -78,6 +81,7 @@
       </section>
 
       <section class="mission-screen mission-solution">
+        <p class="eyebrow">What we do</p>
         <h2 class="mission-solution-title" aria-label="Our AI-enabled interceptors detect and chase threats within terrain">
           <span id="missionTitle2"></span><span class="typewriter-cursor ink-cursor" aria-hidden="true"></span>
         </h2>
@@ -133,7 +137,7 @@
     </main>
     <script>
       (function () {
-        var FULL = " Unhindered by terrain";
+        var FULL = " test the limits of today’s counter-drone systems";
         var el = document.getElementById('missionTitle');
         var cursor = document.querySelector('.typewriter-cursor');
         var idx = 0;
