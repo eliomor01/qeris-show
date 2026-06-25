@@ -998,7 +998,7 @@ h3,
 }
 
 .mission-principles .vision-checklist li {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #1e1e1e;
   background-image:
     linear-gradient(var(--paper), var(--paper)),
     linear-gradient(var(--paper), var(--paper)),
@@ -1587,8 +1587,24 @@ h3,
   padding: 0;
 }
 
+.mission-simulation--video {
+  position: relative;
+}
+
 .mission-simulation--video::before {
   display: none;
+}
+
+.simulation-label {
+  color: var(--muted);
+  font-size: 0.175rem;
+  font-weight: 400;
+  left: 12px;
+  letter-spacing: 0.08em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 10px;
+  z-index: 2;
 }
 
 .mission-simulation--video video {
