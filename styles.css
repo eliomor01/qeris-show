@@ -698,7 +698,7 @@ h3,
 }
 
 .technology-label {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   gap: 14px;
 }
@@ -1002,7 +1002,7 @@ h3,
 .prototype-evidence-title {
   color: var(--white);
   font-family: var(--font-body);
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size: clamp(1rem, 1.3vw, 1.4rem);
   font-weight: 400;
   grid-column: 1 / -1;
   letter-spacing: 0.06em;
