@@ -857,8 +857,9 @@ h3,
 .prototype-render-img {
   display: block;
   height: auto;
+  object-fit: contain;
   position: relative;
-  transform: scale(1.018);
+  transform: none;
   width: 100%;
   z-index: 1;
 }
@@ -1903,7 +1904,7 @@ h3,
 }
 
 .benefit-label {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #1e1e1e;
   background-image:
     linear-gradient(var(--paper), var(--paper)),
     linear-gradient(var(--paper), var(--paper)),
@@ -2086,62 +2087,30 @@ body::after  { right: 36px; }
 
 /* ── Mission hero banner ── */
 .mission-hero-banner {
-  align-items: flex-end;
-  display: flex;
-  min-height: 52vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.mission-hero-banner-bg {
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  object-position: center;
-  position: absolute;
-  width: 100%;
-}
-
-.mission-hero-banner-overlay {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.62) 100%);
-  inset: 0;
-  position: absolute;
-}
-
-.mission-hero-banner-lockup {
   align-items: center;
-  animation: banner-logo-fade 3.5s ease-out forwards;
+  background: #000;
   display: flex;
-  flex-direction: column;
-  gap: clamp(32px, 5vh, 48px);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  justify-content: center;
+  min-height: 38vh;
+  padding: clamp(48px, 8vh, 96px) clamp(18px, 20vw, 380px);
 }
 
-.mission-hero-banner-logo {
-  display: block;
-  filter: invert(1);
-  height: auto;
-  width: clamp(260px, 36vw, 520px);
+.mission-hero-banner-kicker {
+  background: linear-gradient(90deg, rgba(68, 117, 245, 1), rgba(120, 180, 255, 0.85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.mission-hero-banner-tagline {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(0.6rem, 0.88vw, 0.84rem);
+.mission-hero-banner-headline {
+  color: #fff;
+  font-size: clamp(1.5rem, 1.85vw, 2.175rem);
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  white-space: nowrap;
-}
-
-@keyframes banner-logo-fade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 .mission-hero-banner-label {
