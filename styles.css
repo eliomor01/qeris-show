@@ -1537,15 +1537,15 @@ h3,
 }
 
 .mission-left {
-  display: grid;
-  gap: clamp(20px, 3.5vw, 48px);
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 32px);
 }
 
 .mission-copy {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: clamp(10px, 1.5vh, 18px);
   padding-left: 0;
 }
 
@@ -1579,6 +1579,25 @@ h3,
   position: absolute;
 }
 
+.mission-simulation--video {
+  background: #000;
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  padding: 0;
+}
+
+.mission-simulation--video::before {
+  display: none;
+}
+
+.mission-simulation--video video {
+  display: block;
+  height: auto;
+  position: static;
+  width: 100%;
+}
+
 .mission-simulation span:first-child {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.2vw, 2.35rem);
@@ -1595,8 +1614,7 @@ h3,
 .mission-principles .vision-checklist {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  justify-content: space-between;
+  gap: clamp(14px, 2vh, 24px);
   width: 100%;
 }
 
@@ -1890,7 +1908,8 @@ h3,
   font-size: clamp(0.84rem, 1vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: clamp(10px, 1.8vh, 16px) clamp(16px, 2.2vw, 26px);
+  line-height: 1;
+  padding: 12px;
   text-transform: uppercase;
 }
 
