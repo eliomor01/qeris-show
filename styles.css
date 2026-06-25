@@ -1597,10 +1597,10 @@ h3,
 
 .simulation-label {
   color: var(--muted);
-  font-size: 0.175rem;
+  font-size: 9px !important;
   font-weight: 400;
   left: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   position: absolute;
   text-transform: uppercase;
   top: 10px;
@@ -2104,7 +2104,7 @@ body::after  { right: 36px; }
 }
 
 .mission-hero-banner-logo {
-  animation: banner-logo-in 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  animation: banner-logo-fade 3.5s ease-out forwards;
   filter: invert(1);
   height: auto;
   left: 50%;
@@ -2115,9 +2115,9 @@ body::after  { right: 36px; }
   z-index: 2;
 }
 
-@keyframes banner-logo-in {
-  from { opacity: 0; transform: translate(-50%, -46%); }
-  to   { opacity: 1; transform: translate(-50%, -50%); }
+@keyframes banner-logo-fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .mission-hero-banner-label {
