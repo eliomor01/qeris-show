@@ -85,36 +85,47 @@
       </section>
 
       <section class="prototype-screen prototype-evidence">
+        <h2 class="prototype-evidence-title">High value targets<span id="evidenceTitle"></span><span class="typewriter-cursor ink-cursor" aria-hidden="true"></span></h2>
+
         <div class="prototype-threat-copy">
-          <p><strong>Our prototype neutralizes small, evasive, RF-silent drones...</strong></p>
+          <p>Our prototype neutralizes small, evasive, RF-silent drones...</p>
           <p>...striking deeper now, up to 100km, far beyond the frontline...</p>
-          <p><strong>...exposing high-value assets everywhere, both military and civilian</strong></p>
+          <p>...exposing high-value assets everywhere, both military and civilian</p>
         </div>
 
         <div class="prototype-video-grid" aria-label="Prototype reference videos">
           <div class="prototype-video-slot prototype-video-embed" aria-label="Iron Dome video reference">
             <iframe
-              src="https://www.youtube.com/embed/jEWLWmgZ9qo?autoplay=1&mute=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/jEWLWmgZ9qo?modestbranding=1&rel=0"
               title="Iron Dome video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
+              <span class="video-play-btn" aria-hidden="true"></span>
+            </div>
           </div>
           <div class="prototype-video-slot prototype-video-embed" aria-label="Baghdad base video reference">
             <iframe
-              src="https://www.youtube.com/embed/yTOR2HhXiNI?autoplay=1&mute=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/yTOR2HhXiNI?modestbranding=1&rel=0"
               title="Baghdad base video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
+              <span class="video-play-btn" aria-hidden="true"></span>
+            </div>
           </div>
           <div class="prototype-video-slot prototype-video-embed" aria-label="FPV tank attack video reference">
             <iframe
-              src="https://www.youtube.com/embed/vO1-Rkx3WFs?autoplay=1&mute=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/vO1-Rkx3WFs?modestbranding=1&rel=0"
               title="FPV tank attack video reference"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
+              <span class="video-play-btn" aria-hidden="true"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -181,6 +192,51 @@
 
         obs.observe(chain);
       })();
+    </script>
+    <script>
+      (function () {
+        var FULL = ' now vulnerable far beyond the front line';
+        var el = document.getElementById('evidenceTitle');
+        var cursor = el.nextElementSibling;
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          el.textContent = FULL.slice(0, idx);
+          if (idx < FULL.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.prototype-evidence-title'));
+      })();
+
+      document.querySelectorAll('.video-overlay').forEach(function (overlay) {
+        function activate() {
+          var iframe = overlay.previousElementSibling;
+          iframe.src = iframe.src.replace('?', '?autoplay=1&');
+          overlay.classList.add('video-overlay--fading');
+          setTimeout(function () { overlay.style.display = 'none'; }, 600);
+        }
+        overlay.addEventListener('click', activate);
+        overlay.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') activate();
+        });
+      });
     </script>
     <script src="chrome.js"></script>
   </body>
