@@ -687,7 +687,7 @@ h3,
 /* Description text */
 .hiw-text {
   align-self: start;
-  color: rgba(123, 163, 255, 0.5);
+  color: var(--muted);
   font-size: clamp(0.72rem, 0.92vw, 0.82rem);
   line-height: 1.62;
   margin: 0;
@@ -2288,6 +2288,7 @@ h3,
 }
 
 .technology-row > p,
+.technology-text-col > p,
 .mission-copy p,
 .copy-stack p,
 .signal-grid p,
