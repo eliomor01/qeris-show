@@ -545,6 +545,181 @@ h3,
   background: #000;
 }
 
+/* ── HIW: edgy dark-tech — unified blue ───────────────────── */
+
+@keyframes hiw-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(68, 117, 245, 0.2), inset 0 0 20px rgba(68, 117, 245, 0.04); }
+  50%       { box-shadow: 0 0 26px rgba(68, 117, 245, 0.44), inset 0 0 20px rgba(68, 117, 245, 0.09); }
+}
+
+@keyframes hiw-dash {
+  to { stroke-dashoffset: -22; }
+}
+
+.hiw-flow-panel {
+  background: #060a14;
+  border: 1px solid rgba(68, 117, 245, 0.2);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+  margin-top: clamp(24px, 3.5vw, 40px);
+  overflow: hidden;
+  padding: clamp(22px, 3vw, 42px);
+  position: relative;
+}
+
+.hiw-flow-panel::before {
+  background-image:
+    linear-gradient(rgba(68, 117, 245, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(68, 117, 245, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hiw-diagram-grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns:
+    minmax(130px, 1.8fr)
+    clamp(28px, 4vw, 52px)
+    minmax(80px, 0.8fr)
+    clamp(28px, 4vw, 52px)
+    minmax(100px, 1fr)
+    clamp(28px, 4vw, 52px)
+    minmax(80px, 0.8fr);
+  position: relative;
+  row-gap: clamp(14px, 2vw, 22px);
+  z-index: 1;
+}
+
+/* Spanning title */
+.hiw-diagram-title {
+  color: #7ba3ff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  grid-column: 1 / -1;
+  letter-spacing: 0.18em;
+  margin: 0 0 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Detection items — no outer frame */
+.hiw-detection-items {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: center;
+}
+
+.hiw-sub-box {
+  animation: hiw-pulse 3.5s ease-in-out infinite;
+  background: rgba(68, 117, 245, 0.06);
+  border: 1px solid rgba(68, 117, 245, 0.45);
+  color: #7ba3ff;
+  font-size: clamp(0.62rem, 0.85vw, 0.76rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hiw-sub-box:nth-child(2) { animation-delay: 0.4s; }
+.hiw-sub-box:nth-child(3) { animation-delay: 0.8s; }
+
+/* Connectors */
+.hiw-conn {
+  align-items: center;
+  align-self: stretch;
+  color: rgba(68, 117, 245, 0.65);
+  display: flex;
+  justify-content: center;
+}
+
+.hiw-conn svg line {
+  animation: hiw-dash 1.4s linear infinite;
+  stroke-dasharray: 6 3;
+}
+
+.hiw-conn--converge svg {
+  height: 100%;
+  width: 100%;
+}
+
+.hiw-conn--simple svg {
+  height: 14px;
+  width: 100%;
+}
+
+/* Boxes */
+.hiw-box {
+  animation: hiw-pulse 3.5s ease-in-out infinite;
+  background: rgba(68, 117, 245, 0.06);
+  border: 1px solid rgba(68, 117, 245, 0.5);
+  color: #7ba3ff;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.64rem, 0.88vw, 0.78rem);
+  font-weight: 700;
+  gap: 5px;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  padding: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hiw-box:nth-of-type(2) { animation-delay: 0.5s; }
+.hiw-box:nth-of-type(3) { animation-delay: 1s; }
+
+.hiw-box-sub {
+  color: rgba(123, 163, 255, 0.5);
+  display: block;
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+}
+
+/* Description text */
+.hiw-text {
+  align-self: start;
+  color: rgba(123, 163, 255, 0.5);
+  font-size: clamp(0.72rem, 0.92vw, 0.82rem);
+  line-height: 1.62;
+  margin: 0;
+}
+
+.hiw-text strong {
+  color: #7ba3ff;
+  font-weight: 700;
+}
+
+.hiw-brand {
+  color: #7ba3ff;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .hiw-diagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-conn--converge {
+    display: none;
+  }
+
+  .hiw-conn--simple svg {
+    height: 24px;
+    transform: rotate(90deg);
+    width: 24px;
+  }
+}
+
 .technology-screen {
   min-height: 100vh;
   padding: 116px clamp(18px, 20vw, 380px) clamp(54px, 7vw, 92px);
@@ -657,11 +832,117 @@ h3,
   max-width: 320px;
 }
 
-.technology-row > p {
+.technology-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 430px;
+}
+
+.technology-row > p,
+.technology-text-col > p {
+  color: var(--paper);
   font-size: clamp(1rem, 1.35vw, 1.25rem);
   line-height: 1.42;
   margin: 0;
   max-width: 430px;
+}
+
+.find-out-more-link {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  gap: 7px;
+  letter-spacing: 0.08em;
+  padding: 0;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.find-out-more-link:hover {
+  color: var(--white);
+}
+
+.find-out-more-arrow {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.find-out-more-link.is-open .find-out-more-arrow {
+  transform: rotate(180deg);
+}
+
+.sensor-detail-panel {
+  grid-column: 1 / -1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hiw-inner-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: clamp(20px, 3vw, 32px);
+  padding-top: clamp(20px, 3vw, 32px);
+}
+
+.sensor-metrics-bar {
+  background: #07091a;
+  border: 1px solid rgba(68, 117, 245, 0.22);
+  display: flex;
+  margin-top: 18px;
+  padding: 22px clamp(16px, 3vw, 40px);
+}
+
+.sensor-metric {
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0 clamp(12px, 2vw, 28px);
+}
+
+.sensor-metric:first-child {
+  padding-left: 0;
+}
+
+.sensor-metric:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.sensor-metric-label {
+  color: #4475f5;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sensor-metric-value {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  font-weight: 500;
+  text-align: center;
+}
+
+.sensor-metric-note {
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
 }
 
 .technology-simulation {

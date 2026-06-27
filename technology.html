@@ -40,9 +40,9 @@
                 We fuse low-cost visual, thermal, and acoustic sensors into precise 3D tracks; each
                 modality usable alone, but combined they stay robust through fog, rain, and night
               </p>
-              <a href="contact.html" class="find-out-more-link">
+              <button class="find-out-more-link" id="sensorToggle" aria-expanded="false" aria-controls="sensorDetailPanel">
                 <span class="find-out-more-arrow">&#8595;</span> Find out more
-              </a>
+              </button>
             </div>
             <div class="technology-simulation-block">
               <p class="technology-simulation-caption">Tracking models supporting asynchronous sensors, multi-target association, 3D trajectory estimation, temporary occlusions, missed detections, and handover between camera coverage zones</p>
@@ -50,6 +50,127 @@
                 <video autoplay muted loop playsinline>
                   <source src="assets/Detection.mp4" type="video/mp4" />
                 </video>
+              </div>
+            </div>
+            <div class="sensor-detail-panel" id="sensorDetailPanel" aria-hidden="true">
+              <div class="sensor-metrics-bar">
+
+                <div class="sensor-metric">
+                  <svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+                    <circle cx="13" cy="18" r="10" stroke="#4475f5" stroke-width="1.5"/>
+                    <path d="M13 8V5M10 5h6" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 13v5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M21 9l1.5-1.5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="sensor-metric-label">Latency</span>
+                  <span class="sensor-metric-value">&lt;10 ms</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="13.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="8.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="3.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="1.5" fill="#4475f5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Detection Range</span>
+                  <span class="sensor-metric-value">0.5 to 3 km</span>
+                  <span class="sensor-metric-note">depending on deployment model</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="30" height="28" viewBox="0 0 30 28" fill="none" aria-hidden="true">
+                    <polyline points="2,9 6,14 13,6" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="17" y1="9" x2="28" y2="9" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <polyline points="2,21 6,26 13,18" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="17" y1="21" x2="28" y2="21" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="sensor-metric-label">Accuracy</span>
+                  <span class="sensor-metric-value">~95%</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true">
+                    <path d="M10 1C5.582 1 2 4.582 2 9c0 6.5 8 20 8 20s8-13.5 8-20c0-4.418-3.582-8-8-8z" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="10" cy="9" r="3" stroke="#4475f5" stroke-width="1.5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Geolocation Accuracy</span>
+                  <span class="sensor-metric-value">1–5 m / 100 m</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="32" height="22" viewBox="0 0 32 22" fill="none" aria-hidden="true">
+                    <path d="M2 21a14 14 0 0 1 28 0" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M8 14a9 9 0 0 1 8-5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M16 21l-5-8" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="16" cy="21" r="2" fill="#4475f5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Processing Speed</span>
+                  <span class="sensor-metric-value">30 FPS</span>
+                </div>
+              </div>
+
+              <div class="hiw-inner-section">
+                <p class="eyebrow">How it works</p>
+                <div class="hiw-flow-panel">
+                  <div class="hiw-diagram-grid">
+
+                    <!-- Spanning title -->
+                    <p class="hiw-diagram-title">One Detection Node</p>
+
+                    <!-- Detection items (no outer frame) -->
+                    <div class="hiw-detection-items">
+                      <div class="hiw-sub-box">4 EO Cameras</div>
+                      <div class="hiw-sub-box">4 Thermal IP Cameras</div>
+                      <div class="hiw-sub-box">1 Acoustic Sensor</div>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--converge" aria-hidden="true">
+                      <svg viewBox="0 0 50 150" preserveAspectRatio="none" fill="none">
+                        <line x1="1" y1="25"  x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="1" y1="75"  x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="1" y1="125" x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="36" y1="75" x2="48" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="44,72 50,75 44,78" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      PoE+ Switch
+                      <span class="hiw-box-sub">POWER + AGGREGATION</span>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--simple" aria-hidden="true">
+                      <svg viewBox="0 0 50 16" fill="none">
+                        <line x1="0" y1="8" x2="43" y2="8" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="39,5 50,8 39,11" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      Edge Compute Unit
+                      <span class="hiw-box-sub">CPU + GPU + Qeris AI/Fusion Software</span>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--simple" aria-hidden="true">
+                      <svg viewBox="0 0 50 16" fill="none">
+                        <line x1="0" y1="8" x2="43" y2="8" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="39,5 50,8 39,11" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      Alerting Gateway
+                      <span class="hiw-box-sub">HIGH-CONFIDENCE OUTPUT</span>
+                    </div>
+
+                    <!-- Row 3: descriptions -->
+                    <p class="hiw-text">Sensor suite composed of EO cameras providing visible-light coverage, thermal cameras supporting night and low-visibility detection, and 1 acoustic sensor adding directional sound cueing. Provides <strong>360°</strong> coverage <strong>24/7</strong></p>
+                    <div></div>
+                    <p class="hiw-text">The PoE+ switch powers the IP cameras, aggregates their live streams, and forwards the feeds to the edge compute unit</p>
+                    <div></div>
+                    <p class="hiw-text">The edge unit ingests all sensor inputs, decodes the video streams, runs <span class="hiw-brand">Qeris</span> AI on the CPU/GPU, and fuses the cues into a single detection event</p>
+                    <div></div>
+                    <p class="hiw-text">The gateway receives high-confidence detection events and routes them to dashboards, alarms, APIs, VMS platforms, messaging tools, or remote command posts</p>
+
+                  </div>
+                </div>
               </div>
             </div>
           </article>
@@ -116,18 +237,32 @@
           </article>
         </div>
       </section>
+
     </main>
     <script>
       (function () {
         var track = document.querySelector('.technology-simulation-track');
         var arrow = document.querySelector('.simulation-slider-arrow');
-        if (!track || !arrow) return;
-        var total = track.querySelectorAll('.technology-simulation-item').length;
-        var current = 0;
-        arrow.addEventListener('click', function () {
-          current = (current + 1) % total;
-          track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        });
+        if (track && arrow) {
+          var total = track.querySelectorAll('.technology-simulation-item').length;
+          var current = 0;
+          arrow.addEventListener('click', function () {
+            current = (current + 1) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+          });
+        }
+
+        var toggle = document.getElementById('sensorToggle');
+        var panel = document.getElementById('sensorDetailPanel');
+        if (toggle && panel) {
+          toggle.addEventListener('click', function () {
+            var open = panel.classList.toggle('is-open');
+            panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0';
+            toggle.setAttribute('aria-expanded', open);
+            panel.setAttribute('aria-hidden', !open);
+            toggle.classList.toggle('is-open', open);
+          });
+        }
       })();
     </script>
     <script src="chrome.js"></script>
