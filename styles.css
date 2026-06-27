@@ -737,9 +737,70 @@ h3,
   gap: clamp(6px, 0.8vw, 10px);
 }
 
-.technology-simulation-pair .technology-simulation {
+.technology-simulation-slider-wrap {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  gap: 14px;
+}
+
+.technology-simulation-slider {
+  align-self: stretch;
   flex: 1 1 0;
-  min-height: clamp(120px, 16vh, 190px);
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.technology-simulation-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.technology-simulation-item {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.technology-simulation-item .technology-simulation--video video {
+  object-fit: contain;
+}
+
+.technology-simulation-item .technology-simulation {
+  flex: 1 1 0;
+}
+
+.simulation-slider-arrow {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  padding-bottom: 1px;
+  transition: background 0.2s, border-color 0.2s, transform 0.25s;
+  width: 40px;
+}
+
+.simulation-slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.simulation-slider-arrow.is-back {
+  transform: rotate(180deg);
 }
 
 .technology-simulation--video {

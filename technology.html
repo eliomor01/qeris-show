@@ -59,19 +59,28 @@
               intercept
             </p>
             <div class="technology-simulation-block">
-              <div class="technology-simulation-pair">
-                <div class="technology-simulation technology-simulation--video technology-simulation--captioned">
-                  <video autoplay muted loop playsinline>
-                    <source src="assets/1x evasive, 2x speed.mp4" type="video/mp4" />
-                  </video>
-                  <p class="tech-video-caption">Successful engagement of a single highly evasive, high-speed drone by 3 coordinated interceptors, with 1 interceptor expended and 2 returning to base.</p>
+              <div class="technology-simulation-slider-wrap">
+                <div class="technology-simulation-slider">
+                <div class="technology-simulation-track">
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful engagement of a single highly evasive, high-speed drone by 3 coordinated interceptors, with 1 interceptor expended and 2 returning to base.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/1x evasive, 2x speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of six incoming attackers flying a straight-line trajectory by six coordinated defender drones.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/Engagement simulation 6x attackers straight line, same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
                 </div>
-                <div class="technology-simulation technology-simulation--video technology-simulation--captioned">
-                  <video autoplay muted loop playsinline>
-                    <source src="assets/Engagement simulation 6x attackers straight line, same speed.mp4" type="video/mp4" />
-                  </video>
-                  <p class="tech-video-caption">Successful interception of six incoming attackers flying a straight-line trajectory by six coordinated defender drones.</p>
                 </div>
+                <button class="simulation-slider-arrow" aria-label="Next simulation">&#8250;</button>
               </div>
             </div>
           </article>
@@ -87,6 +96,20 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        var track = document.querySelector('.technology-simulation-track');
+        var arrow = document.querySelector('.simulation-slider-arrow');
+        if (!track || !arrow) return;
+        if (!track || !arrow) return;
+        var current = 0;
+        arrow.addEventListener('click', function () {
+          current = current === 0 ? 1 : 0;
+          track.style.transform = current === 1 ? 'translateX(-100%)' : 'translateX(0)';
+          arrow.classList.toggle('is-back', current === 1);
+        });
+      })();
+    </script>
     <script src="chrome.js"></script>
   </body>
 </html>
