@@ -266,12 +266,32 @@
                     <stop offset="100%" stop-color="#4475f5" stop-opacity="0.05"/>
                     <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="-360 120 110" dur="5s" repeatCount="indefinite"/>
                   </linearGradient>
+                  <path id="dronePath1" d="M 215 12 C 215 62 165 86 122 108"/>
                 </defs>
                 <!-- Range rings -->
                 <circle cx="120" cy="110" r="98" fill="rgba(20,55,160,0.06)" stroke="rgba(123,174,255,0.28)" stroke-width="1.5"/>
                 <circle cx="120" cy="110" r="98" fill="none" stroke="url(#outerGrad-1)" stroke-width="1.5"/>
                 <circle cx="120" cy="110" r="52" fill="rgba(30,80,210,0.1)"  stroke="rgba(68,117,245,0.38)" stroke-width="1.5"/><!-- inner base -->
                 <circle cx="120" cy="110" r="52" fill="none" stroke="url(#innerGrad-1)" stroke-width="1.5"/>
+                <!-- Threat sector: appears exactly when drone touches outer ring -->
+                <path d="M 120 110 L 189 41 A 98 98 0 0 1 189 179 Z" fill="#cc1a1a">
+                  <animate attributeName="opacity"
+                    values="0;0;0.25;0.14;0.26;0.14;0.26;0.14;0.26;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </path>
+                <line x1="120" y1="110" x2="189" y2="41"  stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="189" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
                 <!-- Crosshairs -->
                 <line x1="120" y1="10"  x2="120" y2="210" stroke="rgba(68,117,245,0.1)" stroke-width="0.8"/>
                 <!-- Central box -->
@@ -283,19 +303,19 @@
                   <animate attributeName="r" values="1.8;2.6;1.8" dur="1.6s" repeatCount="indefinite"/>
                 </circle>
                 <!-- Shimmering sensor dots — 1 per side, centered on rect outline -->
-                <circle cx="101" cy="110" r="2.4" fill="#ff2020">
+                <circle cx="101" cy="110" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                 </circle>
-                <circle cx="139" cy="110" r="2.4" fill="#ff2020">
+                <circle cx="139" cy="110" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                 </circle>
-                <circle cx="120" cy="102" r="2.4" fill="#ff2020">
+                <circle cx="120" cy="102" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                 </circle>
-                <circle cx="120" cy="118" r="2.4" fill="#ff2020">
+                <circle cx="120" cy="118" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                 </circle>
@@ -303,6 +323,79 @@
                 <text x="120" y="80" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">detection range</text>
                 <text x="120" y="31" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">500m EO/IR</text>
                 <text x="120" y="37" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">detection range</text>
+                <!-- Animated drone — quadcopter bird's-eye, fades as it reaches mobile unit -->
+                <g>
+                  <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear">
+                    <mpath href="#dronePath1"/>
+                  </animateMotion>
+                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.63;0.67;1" dur="5s" repeatCount="indefinite"/>
+                  <!-- Glow halo -->
+                  <circle r="7" fill="rgba(255,40,40,0.12)">
+                    <animate attributeName="r" values="6;10;6" dur="1.1s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0.08;0.3" dur="1.1s" repeatCount="indefinite"/>
+                  </circle>
+                  <!-- Arms (X shape) -->
+                  <line x1="-1.5" y1="-1.5" x2="-4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="-1.5" x2="4.5"  y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="1.5"  x2="-4.5" y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="1.5"  x2="4.5"  y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <!-- Central body -->
+                  <rect x="-2" y="-2" width="4" height="4" rx="0.6" fill="#ff2020"/>
+                  <!-- NW rotor -->
+                  <circle cx="-4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- NE rotor -->
+                  <circle cx="4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- SW rotor -->
+                  <circle cx="-4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- SE rotor -->
+                  <circle cx="4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                </g>
+                <!-- Explosion at inner ring contact point (~166,84 at t=0.66) -->
+                <!-- Flash core -->
+                <circle cx="166" cy="84" r="0" fill="#ffffff">
+                  <animate attributeName="r"       values="0;0;0;7;11;5;0;0"      keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;1;0.7;0.3;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="fill"    values="#fff;#fff;#fff;#ffee66;#ff7722;#cc2200;#cc2200;#cc2200" keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Primary shockwave ring -->
+                <circle cx="166" cy="84" r="0" fill="none" stroke="#ff6622" stroke-width="2">
+                  <animate attributeName="r"            values="0;0;0;2;14;24;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity"      values="0;0;0;1;0.6;0;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="stroke-width" values="2;2;2;2;1.2;0.4;0;0" keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Secondary outer halo -->
+                <circle cx="166" cy="84" r="0" fill="none" stroke="rgba(255,80,20,0.45)" stroke-width="1">
+                  <animate attributeName="r"       values="0;0;0;1;10;22;32;0"      keyTimes="0;0.63;0.65;0.67;0.70;0.75;0.80;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;0.9;0.5;0.2;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.75;0.80;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Spark NE -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;171;178;178;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;79;73;73;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark SW -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;161;154;154;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;89;95;95;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark NW -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;161;154;154;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;79;73;73;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark SE -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;171;178;178;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;89;95;95;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
               </svg>
             </div>
             <p class="deployment-text">Composed of 1 detection node – placed onboard the convoy<br>Each set of EO/IR cameras placed on convoy sides<br>Acoustic sensor &amp; edge compute unit positioned on top</p>
@@ -344,19 +437,19 @@
                   <animate attributeName="r" values="1.8;2.6;1.8" dur="1.6s" repeatCount="indefinite"/>
                 </circle>
                 <!-- Shimmering sensor dots — 1 per side, outside rect -->
-                <circle cx="88" cy="110" r="2.4" fill="#ff2020">
+                <circle cx="88" cy="110" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                 </circle>
-                <circle cx="152" cy="110" r="2.4" fill="#ff2020">
+                <circle cx="152" cy="110" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                 </circle>
-                <circle cx="120" cy="90" r="2.4" fill="#ff2020">
+                <circle cx="120" cy="90" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                 </circle>
-                <circle cx="120" cy="130" r="2.4" fill="#ff2020">
+                <circle cx="120" cy="130" r="2.4" fill="#4475f5">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                 </circle>
@@ -364,6 +457,19 @@
                 <text x="120" y="80" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">detection radius</text>
                 <text x="120" y="31" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">1km EO/IR</text>
                 <text x="120" y="37" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="4.1" font-family="Space Grotesk,sans-serif">detection radius</text>
+                <!-- Attacking drone — incoming threat near outer ring -->
+                <circle cx="186" cy="46" r="3" fill="#ff3030">
+                  <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+                  <animate attributeName="r" values="3;4.5;3" dur="1.4s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Legend -->
+                <circle cx="30" cy="242" r="4.5" fill="rgba(255,30,30,0.18)"/>
+                <circle cx="30" cy="242" r="2.2" fill="#ff2828"/>
+                <text x="37" y="245.5" fill="rgba(143,164,180,0.82)" font-size="4" font-family="Space Grotesk,sans-serif">Attacking drone</text>
+                <circle cx="102" cy="242" r="2.5" fill="#00e87a"/>
+                <text x="107" y="245.5" fill="rgba(143,164,180,0.82)" font-size="4" font-family="Space Grotesk,sans-serif">Acoustic sensor</text>
+                <circle cx="173" cy="242" r="2.5" fill="#4475f5"/>
+                <text x="178" y="245.5" fill="rgba(143,164,180,0.82)" font-size="4" font-family="Space Grotesk,sans-serif">EO/IR cameras</text>
               </svg>
             </div>
             <p class="deployment-text">Composed of 1 detection node – Sensors positioned around the asset<br>Each set of EO/IR cameras placed at 10m altitude and ~20m away from the asset<br>Acoustic sensor &amp; edge compute unit placed at ground level</p>
@@ -392,19 +498,19 @@
                     <!-- Label below tile -->
                     <text y="19" text-anchor="middle" fill="rgba(143,164,180,0.75)" font-size="5" font-weight="700" font-family="Space Grotesk,sans-serif" letter-spacing="0.08em">NODE</text>
                     <!-- Red shimmering dots on each edge -->
-                    <circle cx="-13" cy="0" r="1.2" fill="#ff2020">
+                    <circle cx="-13" cy="0" r="1.2" fill="#4475f5">
                       <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                       <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0s"/>
                     </circle>
-                    <circle cx="13" cy="0" r="1.2" fill="#ff2020">
+                    <circle cx="13" cy="0" r="1.2" fill="#4475f5">
                       <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                       <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                     </circle>
-                    <circle cx="0" cy="-13" r="1.2" fill="#ff2020">
+                    <circle cx="0" cy="-13" r="1.2" fill="#4475f5">
                       <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                       <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                     </circle>
-                    <circle cx="0" cy="13" r="1.2" fill="#ff2020">
+                    <circle cx="0" cy="13" r="1.2" fill="#4475f5">
                       <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                       <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
                     </circle>
@@ -463,6 +569,9 @@
         var toggle = document.getElementById('sensorToggle');
         var panel = document.getElementById('sensorDetailPanel');
         if (toggle && panel) {
+          var deployment = document.querySelector('.deployment-section');
+          if (deployment) panel.appendChild(deployment);
+
           toggle.addEventListener('click', function () {
             var open = panel.classList.toggle('is-open');
             panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0';
