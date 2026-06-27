@@ -35,10 +35,15 @@
             <div class="technology-label">
               <h1>Sensor-fusion detection &amp; tracking</h1>
             </div>
-            <p>
-              We fuse low-cost visual, thermal, and acoustic sensors into precise 3D tracks; each
-              modality usable alone, but combined they stay robust through fog, rain, and night
-            </p>
+            <div class="technology-text-col">
+              <p>
+                We fuse low-cost visual, thermal, and acoustic sensors into precise 3D tracks; each
+                modality usable alone, but combined they stay robust through fog, rain, and night
+              </p>
+              <a href="contact.html" class="find-out-more-link">
+                <span class="find-out-more-arrow">&#8595;</span> Find out more
+              </a>
+            </div>
             <div class="technology-simulation-block">
               <p class="technology-simulation-caption">Tracking models supporting asynchronous sensors, multi-target association, 3D trajectory estimation, temporary occlusions, missed detections, and handover between camera coverage zones</p>
               <div class="technology-simulation technology-simulation--video">
@@ -78,6 +83,22 @@
                       </video>
                     </div>
                   </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of single attacker flying straight-line and at equal speed as interceptors.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/1x straight line, same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of evasive attacker with 3 interceptor drones.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/Engagement simulation 1x attacker evasive; same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
                 </div>
                 </div>
                 <button class="simulation-slider-arrow" aria-label="Next simulation">&#8250;</button>
@@ -101,12 +122,11 @@
         var track = document.querySelector('.technology-simulation-track');
         var arrow = document.querySelector('.simulation-slider-arrow');
         if (!track || !arrow) return;
-        if (!track || !arrow) return;
+        var total = track.querySelectorAll('.technology-simulation-item').length;
         var current = 0;
         arrow.addEventListener('click', function () {
-          current = current === 0 ? 1 : 0;
-          track.style.transform = current === 1 ? 'translateX(-100%)' : 'translateX(0)';
-          arrow.classList.toggle('is-back', current === 1);
+          current = (current + 1) % total;
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
         });
       })();
     </script>

@@ -739,24 +739,19 @@ h3,
 
 .technology-simulation-slider-wrap {
   align-items: center;
-  align-self: stretch;
   display: flex;
   gap: 14px;
 }
 
 .technology-simulation-slider {
-  align-self: stretch;
   flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
-  position: relative;
 }
 
 .technology-simulation-track {
   display: flex;
-  height: 100%;
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
 }
 
 .technology-simulation-item {
@@ -764,16 +759,13 @@ h3,
   flex: 0 0 100%;
   flex-direction: column;
   gap: 8px;
-  height: 100%;
   width: 100%;
 }
 
 .technology-simulation-item .technology-simulation--video video {
-  object-fit: contain;
-}
-
-.technology-simulation-item .technology-simulation {
-  flex: 1 1 0;
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .simulation-slider-arrow {
