@@ -18,9 +18,9 @@
         <img src="assets/qeris-logo.png" alt="QERIS" />
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="mission.html">Mission</a>
         <a class="active" href="prototype.html">Prototype</a>
         <a href="technology.html">Technology</a>
+        <a href="mission.html">Mission</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -29,7 +29,7 @@
     <main class="prototype-page">
       <section class="prototype-screen prototype-overview">
         <p class="eyebrow">Prototype</p>
-        <h1>Autonomous and full-chain solution<span id="protoTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <h1>End-to-end c-uas kit<span id="protoTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
 
         <div class="prototype-layout">
           <div class="prototype-visual">
@@ -40,11 +40,13 @@
             </div>
           </div>
 
+          <div class="prototype-chain-col">
+          <p class="prototype-chain-title">Full-chain solution: From detection to interception</p>
           <ol class="prototype-chain" aria-label="Detection to intercept chain">
             <li>
               <strong>Detection &amp; tracking:</strong>
               Detect incoming RF-silent sUAVs with low-cost sensor fusion across EO/IR and
-              acoustic sensors below US$ 5k, with coverage up to 1.5 km
+              acoustic sensors below US$ 5k, with coverage up to 1km
             </li>
             <li>
               <strong>Launch:</strong>
@@ -62,6 +64,7 @@
               Defenders autonomously navigate, track, and intercept assigned targets using AI
             </li>
           </ol>
+          </div>
         </div>
 
         <div class="prototype-benefits">
@@ -75,8 +78,7 @@
           <article class="benefit-card">
             <div class="benefit-label">Compact and easy to deploy</div>
             <div class="benefit-desc">
-              <p>Ground-emplaced or vehicle mounted</p>
-              <p>Small, lightweight, modular components</p>
+              <p>1 docking station to place on your asset - ground-emplaced or vehicle mounted. Small &amp; lightweight</p>
             </div>
           </article>
           <article class="benefit-card">
@@ -138,7 +140,7 @@
 
     <script>
       (function () {
-        var FULL = ' for point defense, last 1 to 1.5km';
+        var FULL = ' for point defense - last 1 km';
         var el = document.getElementById('protoTitle');
         var cursor = el.nextElementSibling;
         var idx = 0;
