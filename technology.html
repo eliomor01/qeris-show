@@ -309,7 +309,7 @@
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
                 </circle>
-                <circle cx="120" cy="102" r="2.4" fill="#4475f5">
+                <circle cx="120" cy="102" r="2.4" fill="#00e87a">
                   <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                   <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
                 </circle>
@@ -416,7 +416,7 @@
                     <stop offset="100%" stop-color="#4475f5" stop-opacity="0.05"/>
                     <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="-360 120 110" dur="5s" repeatCount="indefinite"/>
                   </linearGradient>
-                  <path id="dronePath2" d="M 21 209 C 30 190 60 160 120 110"/>
+                  <path id="dronePath2" d="M 35 220 C 60 200 90 170 120 110"/>
                 </defs>
                 <circle cx="120" cy="110" r="98" fill="rgba(20,55,160,0.06)" stroke="rgba(123,174,255,0.28)" stroke-width="1.5"/>
                 <circle cx="120" cy="110" r="98" fill="none" stroke="url(#outerGrad-2)" stroke-width="1.5"/>
@@ -429,6 +429,11 @@
                 <circle cx="139" cy="110" r="1.8" fill="#00e87a">
                   <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
                   <animate attributeName="r" values="1.8;2.6;1.8" dur="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Green dot: acoustic sensor on top of asset -->
+                <circle cx="120" cy="102" r="2.4" fill="#00e87a">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
                 </circle>
                 <!-- Shimmering sensor dots — 1 per side, outside rect -->
                 <circle cx="88" cy="110" r="2.4" fill="#4475f5">
@@ -451,33 +456,33 @@
                 <text x="120" y="80" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection radius</text>
                 <text x="120" y="31" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">1km EO/IR</text>
                 <text x="120" y="37" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection radius</text>
-                <!-- Threat sector: bottom-left quadrant — appears when drone hits outer ring -->
-                <path d="M 120 110 L 120 208 A 98 98 0 0 1 22 110 Z" fill="#cc1a1a">
+                <!-- Threat sector: bottom quadrant from blue sensor dot (120,130) — appears when drone hits outer ring -->
+                <path d="M 120 130 L 50 179 A 98 98 0 0 1 190 179 Z" fill="#cc1a1a">
                   <animate attributeName="opacity"
                     values="0;0;0.25;0.14;0.26;0.14;0.26;0.14;0.26;0"
-                    keyTimes="0;0.46;0.48;0.56;0.64;0.70;0.74;0.76;0.78;1"
+                    keyTimes="0;0.39;0.41;0.49;0.57;0.63;0.67;0.69;0.71;1"
                     dur="5s" repeatCount="indefinite"/>
                 </path>
-                <line x1="120" y1="110" x2="120" y2="208" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                <line x1="120" y1="130" x2="50" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
                   <animate attributeName="opacity"
                     values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
-                    keyTimes="0;0.46;0.48;0.56;0.64;0.70;0.74;0.76;0.78;1"
+                    keyTimes="0;0.39;0.41;0.49;0.57;0.63;0.67;0.69;0.71;1"
                     dur="5s" repeatCount="indefinite"/>
                 </line>
-                <line x1="120" y1="110" x2="22" y2="110" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                <line x1="120" y1="130" x2="190" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
                   <animate attributeName="opacity"
                     values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
-                    keyTimes="0;0.46;0.48;0.56;0.64;0.70;0.74;0.76;0.78;1"
+                    keyTimes="0;0.39;0.41;0.49;0.57;0.63;0.67;0.69;0.71;1"
                     dur="5s" repeatCount="indefinite"/>
                 </line>
-                <text x="68" y="162" text-anchor="middle" fill="rgba(220,50,50,1)" font-size="5" font-weight="600" font-family="Space Grotesk,sans-serif" letter-spacing="0.06em">
-                  <animate attributeName="opacity" values="0;0;0.9;0.5;0.9;0.5;0.9;0.5;0.9;0" keyTimes="0;0.46;0.48;0.56;0.64;0.70;0.74;0.76;0.78;1" dur="5s" repeatCount="indefinite"/>detection zone</text>
+                <text x="120" y="188" text-anchor="middle" fill="rgba(220,50,50,1)" font-size="5" font-weight="600" font-family="Space Grotesk,sans-serif" letter-spacing="0.06em">
+                  <animate attributeName="opacity" values="0;0;0.9;0.5;0.9;0.5;0.9;0.5;0.9;0" keyTimes="0;0.39;0.41;0.49;0.57;0.63;0.67;0.69;0.71;1" dur="5s" repeatCount="indefinite"/>detection zone</text>
                 <!-- Animated drone — approaches from bottom-left, fades at inner ring -->
                 <g>
                   <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear">
                     <mpath href="#dronePath2"/>
                   </animateMotion>
-                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.76;0.78;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.70;0.72;1" dur="5s" repeatCount="indefinite"/>
                   <line x1="-1.5" y1="-1.5" x2="-4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
                   <line x1="1.5"  y1="-1.5" x2="4.5"  y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
                   <line x1="-1.5" y1="1.5"  x2="-4.5" y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
@@ -492,40 +497,40 @@
                   <circle cx="4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
                   <g transform="translate(4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
                 </g>
-                <!-- Explosion at inner ring contact point (~82,143 at t=0.76) -->
-                <circle cx="82" cy="143" r="0" fill="#ffffff">
-                  <animate attributeName="r"       values="0;0;0;7;11;5;0;0"      keyTimes="0;0.73;0.75;0.77;0.80;0.83;0.87;1" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;0;1;0.7;0.3;0;0"   keyTimes="0;0.73;0.75;0.77;0.80;0.83;0.87;1" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="fill"    values="#fff;#fff;#fff;#ffee66;#ff7722;#cc2200;#cc2200;#cc2200" keyTimes="0;0.73;0.75;0.77;0.80;0.83;0.87;1" dur="5s" repeatCount="indefinite"/>
+                <!-- Explosion at inner ring contact point (~93,156 at t=0.70) -->
+                <circle cx="93" cy="156" r="0" fill="#ffffff">
+                  <animate attributeName="r"       values="0;0;0;7;11;5;0;0"      keyTimes="0;0.67;0.69;0.71;0.74;0.77;0.81;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;1;0.7;0.3;0;0"   keyTimes="0;0.67;0.69;0.71;0.74;0.77;0.81;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="fill"    values="#fff;#fff;#fff;#ffee66;#ff7722;#cc2200;#cc2200;#cc2200" keyTimes="0;0.67;0.69;0.71;0.74;0.77;0.81;1" dur="5s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="82" cy="143" r="0" fill="none" stroke="#ff6622" stroke-width="2">
-                  <animate attributeName="r"            values="0;0;0;2;14;24;0;0"   keyTimes="0;0.73;0.75;0.77;0.80;0.84;0.88;1" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity"      values="0;0;0;1;0.6;0;0;0"   keyTimes="0;0.73;0.75;0.77;0.80;0.84;0.88;1" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="stroke-width" values="2;2;2;2;1.2;0.4;0;0" keyTimes="0;0.73;0.75;0.77;0.80;0.84;0.88;1" dur="5s" repeatCount="indefinite"/>
+                <circle cx="93" cy="156" r="0" fill="none" stroke="#ff6622" stroke-width="2">
+                  <animate attributeName="r"            values="0;0;0;2;14;24;0;0"   keyTimes="0;0.67;0.69;0.71;0.74;0.78;0.82;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity"      values="0;0;0;1;0.6;0;0;0"   keyTimes="0;0.67;0.69;0.71;0.74;0.78;0.82;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="stroke-width" values="2;2;2;2;1.2;0.4;0;0" keyTimes="0;0.67;0.69;0.71;0.74;0.78;0.82;1" dur="5s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="82" cy="143" r="0" fill="none" stroke="rgba(255,80,20,0.45)" stroke-width="1">
-                  <animate attributeName="r"       values="0;0;0;1;10;22;32;0"      keyTimes="0;0.73;0.75;0.77;0.80;0.85;0.90;1" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;0;0.9;0.5;0.2;0;0"   keyTimes="0;0.73;0.75;0.77;0.80;0.85;0.90;1" dur="5s" repeatCount="indefinite"/>
+                <circle cx="93" cy="156" r="0" fill="none" stroke="rgba(255,80,20,0.45)" stroke-width="1">
+                  <animate attributeName="r"       values="0;0;0;1;10;22;32;0"      keyTimes="0;0.67;0.69;0.71;0.74;0.79;0.84;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;0.9;0.5;0.2;0;0"   keyTimes="0;0.67;0.69;0.71;0.74;0.79;0.84;1" dur="5s" repeatCount="indefinite"/>
                 </circle>
-                <line x1="82" y1="143" x2="82" y2="143" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
-                  <animate attributeName="x2" values="82;82;87;94;94;82" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="143;143;138;132;132;143" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
+                <line x1="93" y1="156" x2="93" y2="156" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="93;93;98;105;105;93" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="156;156;151;145;145;156" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
                 </line>
-                <line x1="82" y1="143" x2="82" y2="143" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
-                  <animate attributeName="x2" values="82;82;77;70;70;82" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="143;143;148;154;154;143" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
+                <line x1="93" y1="156" x2="93" y2="156" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="93;93;88;81;81;93" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="156;156;161;167;167;156" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
                 </line>
-                <line x1="82" y1="143" x2="82" y2="143" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
-                  <animate attributeName="x2" values="82;82;77;70;70;82" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="143;143;138;132;132;143" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
+                <line x1="93" y1="156" x2="93" y2="156" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="93;93;88;81;81;93" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="156;156;151;145;145;156" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
                 </line>
-                <line x1="82" y1="143" x2="82" y2="143" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
-                  <animate attributeName="x2" values="82;82;87;94;94;82" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="143;143;148;154;154;143" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.76;0.78;0.82;0.86;0.90" dur="5s" repeatCount="indefinite"/>
+                <line x1="93" y1="156" x2="93" y2="156" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="93;93;98;105;105;93" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="156;156;161;167;167;156" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0" keyTimes="0;0.70;0.72;0.76;0.80;0.84" dur="5s" repeatCount="indefinite"/>
                 </line>
                 <!-- Legend -->
                 <g transform="translate(30,242)">
