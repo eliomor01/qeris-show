@@ -982,7 +982,7 @@ h3,
   align-items: center;
   align-self: stretch;
   background: var(--field);
-  border: 1px solid rgba(245, 245, 241, 0.22);
+  border: none;
   color: var(--white);
   display: flex;
   gap: clamp(18px, 3vw, 34px);
@@ -1039,7 +1039,8 @@ h3,
   color: var(--muted);
   font-size: clamp(0.75rem, 0.9vw, 0.85rem);
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 .technology-row--wide-sim {
@@ -1148,10 +1149,7 @@ h3,
 }
 
 .technology-simulation::before {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  content: "";
-  inset: 12px;
-  position: absolute;
+  content: none;
 }
 
 .technology-simulation span:first-child {

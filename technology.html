@@ -45,11 +45,28 @@
               </button>
             </div>
             <div class="technology-simulation-block">
-              <p class="technology-simulation-caption">Tracking models supporting asynchronous sensors, multi-target association, 3D trajectory estimation, temporary occlusions, missed detections, and handover between camera coverage zones</p>
-              <div class="technology-simulation technology-simulation--video">
-                <video autoplay muted loop playsinline>
-                  <source src="assets/Detection.mp4" type="video/mp4" />
-                </video>
+              <div class="technology-simulation-slider-wrap">
+                <div class="technology-simulation-slider">
+                  <div class="technology-simulation-track" id="detectionTrack">
+                    <div class="technology-simulation-item">
+                      <p class="technology-simulation-caption">Detection algorithm successfully tested on real battlefield footage</p>
+                      <div class="technology-simulation technology-simulation--video">
+                        <video autoplay muted loop playsinline>
+                          <source src="assets/Detection video.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <div class="technology-simulation-item">
+                      <p class="technology-simulation-caption">Tracking models supporting asynchronous sensors, multi-target association, 3D trajectory estimation, temporary occlusions, missed detections, and handover between camera coverage zones</p>
+                      <div class="technology-simulation technology-simulation--video">
+                        <video autoplay muted loop playsinline>
+                          <source src="assets/Detection.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="simulation-slider-arrow" id="detectionArrow" aria-label="Next detection video">&#8250;</button>
               </div>
             </div>
             <div class="sensor-detail-panel" id="sensorDetailPanel" aria-hidden="true">
@@ -186,7 +203,7 @@
             <div class="technology-simulation-block">
               <div class="technology-simulation-slider-wrap">
                 <div class="technology-simulation-slider">
-                <div class="technology-simulation-track">
+                <div class="technology-simulation-track" id="engagementTrack">
                   <div class="technology-simulation-item">
                     <p class="technology-simulation-caption">Successful engagement of a single highly evasive, high-speed drone by 3 coordinated interceptors, with 1 interceptor expended and 2 returning to base.</p>
                     <div class="technology-simulation technology-simulation--video">
@@ -221,7 +238,7 @@
                   </div>
                 </div>
                 </div>
-                <button class="simulation-slider-arrow" aria-label="Next simulation">&#8250;</button>
+                <button class="simulation-slider-arrow" id="engagementArrow" aria-label="Next simulation">&#8250;</button>
               </div>
             </div>
           </article>
@@ -651,9 +668,10 @@
     </main>
     <script>
       (function () {
-        var track = document.querySelector('.technology-simulation-track');
-        var arrow = document.querySelector('.simulation-slider-arrow');
-        if (track && arrow) {
+        function initSlider(trackId, arrowId) {
+          var track = document.getElementById(trackId);
+          var arrow = document.getElementById(arrowId);
+          if (!track || !arrow) return;
           var total = track.querySelectorAll('.technology-simulation-item').length;
           var current = 0;
           arrow.addEventListener('click', function () {
@@ -661,6 +679,8 @@
             track.style.transform = 'translateX(-' + (current * 100) + '%)';
           });
         }
+        initSlider('detectionTrack', 'detectionArrow');
+        initSlider('engagementTrack', 'engagementArrow');
 
         var toggle = document.getElementById('sensorToggle');
         var panel = document.getElementById('sensorDetailPanel');
