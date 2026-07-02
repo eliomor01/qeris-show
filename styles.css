@@ -738,7 +738,7 @@ h3,
 
 .technology-stack {
   display: grid;
-  gap: clamp(30px, 5vh, 58px);
+  gap: clamp(8px, 1.5vh, 16px);
   padding-top: clamp(34px, 6vh, 72px);
 }
 
