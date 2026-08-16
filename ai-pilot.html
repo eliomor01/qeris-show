@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QERIS | AI-Pilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="mission.html" aria-label="QERIS home">
+        <img src="assets/qeris-logo.png" alt="QERIS" />
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="mission.html">C-UAS Prototype</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <h1>QERIS develops the AI pilot for low-cost UAVs</h1>
+        <p class="ai-pilot-subtitle">We allow any operator to <span class="ai-pilot-highlight">instantly</span> become a <span class="ai-pilot-highlight">skilled</span> pilot</p>
+        <div class="ai-pilot-boxes">
+          <div class="ai-pilot-box">Executes end-to-end <span class="ai-pilot-highlight">missions</span> (from planning, navigation, search, tracking and precision approach)</div>
+          <div class="ai-pilot-box">Stays <span class="ai-pilot-highlight">undetected</span>: Flies low (&lt;10m), using terrain clutter to hide, in contested environments</div>
+          <div class="ai-pilot-box"><span class="ai-pilot-highlight">Deployable</span> across various UAV platforms</div>
+        </div>
+      </section>
+      <section class="ai-pilot-video-section">
+        <video autoplay muted loop playsinline class="ai-pilot-video">
+          <source src="assets/AI_pilot.mp4" type="video/mp4" />
+        </video>
+      </section>
+    </main>
+    <script src="chrome.js"></script>
+  </body>
+</html>

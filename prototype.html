@@ -18,9 +18,8 @@
         <img src="assets/qeris-logo.png" alt="QERIS" />
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a class="active" href="prototype.html">Prototype</a>
-        <a href="technology.html">Technology</a>
-        <a href="mission.html">Mission</a>
+        <a class="active" href="prototype.html">C-UAS PROTOTYPE</a>
+<a href="mission.html">Mission</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -42,16 +41,19 @@
 
           <div class="prototype-chain-col">
           <p class="prototype-chain-title">Full-chain solution: From detection to interception</p>
+          <div class="prototype-chain-sub">
+            <p>Interceptors navigate within meters of the ground hunting for threats that hide behind terrain</p>
+            <p>Multiple drones maximize coverage and handle swarm attacks</p>
+          </div>
           <ol class="prototype-chain" aria-label="Detection to intercept chain">
             <li>
               <strong>Detection &amp; tracking:</strong>
               Detect incoming RF-silent sUAVs with low-cost sensor fusion across EO/IR and
-              acoustic sensors below US$ 5k, with coverage up to 1km
+              acoustic sensors, with coverage up to 1km
             </li>
             <li>
               <strong>Launch:</strong>
-              Low-cost interceptors, US$ 1.5-3k, launched upon threat detection from ground
-              launchpads
+              Low-cost interceptors launched upon threat detection from ground launchpads
             </li>
             <li>
               <strong>Engagement orchestration:</strong>
@@ -72,7 +74,6 @@
             <div class="benefit-label">Low cost</div>
             <div class="benefit-desc">
               <p>Built on cheap, off-the-shelf airframes, sensors, and simple launchpads</p>
-              <p>Kit delivered under US$ 30k</p>
             </div>
           </article>
           <article class="benefit-card">
@@ -90,50 +91,644 @@
         </div>
       </section>
 
-      <section class="prototype-screen prototype-evidence">
-        <p class="eyebrow">Problem today</p>
-        <h2 class="prototype-evidence-title">Protecting high value targets<span id="evidenceTitle"></span><span class="typewriter-cursor ink-cursor" aria-hidden="true"></span></h2>
+      <section class="technology-screen">
+        <p class="eyebrow">Technology</p>
 
-        <div class="prototype-threat-copy">
-          <p>Our prototype neutralizes small, evasive, RF-silent drones...</p>
-          <p>...striking deeper now, up to 100km, far beyond the frontline...</p>
-          <p>...exposing high-value assets everywhere, both military and civilian</p>
+        <div class="technology-stack" aria-label="Technology pillars">
+          <article class="technology-row">
+            <div class="technology-label">
+              <h1>Sensor-fusion detection &amp; tracking</h1>
+            </div>
+            <div class="technology-text-col">
+              <p>
+                We fuse low-cost visual, thermal, and acoustic sensors into precise 3D tracks; each
+                modality usable alone, but combined they stay robust through fog, rain, and night
+              </p>
+              <button class="find-out-more-link" id="sensorToggle" aria-expanded="false" aria-controls="sensorDetailPanel">
+                <span class="find-out-more-arrow">&#8595;</span> Find out more
+              </button>
+            </div>
+            <div class="technology-simulation-block">
+              <div class="technology-simulation-slider-wrap">
+                <div class="technology-simulation-slider">
+                  <div class="technology-simulation-track" id="detectionTrack">
+                    <div class="technology-simulation-item">
+                      <p class="technology-simulation-caption">Detection algorithm successfully tested on real battlefield footage</p>
+                      <div class="technology-simulation technology-simulation--video">
+                        <video autoplay muted loop playsinline>
+                          <source src="assets/Detection video.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <div class="technology-simulation-item">
+                      <p class="technology-simulation-caption">Tracking models supporting asynchronous sensors, multi-target association, 3D trajectory estimation, temporary occlusions, missed detections, and handover between camera coverage zones</p>
+                      <div class="technology-simulation technology-simulation--video">
+                        <video autoplay muted loop playsinline>
+                          <source src="assets/Detection.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="simulation-slider-arrow" id="detectionArrow" aria-label="Next detection video">&#8250;</button>
+              </div>
+            </div>
+            <div class="sensor-detail-panel" id="sensorDetailPanel" aria-hidden="true">
+              <div class="sensor-metrics-bar">
+
+                <div class="sensor-metric">
+                  <svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+                    <circle cx="13" cy="18" r="10" stroke="#4475f5" stroke-width="1.5"/>
+                    <path d="M13 8V5M10 5h6" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 13v5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M21 9l1.5-1.5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="sensor-metric-label">Latency</span>
+                  <span class="sensor-metric-value">&lt;10 ms</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="13.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="8.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="3.5" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="1.5" fill="#4475f5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Detection Range</span>
+                  <span class="sensor-metric-value">0.5 to 3 km</span>
+                  <span class="sensor-metric-note">depending on deployment model</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="30" height="28" viewBox="0 0 30 28" fill="none" aria-hidden="true">
+                    <polyline points="2,9 6,14 13,6" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="17" y1="9" x2="28" y2="9" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <polyline points="2,21 6,26 13,18" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="17" y1="21" x2="28" y2="21" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="sensor-metric-label">Accuracy</span>
+                  <span class="sensor-metric-value">~95%</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true">
+                    <path d="M10 1C5.582 1 2 4.582 2 9c0 6.5 8 20 8 20s8-13.5 8-20c0-4.418-3.582-8-8-8z" stroke="#4475f5" stroke-width="1.5"/>
+                    <circle cx="10" cy="9" r="3" stroke="#4475f5" stroke-width="1.5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Geolocation Accuracy</span>
+                  <span class="sensor-metric-value">1–5 m / 100 m</span>
+                </div>
+                <div class="sensor-metric">
+                  <svg width="32" height="22" viewBox="0 0 32 22" fill="none" aria-hidden="true">
+                    <path d="M2 21a14 14 0 0 1 28 0" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M8 14a9 9 0 0 1 8-5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M16 21l-5-8" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="16" cy="21" r="2" fill="#4475f5"/>
+                  </svg>
+                  <span class="sensor-metric-label">Processing Speed</span>
+                  <span class="sensor-metric-value">30 FPS</span>
+                </div>
+              </div>
+
+              <div class="hiw-inner-section">
+                <p class="eyebrow">How it works</p>
+                <div class="hiw-flow-panel">
+                  <div class="hiw-diagram-grid">
+
+                    <!-- Spanning title -->
+                    <p class="hiw-diagram-title">One Detection Node</p>
+
+                    <!-- Detection items (no outer frame) -->
+                    <div class="hiw-detection-items">
+                      <div class="hiw-sub-box">5 EO/IR Cameras</div>
+                      <div class="hiw-sub-box">1 Acoustic Sensor</div>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--converge" aria-hidden="true">
+                      <svg viewBox="0 0 50 150" preserveAspectRatio="none" fill="none">
+                        <line x1="1" y1="25"  x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="1" y1="75"  x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="1" y1="125" x2="36" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <line x1="36" y1="75" x2="48" y2="75" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="44,72 50,75 44,78" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      PoE+ Switch
+                      <span class="hiw-box-sub">POWER + AGGREGATION</span>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--simple" aria-hidden="true">
+                      <svg viewBox="0 0 50 16" fill="none">
+                        <line x1="0" y1="8" x2="43" y2="8" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="39,5 50,8 39,11" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      Edge Compute Unit
+                      <span class="hiw-box-sub">CPU + GPU + Qeris AI/Fusion Software</span>
+                    </div>
+
+                    <div class="hiw-conn hiw-conn--simple" aria-hidden="true">
+                      <svg viewBox="0 0 50 16" fill="none">
+                        <line x1="0" y1="8" x2="43" y2="8" stroke="currentColor" stroke-width="1.4"/>
+                        <polygon points="39,5 50,8 39,11" fill="currentColor"/>
+                      </svg>
+                    </div>
+
+                    <div class="hiw-box">
+                      Alerting Gateway
+                      <span class="hiw-box-sub">HIGH-CONFIDENCE OUTPUT</span>
+                    </div>
+
+                    <!-- Row 3: descriptions -->
+                    <p class="hiw-text">Sensor suite composed of EO cameras providing visible-light coverage, thermal cameras supporting night and low-visibility detection, and 1 acoustic sensor adding directional sound cueing. Provides <strong>360°</strong> coverage <strong>24/7</strong></p>
+                    <div></div>
+                    <p class="hiw-text">The PoE+ switch powers the IP cameras, aggregates their live streams, and forwards the feeds to the edge compute unit</p>
+                    <div></div>
+                    <p class="hiw-text">The edge unit ingests all sensor inputs, decodes the video streams, runs <span class="hiw-brand">Qeris</span> AI on the CPU/GPU, and fuses the cues into a single detection event</p>
+                    <div></div>
+                    <p class="hiw-text">The gateway receives high-confidence detection events and routes them to dashboards, alarms, APIs, VMS platforms, messaging tools, or remote command posts</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="technology-row technology-row--wide-sim">
+            <div class="technology-label">
+              <h1>Engagement orchestration</h1>
+            </div>
+            <p>
+              We orchestrate a coordinated group of interceptors, continuously optimizing their
+              formation to constrain the threat's path; We maneuver one drone to the final intercept
+              while other uncommitted ones return to base
+            </p>
+            <div class="technology-simulation-block">
+              <div class="technology-simulation-slider-wrap">
+                <div class="technology-simulation-slider">
+                <div class="technology-simulation-track" id="engagementTrack">
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful engagement of a single highly evasive, high-speed drone by 3 coordinated interceptors, with 1 interceptor expended and 2 returning to base.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/1x evasive, 2x speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of six incoming attackers flying a straight-line trajectory by six coordinated defender drones.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/Engagement simulation 6x attackers straight line, same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of single attacker flying straight-line and at equal speed as interceptors.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/1x straight line, same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div class="technology-simulation-item">
+                    <p class="technology-simulation-caption">Successful interception of evasive attacker with 3 interceptor drones.</p>
+                    <div class="technology-simulation technology-simulation--video">
+                      <video autoplay muted loop playsinline>
+                        <source src="assets/Engagement simulation 1x attacker evasive; same speed.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <button class="simulation-slider-arrow" id="engagementArrow" aria-label="Next simulation">&#8250;</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="technology-row">
+            <div class="technology-label">
+              <h1>AI-enabled flight and interception autonomy</h1>
+            </div>
+            <div class="technology-text-col">
+              <p>
+                Drones navigate autonomously to target coordinates, using onboard AI and sensors for situational awareness, target search, lock-on, and terminal intercept
+              </p>
+            </div>
+            <div class="coming-soon-badge">COMING SOON</div>
+          </article>
         </div>
+      </section>
 
-        <div class="prototype-video-grid" aria-label="Prototype reference videos">
-          <div class="prototype-video-slot prototype-video-embed" aria-label="Iron Dome video reference">
-            <iframe
-              src="https://www.youtube.com/embed/jEWLWmgZ9qo?modestbranding=1&rel=0"
-              title="Iron Dome video reference"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
-              <span class="video-play-btn" aria-hidden="true"></span>
+      <!-- ── 3 Deployment Options ──────────────────────────────── -->
+      <section class="deployment-section">
+        <p class="eyebrow">3 Deployment Options</p>
+
+        <div class="deployment-grid">
+
+          <!-- ── 1: Mobile Unit ── -->
+          <div class="deployment-col">
+            <h2 class="deployment-title">Mobile Unit<br>500m radius protection</h2>
+            <div class="deployment-diagram-wrap">
+              <svg viewBox="0 0 240 252" fill="none" class="deployment-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="outerGrad-1" x1="22" y1="110" x2="218" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="#7baeff" stop-opacity="0.04"/>
+                    <stop offset="38%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="54%"  stop-color="#c0e0ff" stop-opacity="1"/>
+                    <stop offset="68%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#7baeff" stop-opacity="0.04"/>
+                    <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="360 120 110" dur="8s" repeatCount="indefinite"/>
+                  </linearGradient>
+                  <linearGradient id="innerGrad-1" x1="68" y1="110" x2="172" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="#4475f5" stop-opacity="0.05"/>
+                    <stop offset="38%"  stop-color="#4475f5" stop-opacity="0.6"/>
+                    <stop offset="54%"  stop-color="#7baeff" stop-opacity="1"/>
+                    <stop offset="68%"  stop-color="#4475f5" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#4475f5" stop-opacity="0.05"/>
+                    <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="-360 120 110" dur="5s" repeatCount="indefinite"/>
+                  </linearGradient>
+                  <path id="dronePath1" d="M 215 12 C 215 62 165 86 122 108"/>
+                </defs>
+                <!-- Range rings -->
+                <circle cx="120" cy="110" r="98" fill="rgba(20,55,160,0.06)" stroke="rgba(123,174,255,0.28)" stroke-width="1.5"/>
+                <circle cx="120" cy="110" r="98" fill="none" stroke="url(#outerGrad-1)" stroke-width="1.5"/>
+                <circle cx="120" cy="110" r="52" fill="rgba(30,80,210,0.1)"  stroke="rgba(68,117,245,0.38)" stroke-width="1.5"/><!-- inner base -->
+                <circle cx="120" cy="110" r="52" fill="none" stroke="url(#innerGrad-1)" stroke-width="1.5"/>
+                <!-- Threat sector: appears exactly when drone touches outer ring -->
+                <path d="M 120 110 L 189 41 A 98 98 0 0 1 189 179 Z" fill="#cc1a1a">
+                  <animate attributeName="opacity"
+                    values="0;0;0.25;0.14;0.26;0.14;0.26;0.14;0.26;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </path>
+                <line x1="120" y1="110" x2="189" y2="41"  stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="189" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0.8;0"
+                    keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <text x="172" y="113" text-anchor="middle" fill="rgba(220,50,50,1)" font-size="4.875" font-weight="600" font-family="Space Grotesk,sans-serif" letter-spacing="0.06em">
+                  <animate attributeName="opacity" values="0;0;0.9;0.5;0.9;0.5;0.9;0.5;0.9;0" keyTimes="0;0.30;0.32;0.42;0.52;0.62;0.72;0.82;0.92;1" dur="5s" repeatCount="indefinite"/>detection zone</text>
+                <!-- Crosshairs -->
+                <line x1="120" y1="10"  x2="120" y2="210" stroke="rgba(68,117,245,0.1)" stroke-width="0.8"/>
+                <!-- Central box -->
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="rgba(68,117,245,0.08)"/>
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="none" stroke="rgba(68,117,245,0.55)" stroke-width="0.8"/>
+                <text x="120" y="112" text-anchor="middle" fill="#7ba3ff" font-size="6.8" font-weight="700" font-family="Space Grotesk,sans-serif" letter-spacing="0.08em">MOBILE UNIT</text>
+                <!-- Shimmering sensor dots — 1 per side, centered on rect outline -->
+                <circle cx="101" cy="110" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                </circle>
+                <circle cx="139" cy="110" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                </circle>
+                <circle cx="120" cy="102" r="2.4" fill="#00e87a">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                </circle>
+                <circle cx="120" cy="118" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                </circle>
+                <text x="120" y="74" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">300m acoustic</text>
+                <text x="120" y="80" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection range</text>
+                <text x="120" y="31" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">500m EO/IR</text>
+                <text x="120" y="37" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection range</text>
+                <!-- Animated drone — quadcopter bird's-eye, fades as it reaches mobile unit -->
+                <g>
+                  <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear">
+                    <mpath href="#dronePath1"/>
+                  </animateMotion>
+                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.63;0.67;1" dur="5s" repeatCount="indefinite"/>
+                  <!-- Arms (X shape) -->
+                  <line x1="-1.5" y1="-1.5" x2="-4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="-1.5" x2="4.5"  y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="1.5"  x2="-4.5" y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="1.5"  x2="4.5"  y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <!-- Central body -->
+                  <rect x="-2" y="-2" width="4" height="4" rx="0.6" fill="#ff2020"/>
+                  <!-- NW rotor -->
+                  <circle cx="-4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- NE rotor -->
+                  <circle cx="4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- SW rotor -->
+                  <circle cx="-4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <!-- SE rotor -->
+                  <circle cx="4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                </g>
+                <!-- Explosion at inner ring contact point (~166,84 at t=0.66) -->
+                <!-- Flash core -->
+                <circle cx="166" cy="84" r="0" fill="#ffffff">
+                  <animate attributeName="r"       values="0;0;0;7;11;5;0;0"      keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;1;0.7;0.3;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="fill"    values="#fff;#fff;#fff;#ffee66;#ff7722;#cc2200;#cc2200;#cc2200" keyTimes="0;0.63;0.65;0.67;0.70;0.73;0.77;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Primary shockwave ring -->
+                <circle cx="166" cy="84" r="0" fill="none" stroke="#ff6622" stroke-width="2">
+                  <animate attributeName="r"            values="0;0;0;2;14;24;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity"      values="0;0;0;1;0.6;0;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="stroke-width" values="2;2;2;2;1.2;0.4;0;0" keyTimes="0;0.63;0.65;0.67;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Secondary outer halo -->
+                <circle cx="166" cy="84" r="0" fill="none" stroke="rgba(255,80,20,0.45)" stroke-width="1">
+                  <animate attributeName="r"       values="0;0;0;1;10;22;32;0"      keyTimes="0;0.63;0.65;0.67;0.70;0.75;0.80;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;0.9;0.5;0.2;0;0"   keyTimes="0;0.63;0.65;0.67;0.70;0.75;0.80;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Spark NE -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;171;178;178;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;79;73;73;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark SW -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;161;154;154;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;89;95;95;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark NW -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;161;154;154;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;79;73;73;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Spark SE -->
+                <line x1="166" y1="84" x2="166" y2="84" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="166;166;171;178;178;166" keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="84;84;89;95;95;84"       keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0;0"      keyTimes="0;0.66;0.68;0.72;0.76;0.80" dur="5s" repeatCount="indefinite"/>
+                </line>
+              </svg>
             </div>
+            <p class="deployment-text">Composed of 1 detection node – placed onboard the convoy<br>Each set of EO/IR cameras placed on convoy sides<br>Acoustic sensor &amp; edge compute unit positioned on top</p>
           </div>
-          <div class="prototype-video-slot prototype-video-embed" aria-label="Baghdad base video reference">
-            <iframe
-              src="https://www.youtube.com/embed/yTOR2HhXiNI?modestbranding=1&rel=0"
-              title="Baghdad base video reference"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
-              <span class="video-play-btn" aria-hidden="true"></span>
+
+          <!-- ── 2: Fixed Asset 1–1.5km ── -->
+          <div class="deployment-col">
+            <h2 class="deployment-title">Fixed Asset<br>1km radius protection</h2>
+            <div class="deployment-diagram-wrap">
+              <svg viewBox="0 0 240 252" fill="none" class="deployment-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="outerGrad-2" x1="22" y1="110" x2="218" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="#7baeff" stop-opacity="0.04"/>
+                    <stop offset="38%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="54%"  stop-color="#c0e0ff" stop-opacity="1"/>
+                    <stop offset="68%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#7baeff" stop-opacity="0.04"/>
+                    <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="360 120 110" dur="8s" repeatCount="indefinite"/>
+                  </linearGradient>
+                  <linearGradient id="innerGrad-2" x1="68" y1="110" x2="172" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="#4475f5" stop-opacity="0.05"/>
+                    <stop offset="38%"  stop-color="#4475f5" stop-opacity="0.6"/>
+                    <stop offset="54%"  stop-color="#7baeff" stop-opacity="1"/>
+                    <stop offset="68%"  stop-color="#4475f5" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#4475f5" stop-opacity="0.05"/>
+                    <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="-360 120 110" dur="5s" repeatCount="indefinite"/>
+                  </linearGradient>
+                  <path id="dronePath2" d="M 5 238 C 30 235 80 220 120 200 C 165 180 225 140 170 120"/>
+                </defs>
+                <circle cx="120" cy="110" r="98" fill="rgba(20,55,160,0.06)" stroke="rgba(123,174,255,0.28)" stroke-width="1.5"/>
+                <circle cx="120" cy="110" r="98" fill="none" stroke="url(#outerGrad-2)" stroke-width="1.5"/>
+                <circle cx="120" cy="110" r="52" fill="rgba(30,80,210,0.1)" stroke="rgba(68,117,245,0.38)" stroke-width="1.5"/><!-- inner base -->
+                <circle cx="120" cy="110" r="52" fill="none" stroke="url(#innerGrad-2)" stroke-width="1.5"/>
+                <line x1="120" y1="10"  x2="120" y2="210" stroke="rgba(68,117,245,0.1)" stroke-width="0.8"/>
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="rgba(68,117,245,0.08)"/>
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="none" stroke="rgba(68,117,245,0.55)" stroke-width="0.8"/>
+                <text x="120" y="112" text-anchor="middle" fill="#7ba3ff" font-size="6.8" font-weight="700" font-family="Space Grotesk,sans-serif" letter-spacing="0.08em">FIXED ASSET</text>
+                <!-- Green dot: acoustic sensor on top of asset -->
+                <circle cx="120" cy="102" r="2.4" fill="#00e87a">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+                <!-- Shimmering sensor dots — 1 per side, outside rect -->
+                <circle cx="88" cy="110" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                </circle>
+                <circle cx="152" cy="110" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                </circle>
+                <circle cx="120" cy="90" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                </circle>
+                <circle cx="120" cy="130" r="2.4" fill="#4475f5">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                  <animate attributeName="r" values="2.4;3.2;2.4" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                </circle>
+                <text x="120" y="74" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">300m acoustic</text>
+                <text x="120" y="80" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection radius</text>
+                <text x="120" y="31" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">1km EO/IR</text>
+                <text x="120" y="37" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection radius</text>
+                <!-- Zone 1: bottom sector — appears when drone crosses outer ring (~t=0.40) -->
+                <path d="M 120 130 L 50 179 A 98 98 0 0 1 190 179 Z" fill="#cc1a1a">
+                  <animate attributeName="opacity"
+                    values="0;0;0.25;0.14;0.26;0.14;0.26;0.14;0;0"
+                    keyTimes="0;0.40;0.42;0.50;0.58;0.64;0.70;0.74;0.78;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </path>
+                <line x1="120" y1="130" x2="50" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0;0"
+                    keyTimes="0;0.40;0.42;0.50;0.58;0.64;0.70;0.74;0.78;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="130" x2="190" y2="179" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0;0"
+                    keyTimes="0;0.40;0.42;0.50;0.58;0.64;0.70;0.74;0.78;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <text x="100" y="194" text-anchor="middle" fill="rgba(220,50,50,1)" font-size="5" font-weight="600" font-family="Space Grotesk,sans-serif" letter-spacing="0.06em">
+                  <animate attributeName="opacity" values="0;0;0.9;0.5;0.9;0.5;0.9;0.5;0;0" keyTimes="0;0.40;0.42;0.50;0.58;0.64;0.70;0.74;0.78;1" dur="5s" repeatCount="indefinite"/>detection zone</text>
+                <!-- Zone 2: right sector from RHS blue dot (152,110) — appears when drone is inside (~t=0.76) -->
+                <path d="M 152 110 L 196 48 A 98 98 0 0 1 196 172 Z" fill="#cc1a1a">
+                  <animate attributeName="opacity"
+                    values="0;0;0.25;0.14;0.26;0.14;0.26;0.14;0;0"
+                    keyTimes="0;0.76;0.78;0.82;0.86;0.89;0.91;0.93;0.96;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </path>
+                <line x1="152" y1="110" x2="196" y2="48" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0;0"
+                    keyTimes="0;0.76;0.78;0.82;0.86;0.89;0.91;0.93;0.96;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="152" y1="110" x2="196" y2="172" stroke="rgba(220,40,40,0.7)" stroke-width="1">
+                  <animate attributeName="opacity"
+                    values="0;0;0.8;0.4;0.8;0.4;0.8;0.4;0;0"
+                    keyTimes="0;0.76;0.78;0.82;0.86;0.89;0.91;0.93;0.96;1"
+                    dur="5s" repeatCount="indefinite"/>
+                </line>
+                <text x="197" y="112" text-anchor="middle" fill="rgba(220,50,50,1)" font-size="5" font-weight="600" font-family="Space Grotesk,sans-serif" letter-spacing="0.06em">
+                  <animate attributeName="opacity" values="0;0;0.9;0.5;0.9;0.5;0.9;0.5;0;0" keyTimes="0;0.76;0.78;0.82;0.86;0.89;0.91;0.93;0.96;1" dur="5s" repeatCount="indefinite"/>detection zone</text>
+                <!-- Animated drone — sweeps bottom sector, arcs wide right into Zone 2 -->
+                <g>
+                  <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear">
+                    <mpath href="#dronePath2"/>
+                  </animateMotion>
+                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.92;0.94;1" dur="5s" repeatCount="indefinite"/>
+                  <line x1="-1.5" y1="-1.5" x2="-4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="-1.5" x2="4.5"  y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="1.5"  x2="-4.5" y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5"  y1="1.5"  x2="4.5"  y2="4.5"  stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="-2" y="-2" width="4" height="4" rx="0.6" fill="#ff2020"/>
+                  <circle cx="-4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="-4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(-4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/>
+                  <g transform="translate(4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                </g>
+                <!-- Explosion in Zone 2 (~185,128) — fires as drone fades at t=0.92 -->
+                <circle cx="185" cy="128" r="0" fill="#ffffff">
+                  <animate attributeName="r"       values="0;0;0;7;11;5;0"         keyTimes="0;0.91;0.93;0.95;0.97;0.99;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;1;0.7;0.3;0"      keyTimes="0;0.91;0.93;0.95;0.97;0.99;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="fill"    values="#fff;#fff;#fff;#ffee66;#ff7722;#cc2200;#cc2200" keyTimes="0;0.91;0.93;0.95;0.97;0.99;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="185" cy="128" r="0" fill="none" stroke="#ff6622" stroke-width="2">
+                  <animate attributeName="r"            values="0;0;0;2;14;0"       keyTimes="0;0.91;0.93;0.95;0.98;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity"      values="0;0;0;1;0.5;0"      keyTimes="0;0.91;0.93;0.95;0.98;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="stroke-width" values="2;2;2;2;1;0"        keyTimes="0;0.91;0.93;0.95;0.98;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="185" cy="128" r="0" fill="none" stroke="rgba(255,80,20,0.45)" stroke-width="1">
+                  <animate attributeName="r"       values="0;0;0;1;22;32"           keyTimes="0;0.91;0.93;0.95;0.99;1" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;0;0.9;0.2;0"         keyTimes="0;0.91;0.93;0.95;0.99;1" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <line x1="185" y1="128" x2="185" y2="128" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="185;185;190;197;185" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="128;128;123;117;128" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="185" y1="128" x2="185" y2="128" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="185;185;180;173;185" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="128;128;133;139;128" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="185" y1="128" x2="185" y2="128" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="185;185;180;173;185" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="128;128;123;117;128" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="185" y1="128" x2="185" y2="128" stroke="#ffaa44" stroke-width="1.2" stroke-linecap="round">
+                  <animate attributeName="x2" values="185;185;190;197;185" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="128;128;133;139;128" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;0;1;0.5;0" keyTimes="0;0.94;0.96;0.99;1.00" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <!-- Legend -->
+                <g transform="translate(30,242)">
+                  <circle r="7" fill="rgba(255,40,40,0.12)"><animate attributeName="r" values="6;10;6" dur="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.08;0.3" dur="1.1s" repeatCount="indefinite"/></circle>
+                  <line x1="-1.5" y1="-1.5" x2="-4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5" y1="-1.5" x2="4.5" y2="-4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="1.5" x2="-4.5" y2="4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="1.5" y1="1.5" x2="4.5" y2="4.5" stroke="#ff3030" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="-2" y="-2" width="4" height="4" rx="0.6" fill="#ff2020"/>
+                  <circle cx="-4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/><g transform="translate(-4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="4.5" cy="-4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/><g transform="translate(4.5,-4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="-4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/><g transform="translate(-4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                  <circle cx="4.5" cy="4.5" r="2.1" fill="rgba(255,30,30,0.08)" stroke="#ff4040" stroke-width="0.9"/><g transform="translate(4.5,4.5)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.28s" repeatCount="indefinite"/><line x1="-1.9" y1="0" x2="1.9" y2="0" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/><line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#ff6666" stroke-width="0.8" stroke-linecap="round"/></g></g>
+                </g>
+                <text x="40" y="245.5" fill="rgba(143,164,180,0.82)" font-size="6" font-family="Space Grotesk,sans-serif">Attacking drone</text>
+                <circle cx="102" cy="242" r="2.5" fill="#00e87a"/>
+                <text x="107" y="245.5" fill="rgba(143,164,180,0.82)" font-size="6" font-family="Space Grotesk,sans-serif">Acoustic sensor</text>
+                <circle cx="173" cy="242" r="2.5" fill="#4475f5"/>
+                <text x="178" y="245.5" fill="rgba(143,164,180,0.82)" font-size="6" font-family="Space Grotesk,sans-serif">EO/IR cameras</text>
+              </svg>
             </div>
+            <p class="deployment-text">Composed of 1 detection node – Sensors positioned around the asset<br>Each set of EO/IR cameras placed at 10m altitude and ~20m away from the asset<br>Acoustic sensor &amp; edge compute unit placed at ground level</p>
           </div>
-          <div class="prototype-video-slot prototype-video-embed" aria-label="FPV tank attack video reference">
-            <iframe
-              src="https://www.youtube.com/embed/vO1-Rkx3WFs?modestbranding=1&rel=0"
-              title="FPV tank attack video reference"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-            <div class="video-overlay" role="button" aria-label="Play video" tabindex="0">
-              <span class="video-play-btn" aria-hidden="true"></span>
+
+          <!-- ── 3: Fixed Asset 3km ── -->
+          <div class="deployment-col">
+            <h2 class="deployment-title">Fixed Asset<br>3km radius protection</h2>
+            <div class="deployment-diagram-wrap">
+              <svg viewBox="0 0 240 252" fill="none" class="deployment-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- Detection node tile template – centered at 0 0 -->
+                  <g id="dep3-node">
+                    <rect x="-13" y="-13" width="26" height="26" rx="3" fill="#0a1628"/>
+                    <rect x="-13" y="-13" width="26" height="26" rx="3" fill="none" stroke="rgba(68,117,245,0.55)" stroke-width="0.8"/>
+                    <!-- Cardinal spokes (N S E W) -->
+                    <line x1="0" y1="-4.5" x2="0" y2="-8"  stroke="#5588ee" stroke-width="0.85" stroke-linecap="round"/>
+                    <line x1="0" y1="4.5"  x2="0" y2="8"   stroke="#5588ee" stroke-width="0.85" stroke-linecap="round"/>
+                    <line x1="-4.5" y1="0" x2="-8" y2="0"  stroke="#5588ee" stroke-width="0.85" stroke-linecap="round"/>
+                    <line x1="4.5"  y1="0" x2="8"  y2="0"  stroke="#5588ee" stroke-width="0.85" stroke-linecap="round"/>
+                    <!-- Diagonal spokes (shorter, dimmer) -->
+                    <line x1="-3.2" y1="-3.2" x2="-6"  y2="-6"  stroke="rgba(85,136,238,0.6)" stroke-width="0.75" stroke-linecap="round"/>
+                    <line x1="3.2"  y1="-3.2" x2="6"   y2="-6"  stroke="rgba(85,136,238,0.6)" stroke-width="0.75" stroke-linecap="round"/>
+                    <line x1="-3.2" y1="3.2"  x2="-6"  y2="6"   stroke="rgba(85,136,238,0.6)" stroke-width="0.75" stroke-linecap="round"/>
+                    <line x1="3.2"  y1="3.2"  x2="6"   y2="6"   stroke="rgba(85,136,238,0.6)" stroke-width="0.75" stroke-linecap="round"/>
+                    <!-- Label below tile -->
+                    <text y="19" text-anchor="middle" fill="rgba(143,164,180,0.75)" font-size="7.5" font-weight="700" font-family="Space Grotesk,sans-serif" letter-spacing="0.08em">NODE</text>
+                    <!-- Red shimmering dots on each edge -->
+                    <circle cx="-13" cy="0" r="1.2" fill="#4475f5">
+                      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                      <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+                    </circle>
+                    <circle cx="13" cy="0" r="1.2" fill="#4475f5">
+                      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                      <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0.45s"/>
+                    </circle>
+                    <circle cx="0" cy="-13" r="1.2" fill="#4475f5">
+                      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                      <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+                    </circle>
+                    <circle cx="0" cy="13" r="1.2" fill="#4475f5">
+                      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                      <animate attributeName="r" values="1.2;1.8;1.2" dur="1.8s" repeatCount="indefinite" begin="1.35s"/>
+                    </circle>
+                    <circle cx="13" cy="-13" r="1.5" fill="#00e87a">
+                      <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
+                      <animate attributeName="r" values="1.5;2.2;1.5" dur="1.6s" repeatCount="indefinite"/>
+                    </circle>
+                  </g>
+                  <linearGradient id="outerGrad-3" x1="22" y1="110" x2="218" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="#7baeff" stop-opacity="0.04"/>
+                    <stop offset="38%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="54%"  stop-color="#c0e0ff" stop-opacity="1"/>
+                    <stop offset="68%"  stop-color="#7baeff" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#7baeff" stop-opacity="0.04"/>
+                    <animateTransform attributeName="gradientTransform" type="rotate" from="0 120 110" to="360 120 110" dur="8s" repeatCount="indefinite"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="120" cy="110" r="98" fill="rgba(20,55,160,0.06)" stroke="rgba(123,174,255,0.28)" stroke-width="1.5"/>
+                <circle cx="120" cy="110" r="98" fill="none" stroke="url(#outerGrad-3)" stroke-width="1.5"/>
+                <line x1="120" y1="10"  x2="120" y2="210" stroke="rgba(68,117,245,0.1)" stroke-width="0.8"/>
+                <line x1="22"  y1="110" x2="218" y2="110" stroke="rgba(68,117,245,0.1)" stroke-width="0.8"/>
+                <!-- Asset box -->
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="rgba(68,117,245,0.08)"/>
+                <rect x="101" y="102" width="38" height="16" rx="2" fill="none" stroke="rgba(68,117,245,0.55)" stroke-width="0.8"/>
+                <text x="120" y="112" text-anchor="middle" fill="#7ba3ff" font-size="6.8" font-weight="700" font-family="Space Grotesk,sans-serif" letter-spacing="0.08em">FIXED ASSET</text>
+                <!-- 4 detection nodes at diagonal positions -->
+                <use href="#dep3-node" transform="translate(83,75)"/>
+                <use href="#dep3-node" transform="translate(157,75)"/>
+                <use href="#dep3-node" transform="translate(83,145)"/>
+                <use href="#dep3-node" transform="translate(157,145)"/>
+                <!-- 3km label — top center of circle -->
+                <text x="120" y="22" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">3km EO/IR</text>
+                <text x="120" y="28" text-anchor="middle" fill="rgba(143,164,180,0.82)" font-size="6.2" font-family="Space Grotesk,sans-serif">detection radius</text>
+              </svg>
             </div>
+            <p class="deployment-text">Composed of 4 detection nodes<br>Each node with same setup as single-node configuration<br>Each node placed ~500m away from fixed asset to create 3km detection coverage</p>
           </div>
+
         </div>
       </section>
     </main>
@@ -202,48 +797,35 @@
     </script>
     <script>
       (function () {
-        var FULL = ' — now vulnerable far beyond the front line';
-        var el = document.getElementById('evidenceTitle');
-        var cursor = el.nextElementSibling;
-        var idx = 0;
-        var started = false;
-
-        function tick() {
-          el.textContent = FULL.slice(0, idx);
-          if (idx < FULL.length) {
-            idx++;
-            setTimeout(tick, 38);
-          } else {
-            setTimeout(function () {
-              cursor.style.animation = 'none';
-              cursor.style.opacity = '0';
-            }, 900);
-          }
+        function initSlider(trackId, arrowId) {
+          var track = document.getElementById(trackId);
+          var arrow = document.getElementById(arrowId);
+          if (!track || !arrow) return;
+          var total = track.querySelectorAll('.technology-simulation-item').length;
+          var current = 0;
+          arrow.addEventListener('click', function () {
+            current = (current + 1) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+          });
         }
+        initSlider('detectionTrack', 'detectionArrow');
+        initSlider('engagementTrack', 'engagementArrow');
 
-        var obs = new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting && !started) {
-            started = true;
-            obs.disconnect();
-            setTimeout(tick, 400);
-          }
-        }, { threshold: 0.15 });
+        var toggle = document.getElementById('sensorToggle');
+        var panel = document.getElementById('sensorDetailPanel');
+        if (toggle && panel) {
+          var deployment = document.querySelector('.deployment-section');
+          if (deployment) panel.appendChild(deployment);
 
-        obs.observe(document.querySelector('.prototype-evidence-title'));
+          toggle.addEventListener('click', function () {
+            var open = panel.classList.toggle('is-open');
+            panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0';
+            toggle.setAttribute('aria-expanded', open);
+            panel.setAttribute('aria-hidden', !open);
+            toggle.classList.toggle('is-open', open);
+          });
+        }
       })();
-
-      document.querySelectorAll('.video-overlay').forEach(function (overlay) {
-        function activate() {
-          var iframe = overlay.previousElementSibling;
-          iframe.src = iframe.src.replace('?', '?autoplay=1&');
-          overlay.classList.add('video-overlay--fading');
-          setTimeout(function () { overlay.style.display = 'none'; }, 600);
-        }
-        overlay.addEventListener('click', activate);
-        overlay.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') activate();
-        });
-      });
     </script>
     <script src="chrome.js"></script>
   </body>
