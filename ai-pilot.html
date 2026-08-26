@@ -14,11 +14,10 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="mission.html" aria-label="QERIS home">
+      <a class="brand" href="ai-pilot.html" aria-label="QERIS home">
         <img src="assets/qeris-logo.png" alt="QERIS" />
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="mission.html">C-UAS Prototype</a>
         <a class="active" href="ai-pilot.html">AI Pilot</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
@@ -27,9 +26,9 @@
 
     <main class="page-shell">
       <section class="page-hero">
-        <h1>QERIS develops the <span class="ai-pilot-highlight">AI pilot</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <h1>QERIS develops a universal <span class="ai-pilot-highlight">AI pilot</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
         <div class="ai-pilot-boxes">
-          <div class="ai-pilot-box"><p><span class="ai-pilot-highlight">Executes end-to-end missions</span>: From planning, navigation, search, target detection, tracking and precision approach</p></div>
+          <div class="ai-pilot-box"><p><span class="ai-pilot-highlight">Executes end-to-end missions</span>: Mission planning, optimal path planning, nap-of-earth navigation, search, target detection, tracking and precision approach</p></div>
           <div class="ai-pilot-box"><p><span class="ai-pilot-highlight">Stays undetected:</span> Flies low (&lt;10m), using terrain clutter to hide and evade radar detection, in contested environments</p></div>
           <div class="ai-pilot-box">
             <div><span class="ai-pilot-highlight">Hardware-agnostic</span> autonomy stack interoperable across UAV platforms, sensor suites, and mission payloads</div>
@@ -111,10 +110,19 @@
           </article>
 
           <article class="ai-pilot-spec-row">
-            <div class="ai-pilot-spec-label">Sensor Compatibility</div>
+            <div class="ai-pilot-spec-label">BASELINE SENSOR REQUIREMENTS</div>
             <div class="ai-pilot-spec-content">
               <ul>
-                <li>Supports sensor modalities commonly used for security and safety applications (e.g., EO/IR, LiDAR, radar, and RF)</li>
+                <li><strong>Camera-only baseline:</strong> Runs with a standard monocular EO camera — no LiDAR or specialized perception sensors required</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="ai-pilot-spec-row">
+            <div class="ai-pilot-spec-label">MODULAR SENSOR &amp; PAYLOAD INTEGRATION</div>
+            <div class="ai-pilot-spec-content">
+              <ul>
+                <li><strong>Plug-in architecture:</strong> Add EO/IR, LiDAR, radar, RF or mission-specific payloads as the mission evolves, without rebuilding the autonomy stack</li>
               </ul>
             </div>
             <div class="ai-pilot-spec-badge">Near term roadmap feature</div>
@@ -161,6 +169,54 @@
           </article>
         </div>
       </div>
+      <div class="mission-applications ai-pilot-applications ai-pilot-oem">
+        <p class="eyebrow"><span id="oemTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></p>
+      </div>
+      <section class="ai-pilot-audience">
+        <div class="ai-pilot-audience-tabs" role="tablist">
+          <button type="button" class="ai-pilot-audience-tab is-active" data-tab="oems">For UAV OEMs</button>
+          <button type="button" class="ai-pilot-audience-tab" data-tab="acquisition">For Acquisition Teams</button>
+          <button type="button" class="ai-pilot-audience-tab" data-tab="operators">For Operators</button>
+        </div>
+        <div class="ai-pilot-audience-panels">
+          <div class="ai-pilot-audience-panel is-active" data-panel="oems">
+            <div class="ai-pilot-audience-content">
+              <h3>Your AI autonomy partner</h3>
+              <ul>
+                <li><strong>Integrate your way:</strong> From software-only integration using your camera and processor, to a full QERIS compute-and-camera integration</li>
+                <li><strong>Add the AI pilot:</strong> Bring autonomous mission planning, terrain-hugging navigation, area search, and target tracking to your drones</li>
+                <li><strong>Keep improving through software:</strong> Continuously upgrade autonomy performance and add new mission capabilities as QERIS evolves</li>
+              </ul>
+              <a class="ai-pilot-audience-cta" href="contact.html">See integration details</a>
+            </div>
+            <div class="ai-pilot-audience-media" aria-hidden="true"></div>
+          </div>
+          <div class="ai-pilot-audience-panel" data-panel="acquisition">
+            <div class="ai-pilot-audience-content">
+              <h3>Build sovereign capability.</h3>
+              <ul>
+                <li><strong>Choose the right drone for every mission:</strong> Source from different UAV suppliers as requirements evolve, without locking your autonomy capability to a single OEM</li>
+                <li><strong>Build with your local industry:</strong> Deploy QERIS on locally produced or assembled drones to strengthen sovereign UAV capability and reduce dependence on foreign platforms</li>
+                <li><strong>Shape the autonomy with us:</strong> Work directly with QERIS to tailor autonomy models to your doctrine, terrain, targets, and mission requirements—rather than buying a fixed black-box capability</li>
+              </ul>
+              <a class="ai-pilot-audience-cta" href="contact.html">See program details</a>
+            </div>
+            <div class="ai-pilot-audience-media" aria-hidden="true"></div>
+          </div>
+          <div class="ai-pilot-audience-panel" data-panel="operators">
+            <div class="ai-pilot-audience-content">
+              <h3>Focus on the mission, not on flying the drone.</h3>
+              <ul>
+                <li><strong>Command by objective:</strong> Define where to go, what to search for, and what to track—QERIS translates the objective into an executable mission</li>
+                <li><strong>Offload the hardest, repetitive tasks:</strong> QERIS handles the flying, searching, and tracking—freeing operators to focus on the tactical picture, prioritize what matters, and make mission-critical decisions</li>
+                <li><strong>Stay in control:</strong> Monitor mission progress and imagery while QERIS executes autonomously, with the operator retaining authority over critical mission decisions</li>
+              </ul>
+              <a class="ai-pilot-audience-cta" href="contact.html">See operator workflow</a>
+            </div>
+            <div class="ai-pilot-audience-media" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <script>
       (function () {
@@ -196,9 +252,77 @@
           obs.observe(container);
         }
 
-        typewriter('.page-hero h1', 'aiPilotTitle', ' for low-cost UAVs');
+        function typewriterColored(containerSelector, elId, segments) {
+          var container = document.querySelector(containerSelector);
+          var el = document.getElementById(elId);
+          if (!container || !el) return;
+          var cursor = el.nextElementSibling;
+          var full = segments.map(function (s) { return s.text; }).join('');
+          var idx = 0;
+          var started = false;
+
+          function tick() {
+            var remaining = idx;
+            var html = '';
+            segments.forEach(function (s) {
+              var chunk = s.text.slice(0, Math.max(0, Math.min(s.text.length, remaining)));
+              remaining -= s.text.length;
+              if (!chunk) return;
+              html += s.color ? '<span style="color:' + s.color + '">' + chunk + '</span>' : chunk;
+            });
+            el.innerHTML = html;
+            if (idx < full.length) {
+              idx++;
+              setTimeout(tick, 38);
+            } else {
+              setTimeout(function () {
+                cursor.style.animation = 'none';
+                cursor.style.opacity = '0';
+              }, 900);
+            }
+          }
+
+          var obs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting && !started) {
+              started = true;
+              obs.disconnect();
+              setTimeout(tick, 400);
+            }
+          }, { threshold: 0.15 });
+
+          obs.observe(container);
+        }
+
+        typewriter('.page-hero h1', 'aiPilotTitle', ' for drones');
         typewriter('.ai-pilot-specs-section h2', 'specsTitle', 'Technical Specifications');
         typewriter('.ai-pilot-applications .eyebrow', 'appsTitle', 'Applications');
+        typewriterColored('.ai-pilot-oem .eyebrow', 'oemTitle', [
+          { text: 'Built for ' },
+          { text: 'OEMs.', color: '#9ab8ff' },
+          { text: ' ' },
+          { text: 'Acquisition Teams.', color: '#4475f5' },
+          { text: ' ' },
+          { text: 'Operators', color: '#2a4bb0' }
+        ]);
+      })();
+
+      (function () {
+        var tabs = document.querySelectorAll('.ai-pilot-audience-tab');
+        var panels = document.querySelectorAll('.ai-pilot-audience-panel');
+        if (!tabs.length || !panels.length) return;
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var target = tab.getAttribute('data-tab');
+
+            tabs.forEach(function (t) { t.classList.remove('is-active'); });
+            tab.classList.add('is-active');
+
+            panels.forEach(function (panel) {
+              panel.classList.toggle('is-active', panel.getAttribute('data-panel') === target);
+            });
+          });
+        });
       })();
 
       (function () {

@@ -94,10 +94,6 @@ a {
   color: var(--white);
 }
 
-.site-nav a[href="mission.html"] {
-  display: none;
-}
-
 .hero {
   background: var(--field);
   color: var(--white);
@@ -3103,4 +3099,121 @@ body::after  { right: 36px; }
 }
 .mission-solution .prototype-overview {
   padding-top: 0;
+}
+
+/* ── AI Pilot audience tabs (OEMs / Acquisition Teams / Operators) ── */
+.ai-pilot-audience {
+  padding: clamp(28px, 4vw, 40px) 0 clamp(60px, 8vw, 100px);
+}
+
+.ai-pilot-audience-tabs {
+  display: flex;
+  gap: clamp(28px, 4vw, 56px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.ai-pilot-audience-tab {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0 0 18px;
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ai-pilot-audience-tab:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ai-pilot-audience-tab.is-active {
+  color: var(--paper);
+  border-bottom-color: #4475f5;
+}
+
+.ai-pilot-audience-panel {
+  display: none;
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.ai-pilot-audience-panel.is-active {
+  display: grid;
+}
+
+.ai-pilot-audience-content h3 {
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 clamp(20px, 3vw, 32px);
+}
+
+.ai-pilot-audience-content ul {
+  list-style: none;
+  margin: 0 0 clamp(28px, 4vw, 40px);
+  padding: 0;
+}
+
+.ai-pilot-audience-content li {
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1vw, 1.02rem);
+  line-height: 1.6;
+  margin-bottom: clamp(14px, 2vw, 20px);
+  padding-left: 24px;
+  position: relative;
+}
+
+.ai-pilot-audience-content li::before {
+  color: #4475f5;
+  content: "\5C";
+  left: 0;
+  position: absolute;
+}
+
+.ai-pilot-audience-content li strong {
+  color: var(--paper);
+}
+
+.ai-pilot-audience-cta {
+  background: #4475f5;
+  color: #0a0a0f;
+  display: inline-block;
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: clamp(16px, 2vw, 20px) clamp(28px, 3vw, 36px);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.ai-pilot-audience-cta:hover {
+  opacity: 0.85;
+}
+
+.ai-pilot-audience-media {
+  aspect-ratio: 16 / 11;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .ai-pilot-audience-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-pilot-audience-tabs {
+    gap: clamp(18px, 5vw, 28px);
+    overflow-x: auto;
+  }
 }
