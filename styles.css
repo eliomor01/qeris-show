@@ -2740,6 +2740,10 @@ body::after  { right: 36px; }
   margin-top: auto;
 }
 
+.ai-pilot-platform-types-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .ai-pilot-platform-type {
   border-radius: 6px;
   font-size: clamp(0.85rem, 1vw, 0.95rem);
@@ -2785,6 +2789,7 @@ body::after  { right: 36px; }
 
 .ai-pilot-video-wrap {
   aspect-ratio: 16 / 9;
+  background: #000;
   flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
@@ -2794,7 +2799,7 @@ body::after  { right: 36px; }
 .ai-pilot-video {
   display: block;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
