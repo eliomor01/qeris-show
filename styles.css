@@ -94,6 +94,10 @@ a {
   color: var(--white);
 }
 
+.site-nav a[href="mission.html"] {
+  display: none;
+}
+
 .hero {
   background: var(--field);
   color: var(--white);
@@ -398,7 +402,7 @@ h3,
 }
 
 .contact-form-only {
-  grid-template-columns: minmax(280px, 720px);
+  grid-template-columns: minmax(280px, 620px);
   justify-content: center;
 }
 
@@ -410,18 +414,50 @@ h3,
   overflow-wrap: anywhere;
 }
 
+.contact-card {
+  padding-top: clamp(36px, 5vw, 56px);
+  position: relative;
+}
+
+.contact-close {
+  color: var(--muted);
+  font-size: 1.7rem;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: color 0.2s ease;
+}
+
+.contact-close:hover {
+  color: var(--white);
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin: 0 0 clamp(32px, 5vw, 52px);
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .contact-form {
   display: grid;
-  gap: 20px;
+  gap: 28px;
 }
 
 .contact-form label {
   color: var(--muted);
   display: grid;
-  font-size: 0.76rem;
-  font-weight: 800;
-  gap: 8px;
-  text-transform: uppercase;
+  font-size: 0.98rem;
+  font-weight: 400;
+  gap: 10px;
+}
+
+.contact-required {
+  color: #4475f5;
+  margin-left: 2px;
 }
 
 .contact-form input,
@@ -442,17 +478,23 @@ h3,
 }
 
 .contact-form button {
-  background: var(--paper);
-  border: 1px solid var(--paper);
-  color: var(--ink);
+  background: none;
+  border: 0;
+  color: var(--paper);
   cursor: pointer;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  justify-self: start;
-  min-height: 52px;
-  padding: 0 24px;
+  justify-self: center;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  padding: 8px 0 0;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.contact-form button:hover {
+  color: #4475f5;
 }
 
 .team-page {
@@ -2642,8 +2684,14 @@ body::after  { right: 36px; }
   margin-top: clamp(28px, 4vh, 48px);
 }
 
+.ai-pilot-box p {
+  font-size: inherit;
+  margin: 0;
+}
+
 .ai-pilot-box {
   background-color: rgba(255, 255, 255, 0.03);
+  min-width: 0;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
     linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
@@ -2666,9 +2714,13 @@ body::after  { right: 36px; }
   background-repeat: no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--muted);
+  display: flex;
+  flex-direction: column;
   font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  gap: clamp(16px, 2.5vw, 28px);
+  justify-content: center;
   line-height: 1.5;
-  padding: clamp(22px, 3vw, 36px) clamp(18px, 2.5vw, 30px);
+  padding: clamp(18px, 2.2vw, 26px) clamp(18px, 2.5vw, 30px);
   text-align: center;
 }
 
@@ -2685,14 +2737,286 @@ body::after  { right: 36px; }
   color: #4475f5;
 }
 
+.ai-pilot-platform-types {
+  display: grid;
+  gap: clamp(10px, 1.5vw, 16px);
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: auto;
+}
+
+.ai-pilot-platform-type {
+  border-radius: 6px;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  font-weight: 600;
+  padding: clamp(10px, 1.5vw, 14px) clamp(12px, 2vw, 16px);
+  text-align: center;
+}
+
+.ai-pilot-platform-multirotors {
+  background-color: rgba(68, 117, 245, 0.2);
+  color: #4475f5;
+}
+
+.ai-pilot-platform-fixedwing,
+.ai-pilot-platform-vtol {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .ai-pilot-video-section {
-  padding: 0 clamp(18px, 5vw, 60px) clamp(54px, 7vw, 92px);
+  align-items: center;
+  display: flex;
+  gap: 7px;
+  padding: 0 clamp(9px, 2.5vw, 30px) clamp(54px, 7vw, 92px);
+}
+
+.ai-pilot-video-slider {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ai-pilot-video-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ai-pilot-video-page {
+  display: flex;
+  flex: 0 0 100%;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.ai-pilot-video-wrap {
+  aspect-ratio: 16 / 9;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .ai-pilot-video {
   display: block;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   width: 100%;
+}
+
+.ai-pilot-video-gate {
+  align-items: center;
+  background: rgba(30, 30, 30, 0.72);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.ai-pilot-video-gate.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ai-pilot-video-replay {
+  align-items: center;
+  background: #000;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.ai-pilot-video-replay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ai-pilot-play-btn,
+.ai-pilot-replay-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  color: var(--paper);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 12px 28px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ai-pilot-play-btn:hover,
+.ai-pilot-replay-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── AI-Pilot page: Technical Specifications section ─────────── */
+.ai-pilot-specs-section {
+  padding: clamp(54px, 7vw, 92px) 0;
+}
+
+.ai-pilot-specs-section h2 {
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.28;
+  margin: 0 0 clamp(32px, 5vw, 56px) 0;
+  text-transform: uppercase;
+}
+
+.ai-pilot-applications .application-grid {
+  align-items: stretch;
+}
+
+.ai-pilot-applications .application-grid article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  background-size:
+    1px 10px, 10px 1px,
+    1px 10px, 10px 1px,
+    1px 10px, 10px 1px,
+    1px 10px, 10px 1px;
+  background-position:
+    0 0,       0 0,
+    100% 0,    100% 0,
+    0 100%,    0 100%,
+    100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.ai-pilot-applications .application-grid h2 {
+  color: #4475f5;
+}
+
+.ai-pilot-applications .application-grid li::before {
+  color: #4475f5;
+  content: "•";
+  font-weight: bold;
+}
+
+.ai-pilot-applications .application-grid li.ai-pilot-no-bullet {
+  padding-left: 0;
+}
+
+.ai-pilot-applications .application-grid li.ai-pilot-no-bullet::before {
+  content: none;
+}
+
+.ai-pilot-applications .eyebrow {
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+.ai-pilot-specs-grid {
+  display: grid;
+  gap: clamp(28px, 4vw, 42px);
+}
+
+.ai-pilot-spec-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: grid;
+  gap: clamp(24px, 3vw, 40px);
+  grid-template-columns: minmax(180px, 0.35fr) 1fr minmax(160px, auto);
+  padding-top: clamp(24px, 3vw, 36px);
+}
+
+.ai-pilot-spec-label {
+  align-self: start;
+  background-color: #1e1e1e;
+  background-image:
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper)),
+    linear-gradient(var(--paper), var(--paper));
+  background-size:
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px,
+    1px 9px, 9px 1px;
+  background-position:
+    0 0,       0 0,
+    100% 0,    100% 0,
+    0 100%,    0 100%,
+    100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  color: var(--paper);
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(0.84rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.ai-pilot-spec-content ul {
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  line-height: 1.6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-pilot-spec-content li {
+  margin-bottom: clamp(12px, 1.5vw, 18px);
+}
+
+.ai-pilot-spec-content li:last-child {
+  margin-bottom: 0;
+}
+
+.ai-pilot-spec-content li::before {
+  content: "•";
+  color: #4475f5;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.ai-pilot-spec-badge {
+  align-self: start;
+  background-color: rgba(68, 117, 245, 0.12);
+  border: 1px solid rgba(68, 117, 245, 0.4);
+  border-radius: 999px;
+  color: #4475f5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* ── Prototype page: technology section spacing fix ─────────── */

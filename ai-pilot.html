@@ -19,6 +19,7 @@
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="mission.html">C-UAS Prototype</a>
+        <a class="active" href="ai-pilot.html">AI Pilot</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -26,20 +27,229 @@
 
     <main class="page-shell">
       <section class="page-hero">
-        <h1>QERIS develops the AI pilot for low-cost UAVs</h1>
-        <p class="ai-pilot-subtitle">We allow any operator to <span class="ai-pilot-highlight">instantly</span> become a <span class="ai-pilot-highlight">skilled</span> pilot</p>
+        <h1>QERIS develops the <span class="ai-pilot-highlight">AI pilot</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
         <div class="ai-pilot-boxes">
-          <div class="ai-pilot-box">Executes end-to-end <span class="ai-pilot-highlight">missions</span> (from planning, navigation, search, tracking and precision approach)</div>
-          <div class="ai-pilot-box">Stays <span class="ai-pilot-highlight">undetected</span>: Flies low (&lt;10m), using terrain clutter to hide, in contested environments</div>
-          <div class="ai-pilot-box"><span class="ai-pilot-highlight">Deployable</span> across various UAV platforms</div>
+          <div class="ai-pilot-box"><p><span class="ai-pilot-highlight">Executes end-to-end missions</span> (from planning, navigation, search, target detection, tracking and precision approach)</p></div>
+          <div class="ai-pilot-box"><p><span class="ai-pilot-highlight">Stays undetected:</span> Flies low (&lt;10m), using terrain clutter to hide and evade radar detection, in contested environments</p></div>
+          <div class="ai-pilot-box">
+            <div><span class="ai-pilot-highlight">Hardware-agnostic</span> autonomy stack interoperable across UAV platforms, sensor suites, and mission payloads</div>
+            <div class="ai-pilot-platform-types">
+              <div class="ai-pilot-platform-type ai-pilot-platform-multirotors">Multirotors</div>
+              <div class="ai-pilot-platform-type ai-pilot-platform-fixedwing">Fixed-wing</div>
+              <div class="ai-pilot-platform-type ai-pilot-platform-vtol">VTOL</div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="ai-pilot-video-section">
-        <video autoplay muted loop playsinline class="ai-pilot-video">
-          <source src="assets/AI_pilot.mp4" type="video/mp4" />
-        </video>
+        <button type="button" class="simulation-slider-arrow is-back" id="aiPilotVideoArrowBack" aria-label="Show previous videos">&#8250;</button>
+        <div class="ai-pilot-video-slider">
+          <div class="ai-pilot-video-track" id="aiPilotVideoTrack">
+            <div class="ai-pilot-video-page">
+              <div class="ai-pilot-video-wrap">
+                <video muted playsinline class="ai-pilot-video">
+                  <source src="assets/Mission plnning.mp4" type="video/mp4" />
+                </video>
+                <div class="ai-pilot-video-gate">
+                  <button type="button" class="ai-pilot-play-btn">MISSION PLANNING</button>
+                </div>
+                <div class="ai-pilot-video-replay">
+                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                </div>
+              </div>
+              <div class="ai-pilot-video-wrap">
+                <video muted playsinline class="ai-pilot-video">
+                  <source src="assets/In between houses.mov" />
+                </video>
+                <div class="ai-pilot-video-gate">
+                  <button type="button" class="ai-pilot-play-btn">TERRAIN MASKING NAVIGATION</button>
+                </div>
+                <div class="ai-pilot-video-replay">
+                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                </div>
+              </div>
+            </div>
+            <div class="ai-pilot-video-page">
+              <div class="ai-pilot-video-wrap">
+                <video muted playsinline class="ai-pilot-video">
+                  <source src="assets/Collide.mov" />
+                </video>
+                <div class="ai-pilot-video-gate">
+                  <button type="button" class="ai-pilot-play-btn">TERMINAL GUIDANCE</button>
+                </div>
+                <div class="ai-pilot-video-replay">
+                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                </div>
+              </div>
+              <div class="ai-pilot-video-wrap">
+                <video muted playsinline class="ai-pilot-video">
+                  <source src="assets/Drive through houses 2.mov" />
+                </video>
+                <div class="ai-pilot-video-gate">
+                  <button type="button" class="ai-pilot-play-btn">TERRAIN MASKING NAVIGATION</button>
+                </div>
+                <div class="ai-pilot-video-replay">
+                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="simulation-slider-arrow" id="aiPilotVideoArrow" aria-label="Show next videos">&#8250;</button>
       </section>
+      <section class="ai-pilot-specs-section">
+        <h2><span id="specsTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h2>
+        <div class="ai-pilot-specs-grid">
+          <article class="ai-pilot-spec-row">
+            <div class="ai-pilot-spec-label">Supported UAV Platforms / Protocols</div>
+            <div class="ai-pilot-spec-content">
+              <ul>
+                <li>Platform agnostic, supports UAVs with different flight controllers (Ardupilot, PX4) using MAVLINK</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="ai-pilot-spec-row">
+            <div class="ai-pilot-spec-label">Sensor Compatibility</div>
+            <div class="ai-pilot-spec-content">
+              <ul>
+                <li>Supports sensor modalities commonly used for security and safety applications (e.g., EO/IR, LiDAR, radar, and RF)</li>
+              </ul>
+            </div>
+            <div class="ai-pilot-spec-badge">Near term roadmap feature</div>
+          </article>
+
+          <article class="ai-pilot-spec-row">
+            <div class="ai-pilot-spec-label">Processing Requirements</div>
+            <div class="ai-pilot-spec-content">
+              <ul>
+                <li>Runs on device with lightweight and lower-cost NPUs - Orange Pi 5/CM5, Radxa ROCK 5C</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="ai-pilot-spec-row">
+            <div class="ai-pilot-spec-label">User Interface</div>
+            <div class="ai-pilot-spec-content">
+              <ul>
+                <li>TAK Compatible</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div class="mission-applications ai-pilot-applications">
+        <p class="eyebrow"><span id="appsTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></p>
+        <div class="application-grid">
+          <article>
+            <h2>Defence</h2>
+            <ul>
+              <li class="ai-pilot-no-bullet"><strong>Mission focus:</strong> close to mid-range (&lt;50km), ground-hugging/evasive navigation, in degraded environments</li>
+              <li>Tactical reconnaissance and surveillance</li>
+              <li>Target acquisition and persistent tracking</li>
+              <li>Precision engagement</li>
+            </ul>
+          </article>
+          <article>
+            <h2>Civilian</h2>
+            <ul>
+              <li><strong>Drone as first responder:</strong> Automatically deploy upon 911 call, stream video to responding officers, maintain track of suspects</li>
+              <li><strong>Search &amp; rescue:</strong> Search hazardous areas, locate missing persons, and relay live situational awareness</li>
+              <li><strong>Border patrol:</strong> Monitor remote borders, detect illegal crossings, and stream real-time intelligence to patrol teams</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </main>
+    <script>
+      (function () {
+        function typewriter(containerSelector, elId, full) {
+          var container = document.querySelector(containerSelector);
+          var el = document.getElementById(elId);
+          if (!container || !el) return;
+          var cursor = el.nextElementSibling;
+          var idx = 0;
+          var started = false;
+
+          function tick() {
+            el.textContent = full.slice(0, idx);
+            if (idx < full.length) {
+              idx++;
+              setTimeout(tick, 38);
+            } else {
+              setTimeout(function () {
+                cursor.style.animation = 'none';
+                cursor.style.opacity = '0';
+              }, 900);
+            }
+          }
+
+          var obs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting && !started) {
+              started = true;
+              obs.disconnect();
+              setTimeout(tick, 400);
+            }
+          }, { threshold: 0.15 });
+
+          obs.observe(container);
+        }
+
+        typewriter('.page-hero h1', 'aiPilotTitle', ' for low-cost UAVs');
+        typewriter('.ai-pilot-specs-section h2', 'specsTitle', 'Technical Specifications');
+        typewriter('.ai-pilot-applications .eyebrow', 'appsTitle', 'Applications');
+      })();
+
+      (function () {
+        var wraps = document.querySelectorAll('.ai-pilot-video-wrap');
+        wraps.forEach(function (wrap) {
+          var video = wrap.querySelector('video');
+          var gate = wrap.querySelector('.ai-pilot-video-gate');
+          var gateBtn = wrap.querySelector('.ai-pilot-play-btn');
+          var overlay = wrap.querySelector('.ai-pilot-video-replay');
+          var btn = wrap.querySelector('.ai-pilot-replay-btn');
+          if (!video || !gate || !gateBtn || !overlay || !btn) return;
+
+          gateBtn.addEventListener('click', function () {
+            gate.classList.add('is-hidden');
+            video.play();
+          });
+
+          video.addEventListener('ended', function () {
+            overlay.classList.add('is-visible');
+          });
+
+          btn.addEventListener('click', function () {
+            overlay.classList.remove('is-visible');
+            video.currentTime = 0;
+            video.play();
+          });
+        });
+      })();
+
+      (function () {
+        var track = document.getElementById('aiPilotVideoTrack');
+        var nextArrow = document.getElementById('aiPilotVideoArrow');
+        var prevArrow = document.getElementById('aiPilotVideoArrowBack');
+        if (!track || !nextArrow || !prevArrow) return;
+        var total = track.querySelectorAll('.ai-pilot-video-page').length;
+        var current = 0;
+
+        function update() {
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        }
+
+        nextArrow.addEventListener('click', function () {
+          current = (current + 1) % total;
+          update();
+        });
+
+        prevArrow.addEventListener('click', function () {
+          current = (current - 1 + total) % total;
+          update();
+        });
+      })();
+    </script>
     <script src="chrome.js"></script>
   </body>
 </html>
