@@ -2834,18 +2834,31 @@ body::after  { right: 36px; }
 
 .ai-pilot-play-btn,
 .ai-pilot-replay-btn {
+  align-items: center;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 6px;
   color: var(--paper);
   cursor: pointer;
+  display: inline-flex;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
+  gap: 10px;
   letter-spacing: 0.04em;
   padding: 12px 28px;
   text-transform: uppercase;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ai-pilot-play-icon {
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+  border-color: transparent transparent transparent var(--paper);
+  display: inline-block;
+  flex-shrink: 0;
+  height: 0;
+  width: 0;
 }
 
 .ai-pilot-play-btn:hover,
