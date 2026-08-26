@@ -2870,8 +2870,14 @@ body::after  { right: 36px; }
   font-weight: 400;
   letter-spacing: 0.06em;
   line-height: 1.28;
-  margin: 0 0 clamp(32px, 5vw, 56px) 0;
+  margin: 0 0 clamp(12px, 1.5vw, 16px) 0;
   text-transform: uppercase;
+}
+
+.ai-pilot-specs-subtitle {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  margin: 0 0 clamp(32px, 5vw, 56px) 0;
 }
 
 .ai-pilot-applications .application-grid {
