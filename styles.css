@@ -3021,6 +3021,70 @@ body::after  { right: 36px; }
   white-space: nowrap;
 }
 
+@media (max-width: 860px) {
+  .ai-pilot-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-pilot-platform-types {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ai-pilot-video-section {
+    gap: 10px;
+    padding-left: clamp(10px, 4vw, 18px);
+    padding-right: clamp(10px, 4vw, 18px);
+  }
+
+  .ai-pilot-video-page {
+    flex-direction: column;
+  }
+
+  .ai-pilot-video-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .simulation-slider-arrow {
+    height: 32px;
+    width: 32px;
+    font-size: 1.2rem;
+  }
+
+  .ai-pilot-spec-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-pilot-spec-label {
+    display: inline-block;
+    width: auto;
+  }
+
+  .ai-pilot-spec-badge {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .ai-pilot-platform-types {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-pilot-box {
+    text-align: left;
+  }
+
+  .ai-pilot-audience-tabs {
+    gap: 18px;
+  }
+
+  .ai-pilot-audience-tab {
+    font-size: 0.72rem;
+    padding-bottom: 12px;
+    white-space: nowrap;
+  }
+}
+
 /* ── Prototype page: technology section spacing fix ─────────── */
 .prototype-page .technology-screen {
   min-height: 0;
