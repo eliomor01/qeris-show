@@ -3139,14 +3139,12 @@ body::after  { right: 36px; }
 
 .ai-pilot-audience-panel {
   display: none;
-  align-items: center;
-  gap: clamp(32px, 5vw, 64px);
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .ai-pilot-audience-panel.is-active {
-  display: grid;
+  display: block;
 }
+
 
 .ai-pilot-audience-content h3 {
   color: var(--paper);
@@ -3200,18 +3198,7 @@ body::after  { right: 36px; }
   opacity: 0.85;
 }
 
-.ai-pilot-audience-media {
-  aspect-ratio: 16 / 11;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  width: 100%;
-}
-
 @media (max-width: 860px) {
-  .ai-pilot-audience-panel {
-    grid-template-columns: 1fr;
-  }
-
   .ai-pilot-audience-tabs {
     gap: clamp(18px, 5vw, 28px);
     overflow-x: auto;
