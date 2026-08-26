@@ -3165,6 +3165,19 @@ body::after  { right: 36px; }
   .ai-pilot-spec-badge {
     justify-self: start;
   }
+
+  .ai-pilot-subtitle-line {
+    min-height: 0;
+    white-space: normal;
+  }
+
+  .page-hero p.ai-pilot-video-lead {
+    white-space: normal;
+  }
+
+  .ai-pilot-hero-banner {
+    padding: clamp(20px, 6vw, 32px) clamp(16px, 5vw, 24px);
+  }
 }
 
 @media (max-width: 520px) {
