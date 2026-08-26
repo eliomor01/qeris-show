@@ -2720,13 +2720,65 @@ body::after  { right: 36px; }
   text-align: center;
 }
 
+.ai-pilot-box-icon {
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
 .ai-pilot-subtitle {
   color: var(--muted);
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 1.6vw, 1.32rem);
   font-weight: 400;
   line-height: 1.5;
-  margin-top: clamp(14px, 2vh, 22px);
+  margin-top: clamp(52px, 8vh, 84px);
+}
+
+.ai-pilot-subtitle-dot {
+  color: #4475f5;
+}
+
+.ai-pilot-subtitle-line {
+  display: inline-block;
+  margin-bottom: 24px;
+  min-height: 1.5em;
+  white-space: nowrap;
+}
+
+.ai-pilot-hero-banner h1 {
+  margin-top: 0;
+}
+
+.ai-pilot-hero-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("assets/elevation2.png");
+  background-color: #000;
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: 8px;
+  margin-bottom: clamp(28px, 4vh, 48px);
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 40px) clamp(24px, 3vw, 36px);
+}
+
+.ai-pilot-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.5vw, 16px);
+  margin-top: clamp(24px, 4vh, 40px);
+}
+
+.ai-pilot-hero-tag {
+  color: var(--muted);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  letter-spacing: 0.03em;
+  padding: 8px 14px;
+}
+
+.ai-pilot-hero-tag-bracket {
+  color: var(--white);
 }
 
 .ai-pilot-highlight {
@@ -2747,7 +2799,7 @@ body::after  { right: 36px; }
 .ai-pilot-platform-type {
   border-radius: 6px;
   font-size: clamp(0.85rem, 1vw, 0.95rem);
-  font-weight: 600;
+  font-weight: 400;
   padding: clamp(10px, 1.5vw, 14px) clamp(12px, 2vw, 16px);
   text-align: center;
 }
@@ -2761,6 +2813,16 @@ body::after  { right: 36px; }
 .ai-pilot-platform-vtol {
   background-color: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.6);
+}
+
+.page-hero p.ai-pilot-video-lead {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  margin: 0 auto clamp(20px, 3vw, 32px);
+  max-width: none;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .ai-pilot-video-section {
@@ -2840,9 +2902,28 @@ body::after  { right: 36px; }
 .ai-pilot-play-btn,
 .ai-pilot-replay-btn {
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  background-size:
+    1px 8px, 8px 1px,
+    1px 8px, 8px 1px,
+    1px 8px, 8px 1px,
+    1px 8px, 8px 1px;
+  background-position:
+    0 0,       0 0,
+    100% 0,    100% 0,
+    0 100%,    0 100%,
+    100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--paper);
   cursor: pointer;
   display: inline-flex;
@@ -2868,8 +2949,8 @@ body::after  { right: 36px; }
 
 .ai-pilot-play-btn:hover,
 .ai-pilot-replay-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ── AI-Pilot page: Technical Specifications section ─────────── */
@@ -2928,7 +3009,10 @@ body::after  { right: 36px; }
 }
 
 .ai-pilot-applications .application-grid h2 {
+  align-items: center;
   color: #4475f5;
+  display: flex;
+  gap: 10px;
 }
 
 .ai-pilot-applications .application-grid li::before {

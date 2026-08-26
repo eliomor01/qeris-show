@@ -26,23 +26,92 @@
 
     <main class="page-shell">
       <section class="page-hero">
-        <h1>QERIS develops a universal <span class="ai-pilot-highlight">AI pilot</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <div class="ai-pilot-hero-banner">
+          <h1>QERIS builds <span class="ai-pilot-highlight">combat autonomy</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+          <p class="ai-pilot-subtitle"><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="Airframes have become cheap and "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="scalable"></span></span><br /><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="Skilled, tactical piloting has "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="not"></span></span><br /><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="QERIS turns that expertise into scalable "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="software"></span></span></p>
+        </div>
+        <p class="ai-pilot-video-lead">We provide full mission autonomy and terrain-masked navigation - across drone platforms</p>
+        <section class="ai-pilot-video-section">
+          <button type="button" class="simulation-slider-arrow is-back" id="aiPilotVideoArrowBack" aria-label="Show previous videos">&#8250;</button>
+          <div class="ai-pilot-video-slider">
+            <div class="ai-pilot-video-track" id="aiPilotVideoTrack">
+              <div class="ai-pilot-video-page">
+                <div class="ai-pilot-video-wrap">
+                  <video muted playsinline class="ai-pilot-video">
+                    <source src="assets/In between houses.mp4" type="video/mp4" />
+                  </video>
+                  <div class="ai-pilot-video-gate">
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERRAIN MASKING NAVIGATION</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ai-pilot-video-page">
+                <div class="ai-pilot-video-wrap">
+                  <video muted playsinline class="ai-pilot-video">
+                    <source src="assets/Trees.mp4" type="video/mp4" />
+                  </video>
+                  <div class="ai-pilot-video-gate">
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>AREA SEARCH & DETECTION</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ai-pilot-video-page">
+                <div class="ai-pilot-video-wrap">
+                  <video muted playsinline class="ai-pilot-video">
+                    <source src="assets/Collide.mp4" type="video/mp4" />
+                  </video>
+                  <div class="ai-pilot-video-gate">
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERMINAL GUIDANCE</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="simulation-slider-arrow" id="aiPilotVideoArrow" aria-label="Show next videos">&#8250;</button>
+        </section>
         <div class="ai-pilot-boxes">
           <div class="ai-pilot-box">
-            <p><span class="ai-pilot-highlight">Executes end-to-end missions</span>: Mission planning, optimal path planning, nap-of-earth navigation, search, target detection, tracking and precision approach</p>
+            <svg class="ai-pilot-box-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="5" cy="23" r="2.2" stroke="#4475f5" stroke-width="1.5"/>
+              <path d="M7.5 20.5L20.5 7.5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.5 3.2"/>
+              <circle cx="23" cy="5" r="4" stroke="#4475f5" stroke-width="1.5"/>
+              <circle cx="23" cy="5" r="1.2" fill="#4475f5"/>
+            </svg>
+            <p><span class="ai-pilot-highlight">Autonomous mission execution</span>: Mission planning, optimal path planning, nap-of-earth navigation, search, target detection, tracking and precision approach</p>
             <div class="ai-pilot-platform-types ai-pilot-platform-types-two">
               <div class="ai-pilot-platform-type ai-pilot-platform-fixedwing">Ultra-low RF reliance</div>
               <div class="ai-pilot-platform-type ai-pilot-platform-fixedwing">Human-in-the-loop for key authorizations</div>
             </div>
           </div>
           <div class="ai-pilot-box">
-            <p><span class="ai-pilot-highlight">Stays undetected:</span> Flies low (&lt;10m), using terrain clutter to hide and evade radar detection, in contested environments</p>
+            <svg class="ai-pilot-box-icon" width="30" height="26" viewBox="0 0 30 26" fill="none" aria-hidden="true">
+              <line x1="2" y1="4" x2="28" y2="4" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.5 3.2"/>
+              <path d="M9 15l4-2.5 8 2.5-4 2.5z" stroke="#4475f5" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M2 23c4-4 8-4 12 0s8 4 12 0" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p><span class="ai-pilot-highlight">Terrain-masked flight:</span> Flies low (&lt;10m), using terrain clutter to hide and evade radar detection, in contested environments</p>
             <div class="ai-pilot-platform-types ai-pilot-platform-types-two">
               <div class="ai-pilot-platform-type ai-pilot-platform-fixedwing">No LiDAR</div>
               <div class="ai-pilot-platform-type ai-pilot-platform-fixedwing">No pre-mapping</div>
             </div>
           </div>
           <div class="ai-pilot-box">
+            <svg class="ai-pilot-box-icon" width="30" height="26" viewBox="0 0 30 26" fill="none" aria-hidden="true">
+              <circle cx="15" cy="13" r="3" stroke="#4475f5" stroke-width="1.5"/>
+              <rect x="2" y="2" width="6" height="6" rx="1" stroke="#4475f5" stroke-width="1.5"/>
+              <rect x="22" y="2" width="6" height="6" rx="1" stroke="#4475f5" stroke-width="1.5"/>
+              <rect x="12" y="18" width="6" height="6" rx="1" stroke="#4475f5" stroke-width="1.5"/>
+              <path d="M12.5 11L7 6.5M17.5 11L23 6.5M15 16v2" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
             <div><span class="ai-pilot-highlight">Hardware-agnostic</span> autonomy stack interoperable across UAV platforms, sensor suites, and mission payloads</div>
             <div class="ai-pilot-platform-types">
               <div class="ai-pilot-platform-type ai-pilot-platform-multirotors">Multirotors</div>
@@ -51,53 +120,6 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="ai-pilot-video-section">
-        <button type="button" class="simulation-slider-arrow is-back" id="aiPilotVideoArrowBack" aria-label="Show previous videos">&#8250;</button>
-        <div class="ai-pilot-video-slider">
-          <div class="ai-pilot-video-track" id="aiPilotVideoTrack">
-            <div class="ai-pilot-video-page">
-              <div class="ai-pilot-video-wrap">
-                <video muted playsinline class="ai-pilot-video">
-                  <source src="assets/In between houses.mp4" type="video/mp4" />
-                </video>
-                <div class="ai-pilot-video-gate">
-                  <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERRAIN MASKING NAVIGATION</button>
-                </div>
-                <div class="ai-pilot-video-replay">
-                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
-                </div>
-              </div>
-            </div>
-            <div class="ai-pilot-video-page">
-              <div class="ai-pilot-video-wrap">
-                <video muted playsinline class="ai-pilot-video">
-                  <source src="assets/Trees.mp4" type="video/mp4" />
-                </video>
-                <div class="ai-pilot-video-gate">
-                  <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>AREA SEARCH & DETECTION</button>
-                </div>
-                <div class="ai-pilot-video-replay">
-                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
-                </div>
-              </div>
-            </div>
-            <div class="ai-pilot-video-page">
-              <div class="ai-pilot-video-wrap">
-                <video muted playsinline class="ai-pilot-video">
-                  <source src="assets/Collide.mp4" type="video/mp4" />
-                </video>
-                <div class="ai-pilot-video-gate">
-                  <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERMINAL GUIDANCE</button>
-                </div>
-                <div class="ai-pilot-video-replay">
-                  <button type="button" class="ai-pilot-replay-btn">Play again</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="simulation-slider-arrow" id="aiPilotVideoArrow" aria-label="Show next videos">&#8250;</button>
       </section>
       <section class="ai-pilot-specs-section">
         <h2><span id="specsTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h2>
@@ -154,7 +176,13 @@
         <p class="eyebrow"><span id="appsTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></p>
         <div class="application-grid">
           <article>
-            <h2>Defence</h2>
+            <h2>
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden="true">
+                <path d="M9 1l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V4z" stroke="#4475f5" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M6 10l2 2 4-4" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Defence
+            </h2>
             <ul>
               <li class="ai-pilot-no-bullet"><strong>Mission focus:</strong> close to mid-range (&lt;50km), ground-hugging/evasive navigation, in degraded environments</li>
               <li>Tactical reconnaissance and surveillance</li>
@@ -163,7 +191,14 @@
             </ul>
           </article>
           <article>
-            <h2>Civilian</h2>
+            <h2>
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden="true">
+                <path d="M2 9.5L9 3l7 6.5" stroke="#4475f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 8v9.5h10V8" stroke="#4475f5" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M7.5 17.5v-5h3v5" stroke="#4475f5" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              Civilian
+            </h2>
             <ul>
               <li><strong>Drone as first responder:</strong> Automatically deploy upon 911 call, stream video to responding officers, maintain track of suspects</li>
               <li><strong>Search &amp; rescue:</strong> Search hazardous areas, locate missing persons, and relay live situational awareness</li>
@@ -293,9 +328,9 @@
           obs.observe(container);
         }
 
-        typewriter('.page-hero h1', 'aiPilotTitle', ' for drones');
+        typewriter('.page-hero h1', 'aiPilotTitle', ' for attritable drones');
         typewriter('.ai-pilot-specs-section h2', 'specsTitle', 'Technical Specifications');
-        typewriter('.ai-pilot-applications .eyebrow', 'appsTitle', 'Applications');
+        typewriter('.ai-pilot-applications .eyebrow', 'appsTitle', 'Dual-Use Applications');
         typewriterColored('.ai-pilot-oem .eyebrow', 'oemTitle', [
           { text: 'Built for ' },
           { text: 'OEMs.', color: '#9ab8ff' },
@@ -304,6 +339,69 @@
           { text: ' ' },
           { text: 'Operators', color: '#2a4bb0' }
         ]);
+      })();
+
+      (function () {
+        var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!<>-_\\/[]{}—=+*^?#';
+
+        function scramble(el, full, onDone) {
+          var order = full.split('').map(function (_, i) { return i; });
+          for (var i = order.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = order[i]; order[i] = order[j]; order[j] = t;
+          }
+
+          var resolved = new Array(full.length).fill(false);
+          var chars = full.split('');
+
+          function render() {
+            el.textContent = chars.map(function (c, i) {
+              if (c === ' ') return ' ';
+              if (resolved[i]) return c;
+              return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+            }).join('');
+          }
+
+          function tick() {
+            var resolveCount = Math.ceil(order.length / 18);
+            for (var k = 0; k < resolveCount; k++) {
+              var idx = order.shift();
+              if (idx === undefined) break;
+              resolved[idx] = true;
+            }
+            render();
+            if (order.length) {
+              setTimeout(tick, 35);
+            } else {
+              el.textContent = full;
+              if (onDone) setTimeout(onDone, 250);
+            }
+          }
+
+          tick();
+        }
+
+        var texts = document.querySelectorAll('.ai-pilot-subtitle-text');
+        if (!texts.length) return;
+        var started = false;
+
+        function runSequence(index) {
+          if (index >= texts.length) return;
+          var el = texts[index];
+          scramble(el, el.getAttribute('data-scramble-text'), function () {
+            runSequence(index + 1);
+          });
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(function () { runSequence(0); }, 300);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.ai-pilot-subtitle'));
       })();
 
       (function () {
