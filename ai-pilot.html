@@ -27,7 +27,7 @@
     <main class="page-shell">
       <section class="page-hero">
         <div class="ai-pilot-hero-banner">
-          <h1>QERIS builds <span class="ai-pilot-highlight">combat autonomy</span><span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+          <h1>QERIS builds autonomy<span id="aiPilotTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
           <p class="ai-pilot-subtitle"><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="Airframes have become cheap and "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="scalable"></span></span><br /><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="Skilled, tactical piloting has "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="not"></span></span><br /><span class="ai-pilot-subtitle-line"><span class="ai-pilot-subtitle-text" data-scramble-text="QERIS turns that expertise into scalable "></span><span class="ai-pilot-subtitle-text ai-pilot-highlight" data-scramble-text="software"></span></span></p>
         </div>
         <p class="ai-pilot-video-lead">We provide full mission autonomy and terrain-masked navigation - across drone platforms</p>
@@ -328,7 +328,11 @@
           obs.observe(container);
         }
 
-        typewriter('.page-hero h1', 'aiPilotTitle', ' for attritable drones');
+        typewriterColored('.page-hero h1', 'aiPilotTitle', [
+          { text: ' for ' },
+          { text: 'security and defence', color: '#4475f5' },
+          { text: ' UAV missions' }
+        ]);
         typewriter('.ai-pilot-specs-section h2', 'specsTitle', 'Technical Specifications');
         typewriter('.ai-pilot-applications .eyebrow', 'appsTitle', 'Dual-Use Applications');
         typewriterColored('.ai-pilot-oem .eyebrow', 'oemTitle', [

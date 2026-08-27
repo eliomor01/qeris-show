@@ -2751,7 +2751,7 @@ body::after  { right: 36px; }
 
 .ai-pilot-hero-banner {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("assets/elevation2.png");
   background-color: #000;
   background-position: center, center;
