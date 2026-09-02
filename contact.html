@@ -58,6 +58,14 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        var demo = new URLSearchParams(window.location.search).get('demo');
+        if (!demo) return;
+        var textarea = document.querySelector('.contact-form textarea[name="message"]');
+        if (textarea) textarea.value = 'Requesting a demo of: ' + demo;
+      })();
+    </script>
     <script src="chrome.js"></script>
   </body>
 </html>

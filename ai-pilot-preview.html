@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QERIS | AI-Pilot</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <title>QERIS | AI-Pilot (Preview)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,7 +42,10 @@
                     <source src="assets/In between houses.mp4" type="video/mp4" />
                   </video>
                   <div class="ai-pilot-video-gate">
-                    <a class="ai-pilot-play-btn" href="contact.html?demo=Terrain%20Masking%20Navigation"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERRAIN MASKING NAVIGATION - DEMO UPON REQUEST</a>
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERRAIN MASKING NAVIGATION</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
                   </div>
                 </div>
               </div>
@@ -51,7 +55,10 @@
                     <source src="assets/Trees.mp4" type="video/mp4" />
                   </video>
                   <div class="ai-pilot-video-gate">
-                    <a class="ai-pilot-play-btn" href="contact.html?demo=Area%20Search%20%26%20Detection"><span class="ai-pilot-play-icon" aria-hidden="true"></span>AREA SEARCH & DETECTION - DEMO UPON REQUEST</a>
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>AREA SEARCH & DETECTION</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
                   </div>
                 </div>
               </div>
@@ -61,7 +68,10 @@
                     <source src="assets/pursuing (2).mp4" type="video/mp4" />
                   </video>
                   <div class="ai-pilot-video-gate">
-                    <a class="ai-pilot-play-btn" href="contact.html?demo=Tracking"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TRACKING - DEMO UPON REQUEST</a>
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TRACKING</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
                   </div>
                 </div>
               </div>
@@ -71,7 +81,10 @@
                     <source src="assets/Collide.mp4" type="video/mp4" />
                   </video>
                   <div class="ai-pilot-video-gate">
-                    <a class="ai-pilot-play-btn" href="contact.html?demo=Terminal%20Guidance"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERMINAL GUIDANCE - DEMO UPON REQUEST</a>
+                    <button type="button" class="ai-pilot-play-btn"><span class="ai-pilot-play-icon" aria-hidden="true"></span>TERMINAL GUIDANCE</button>
+                  </div>
+                  <div class="ai-pilot-video-replay">
+                    <button type="button" class="ai-pilot-replay-btn">Play again</button>
                   </div>
                 </div>
               </div>
@@ -425,6 +438,37 @@
               panel.classList.toggle('is-active', panel.getAttribute('data-panel') === target);
             });
           });
+        });
+      })();
+
+      (function () {
+        var wraps = document.querySelectorAll('.ai-pilot-video-wrap');
+        wraps.forEach(function (wrap) {
+          var video = wrap.querySelector('video');
+          var gate = wrap.querySelector('.ai-pilot-video-gate');
+          var gateBtn = wrap.querySelector('.ai-pilot-play-btn');
+          var overlay = wrap.querySelector('.ai-pilot-video-replay');
+          var btn = wrap.querySelector('.ai-pilot-replay-btn');
+          if (!video) return;
+
+          if (gate && gateBtn) {
+            gateBtn.addEventListener('click', function () {
+              gate.classList.add('is-hidden');
+              video.play();
+            });
+          }
+
+          if (overlay && btn) {
+            video.addEventListener('ended', function () {
+              overlay.classList.add('is-visible');
+            });
+
+            btn.addEventListener('click', function () {
+              overlay.classList.remove('is-visible');
+              video.currentTime = 0;
+              video.play();
+            });
+          }
         });
       })();
 
