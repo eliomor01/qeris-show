@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QERIS | Integration Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="ai-pilot.html" aria-label="QERIS home">
+        <img src="assets/qeris-logo.png" alt="QERIS" />
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="ai-pilot.html">AI Pilot</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <h1><span id="missionTitle"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <div class="mission-slider-wrap">
+          <button type="button" class="simulation-slider-arrow is-back" id="missionArrowBack" aria-label="Show previous missions">&#8250;</button>
+          <div class="mission-slider">
+            <div class="mission-track" id="missionTrack">
+              <div class="mission-page">
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/ISR.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-title is-live">ISR</span>
+                  <span class="mission-tile-desc">Collect intelligence through surveillance and reconnaissance.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/ISTAR.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-title is-live">ISTAR</span>
+                  <span class="mission-tile-desc">Find, identify, geolocate and track targets for decision-making.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Engagement.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-title is-live">Engagement</span>
+                  <span class="mission-tile-desc">Detect, track, and guide payloads for precision engagement.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Search & rescue.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Search &amp; Rescue</span>
+                  <span class="mission-tile-desc">Search hazardous areas, locate people, and send real-time updates.</span>
+                </button>
+              </div>
+              <div class="mission-page">
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Counter UAS.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Counter-UAS</span>
+                  <span class="mission-tile-desc">Detect, track, and neutralize hostile drone threats.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Logistics & Resupply.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Logistics &amp; Resupply</span>
+                  <span class="mission-tile-desc">Deliver supplies and equipment autonomously in contested or remote areas.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/SEAD Support.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">SEAD Support</span>
+                  <span class="mission-tile-desc">Detect and locate air-defense systems to support suppression missions.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Mapping.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Mapping</span>
+                  <span class="mission-tile-desc">Generate maps, 3D models, and terrain intelligence autonomously.</span>
+                </button>
+              </div>
+              <div class="mission-page">
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Cross-border patrol.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Cross-Border Surveillance</span>
+                  <span class="mission-tile-desc">Monitor borders to detect and track crossings and threats.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/Event security.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">Event Security</span>
+                  <span class="mission-tile-desc">Monitor crowds and venues to detect risks and respond rapidly.</span>
+                </button>
+                <button type="button" class="mission-tile" style="background-image: url('assets/use cases/First responders.png')">
+                  <span class="mission-tile-target" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="5" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                  <span class="mission-tile-badge">In development</span>
+                  <span class="mission-tile-title">First Responders</span>
+                  <span class="mission-tile-desc">Provide aerial intelligence to improve situational awareness in emergencies.</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="simulation-slider-arrow" id="missionArrow" aria-label="Show next missions">&#8250;</button>
+        </div>
+        <h1 id="modulesTitle" class="mission-modules-title"><span id="modulesTitleText"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+      </section>
+    </main>
+    <script>
+      (function () {
+        var segments = [
+          { text: 'Choose your ' },
+          { text: 'Mission', color: '#4475f5' }
+        ];
+        var full = segments.map(function (s) { return s.text; }).join('');
+        var el = document.getElementById('missionTitle');
+        var cursor = el.nextElementSibling;
+        var idx = 0;
+        var started = false;
+
+        function tick() {
+          var remaining = idx;
+          var html = '';
+          segments.forEach(function (s) {
+            var chunk = s.text.slice(0, Math.max(0, Math.min(s.text.length, remaining)));
+            remaining -= s.text.length;
+            if (!chunk) return;
+            html += s.color ? '<span style="color:' + s.color + '">' + chunk + '</span>' : chunk;
+          });
+          el.innerHTML = html;
+          if (idx < full.length) {
+            idx++;
+            setTimeout(tick, 38);
+          } else {
+            setTimeout(function () {
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && !started) {
+            started = true;
+            obs.disconnect();
+            setTimeout(tick, 400);
+          }
+        }, { threshold: 0.15 });
+
+        obs.observe(document.querySelector('.page-hero h1'));
+      })();
+
+      (function () {
+        var track = document.getElementById('missionTrack');
+        var nextArrow = document.getElementById('missionArrow');
+        var prevArrow = document.getElementById('missionArrowBack');
+        if (!track || !nextArrow || !prevArrow) return;
+        var total = track.querySelectorAll('.mission-page').length;
+        var current = 0;
+
+        function update() {
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        }
+
+        nextArrow.addEventListener('click', function () {
+          current = (current + 1) % total;
+          update();
+        });
+
+        prevArrow.addEventListener('click', function () {
+          current = (current - 1 + total) % total;
+          update();
+        });
+      })();
+
+      (function () {
+        var tiles = document.querySelectorAll('.mission-tile');
+        var titleEl = document.getElementById('modulesTitle');
+        var textEl = document.getElementById('modulesTitleText');
+        var cursor = textEl.nextElementSibling;
+        if (!tiles.length || !titleEl) return;
+        var generation = 0;
+
+        function tick(segments, idx, gen) {
+          if (gen !== generation) return;
+          var full = segments.map(function (s) { return s.text; }).join('');
+          var remaining = idx;
+          var html = '';
+          segments.forEach(function (s) {
+            var chunk = s.text.slice(0, Math.max(0, Math.min(s.text.length, remaining)));
+            remaining -= s.text.length;
+            if (!chunk) return;
+            html += s.color ? '<span style="color:' + s.color + '">' + chunk + '</span>' : chunk;
+          });
+          textEl.innerHTML = html;
+          if (idx < full.length) {
+            setTimeout(function () { tick(segments, idx + 1, gen); }, 38);
+          } else {
+            setTimeout(function () {
+              if (gen !== generation) return;
+              cursor.style.animation = 'none';
+              cursor.style.opacity = '0';
+            }, 900);
+          }
+        }
+
+        tiles.forEach(function (tile) {
+          tile.addEventListener('click', function () {
+            var nameEl = tile.querySelector('.mission-tile-title');
+            var missionName = nameEl ? nameEl.textContent.trim() : '';
+            var segments = [
+              { text: 'Select relevant AI modules for ' },
+              { text: missionName, color: '#4475f5' }
+            ];
+
+            generation++;
+            cursor.style.animation = '';
+            cursor.style.opacity = '';
+            titleEl.classList.add('is-visible');
+            tick(segments, 0, generation);
+          });
+        });
+      })();
+    </script>
+    <script src="chrome.js"></script>
+  </body>
+</html>
