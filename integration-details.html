@@ -105,6 +105,43 @@
           <button type="button" class="simulation-slider-arrow" id="missionArrow" aria-label="Show next missions">&#8250;</button>
         </div>
         <h1 id="modulesTitle" class="mission-modules-title"><span id="modulesTitleText"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <div class="module-slider-wrap" id="moduleSliderWrap">
+          <button type="button" class="simulation-slider-arrow is-back" id="moduleArrowBack" aria-label="Show previous AI modules">&#8250;</button>
+          <div class="module-slider">
+            <div class="module-track" id="moduleTrack"></div>
+          </div>
+          <button type="button" class="simulation-slider-arrow" id="moduleArrow" aria-label="Show next AI modules">&#8250;</button>
+        </div>
+        <h1 id="hardwareTitle" class="mission-modules-title"><span id="hardwareTitleText"></span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <div class="hardware-row" id="hardwareRow">
+          <span class="hardware-row-label">Flight controller /</span>
+          <div class="hardware-options">
+            <button type="button" class="hardware-option" data-value="PX4">PX4</button>
+            <button type="button" class="hardware-option" data-value="ArduPilot">ArduPilot</button>
+          </div>
+        </div>
+        <div class="hardware-row" id="sensorsRow">
+          <span class="hardware-row-label">Sensors /</span>
+          <div class="hardware-options">
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Inertial">Inertial</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Altitude & Heading">Altitude &amp; Heading</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="EO/IR">EO/IR</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Thermal">Thermal</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Radar">Radar</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="LiDAR">LiDAR</button>
+          </div>
+        </div>
+        <div class="hardware-row" id="payloadsRow">
+          <span class="hardware-row-label">Mission payloads /</span>
+          <div class="hardware-options">
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Kinetic & Munitions">Kinetic &amp; Munitions</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="ISR">ISR</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Electronic Warfare">Electronic Warfare</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Communications Relay">Communications Relay</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Decoy">Decoy</button>
+            <button type="button" class="hardware-option hardware-option-multi" data-value="Cargo & Utility">Cargo &amp; Utility</button>
+          </div>
+        </div>
       </section>
     </main>
     <script>
@@ -175,14 +212,61 @@
       })();
 
       (function () {
+        var MISSION_MODULES = {
+          'ISR': ['Search / Coverage Planning', 'Tactical Routing', 'Tactical Low-Altitude Navigation / Terrain-Masking', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Terrain / Structure Segmentation', 'Fine-Grained Classification', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Priority Scoring', 'Dynamic Mission Replanning'],
+          'ISTAR': ['Search / Coverage Planning', 'Tactical Routing', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Air-Defence Asset Detection', 'Fine-Grained Target Classification', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Target Prioritization', 'Dynamic Mission Replanning'],
+          'Search & Rescue': ['Search / Coverage Planning', 'Route Planning', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person Detection', 'Thermal Person Detection', 'Fire / Smoke / Hazard Detection', 'Terrain Segmentation', 'Person Tracking', 'Person Geolocation', 'Multi-Sensor Fusion', 'Rescue Priority Scoring', 'Dynamic Mission Replanning', 'Local Semantic Mapping'],
+          'Force Protection': ['Patrol / Coverage Planning', 'Route Planning', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Small-UAS Detection', 'Fine-Grained Classification', 'Intrusion / Anomaly Detection', 'Pattern-of-Life Detection', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Threat Scoring', 'Dynamic Mission Replanning'],
+          'Logistics & Resupply': ['Route Planning', 'Tactical Routing', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Terrain / Structure Segmentation', 'Local Semantic Mapping', 'Dynamic Mission Replanning', 'Landing / Drop-Zone Detection', 'Person Detection for Landing-Zone Safety', 'Precision Landing / Delivery Alignment', 'Payload Delivery Control'],
+          'SEAD Support': ['Tactical Routing', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'RF Emitter Detection', 'RF Emitter Classification', 'RF Emitter Geolocation', 'Radar / Air-Defence Asset Detection', 'Air-Defence Asset Classification', 'Multi-Object Tracking', 'Target Geolocation', 'EO / IR / RF Sensor Fusion', 'Threat Scoring', 'Threat-Aware Mission Replanning', 'Multi-UAV Coordination'],
+          'Mapping': ['Search / Coverage Planning', 'Route Planning', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Terrain / Structure Segmentation', 'Local Mapping', '2D Orthomosaic Reconstruction', '3D Reconstruction', 'Elevation-Map Generation', 'Mapping Coverage / Quality Validation', 'Dynamic Replanning for Missing Coverage'],
+          'Engagement': ['Tactical Routing', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person / Vehicle / Asset Detection', 'Fine-Grained Target Classification', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Target / Confidence Scoring', 'Dynamic Mission Replanning', 'Terminal Guidance / Precision Approach'],
+          'Cross-Border Surveillance': ['Patrol / Coverage Planning', 'Route Planning', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Crossing / Intrusion Detection', 'Pattern-of-Life Detection', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Priority Scoring', 'Dynamic Mission Replanning', 'Semantic Mapping'],
+          'Event Security': ['Patrol / Coverage Planning', 'Route Planning', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Crowd Density Estimation', 'Crowd Flow Estimation', 'Activity / Anomaly Detection', 'Multi-Object Tracking', 'Re-Identification', 'Target Geolocation', 'Multi-Sensor Fusion', 'Incident Prioritization', 'Dynamic Mission Replanning'],
+          'First Responders': ['Fastest-Safe Route Planning', 'Low-Altitude, Terrain-Masking Navigation', 'GNSS-Denied Navigation', 'Person Detection', 'Vehicle Detection', 'Fire / Smoke / Hazard Detection', 'Road / Structure Detection', 'Incident / Anomaly Detection', 'Multi-Object Tracking', 'Target Geolocation', 'Multi-Sensor Fusion', 'Incident Prioritization', 'Incident Mapping']
+        };
+
         var tiles = document.querySelectorAll('.mission-tile');
         var titleEl = document.getElementById('modulesTitle');
         var textEl = document.getElementById('modulesTitleText');
         var cursor = textEl.nextElementSibling;
+        var moduleWrap = document.getElementById('moduleSliderWrap');
+        var moduleTrack = document.getElementById('moduleTrack');
+        var moduleArrow = document.getElementById('moduleArrow');
+        var moduleArrowBack = document.getElementById('moduleArrowBack');
         if (!tiles.length || !titleEl) return;
-        var generation = 0;
+        var hwTitleEl = document.getElementById('hardwareTitle');
+        var hwTextEl = document.getElementById('hardwareTitleText');
+        var hwCursor = hwTextEl.nextElementSibling;
+        var hardwareRow = document.getElementById('hardwareRow');
+        var sensorsRow = document.getElementById('sensorsRow');
+        var payloadsRow = document.getElementById('payloadsRow');
+        var hardwareOptions = document.querySelectorAll('#hardwareRow .hardware-option');
+        var sensorOptions = document.querySelectorAll('#sensorsRow .hardware-option');
+        var payloadOptions = document.querySelectorAll('#payloadsRow .hardware-option');
 
-        function tick(segments, idx, gen) {
+        hardwareOptions.forEach(function (option) {
+          option.addEventListener('click', function () {
+            hardwareOptions.forEach(function (o) { o.classList.remove('is-selected'); });
+            option.classList.add('is-selected');
+          });
+        });
+
+        sensorOptions.forEach(function (option) {
+          option.addEventListener('click', function () {
+            option.classList.toggle('is-selected');
+          });
+        });
+
+        payloadOptions.forEach(function (option) {
+          option.addEventListener('click', function () {
+            option.classList.toggle('is-selected');
+          });
+        });
+        var generation = 0;
+        var moduleCurrent = 0;
+
+        function tick(segments, idx, gen, target, targetCursor, onComplete) {
           if (gen !== generation) return;
           var full = segments.map(function (s) { return s.text; }).join('');
           var remaining = idx;
@@ -193,17 +277,129 @@
             if (!chunk) return;
             html += s.color ? '<span style="color:' + s.color + '">' + chunk + '</span>' : chunk;
           });
-          textEl.innerHTML = html;
+          target.innerHTML = html;
           if (idx < full.length) {
-            setTimeout(function () { tick(segments, idx + 1, gen); }, 38);
+            setTimeout(function () { tick(segments, idx + 1, gen, target, targetCursor, onComplete); }, 38);
           } else {
             setTimeout(function () {
               if (gen !== generation) return;
-              cursor.style.animation = 'none';
-              cursor.style.opacity = '0';
+              targetCursor.style.animation = 'none';
+              targetCursor.style.opacity = '0';
             }, 900);
+            if (onComplete) onComplete();
           }
         }
+
+        function updateModuleTrack() {
+          moduleTrack.style.transform = 'translateX(-' + (moduleCurrent * 100) + '%)';
+        }
+
+        function revealPage(index, onDone) {
+          var page = moduleTrack.children[index];
+          if (!page) return;
+          var chips = page.querySelectorAll('.module-tile');
+          chips.forEach(function (chip) { chip.classList.remove('is-in'); });
+          void page.offsetWidth;
+          chips.forEach(function (chip, i) {
+            setTimeout(function () { chip.classList.add('is-in'); }, i * 90);
+          });
+          if (onDone) {
+            var totalDelay = Math.max(0, chips.length - 1) * 90 + 400;
+            setTimeout(onDone, totalDelay);
+          }
+        }
+
+        var titleTypingDone = false;
+        var modulesRevealDone = false;
+
+        function maybeShowHardwareTitle(gen) {
+          if (gen !== generation) return;
+          if (!titleTypingDone || !modulesRevealDone) return;
+          hwTitleEl.classList.add('is-visible');
+          hwCursor.style.animation = '';
+          hwCursor.style.opacity = '';
+          tick([
+            { text: 'Provide your hardware ' },
+            { text: 'specifications', color: '#4475f5' }
+          ], 0, gen, hwTextEl, hwCursor);
+          hardwareRow.classList.add('is-visible');
+          sensorsRow.classList.add('is-visible');
+          payloadsRow.classList.add('is-visible');
+        }
+
+        function buildModules(missionName, gen) {
+          var modules = MISSION_MODULES[missionName];
+          moduleTrack.innerHTML = '';
+          moduleCurrent = 0;
+
+          if (!modules) {
+            var page = document.createElement('div');
+            page.className = 'module-page';
+            var chip = document.createElement('div');
+            chip.className = 'module-tile module-tile-empty';
+            chip.textContent = 'Module mapping coming soon for ' + missionName + '.';
+            page.appendChild(chip);
+            moduleTrack.appendChild(page);
+            updateModuleTrack();
+            revealPage(0, function () { modulesRevealDone = true; maybeShowHardwareTitle(gen); });
+            return;
+          }
+
+          var HIGHLIGHT_MODULES = [
+            'Search / Coverage Planning',
+            'Target Geolocation',
+            'Vehicle Detection',
+            'Low-Altitude, Terrain-Masking Navigation',
+            'Tactical Low-Altitude Navigation / Terrain-Masking',
+            'Tactical Routing',
+            'Person / Vehicle / Asset Detection',
+            'Terminal Guidance / Precision Approach',
+            'Target / Confidence Scoring'
+          ];
+
+          var perPage = 4;
+          for (var i = 0; i < modules.length; i += perPage) {
+            var pageEl = document.createElement('div');
+            pageEl.className = 'module-page';
+            modules.slice(i, i + perPage).forEach(function (name) {
+              var tile = document.createElement('div');
+              tile.className = 'module-tile';
+              var isHighlighted = HIGHLIGHT_MODULES.indexOf(name) !== -1;
+              if (isHighlighted) {
+                tile.classList.add('module-tile-highlight');
+              } else {
+                tile.classList.add('module-tile-pending');
+                var badge = document.createElement('span');
+                badge.className = 'module-tile-badge';
+                badge.textContent = 'In development';
+                tile.appendChild(badge);
+              }
+              var label = document.createElement('span');
+              label.textContent = name;
+              tile.appendChild(label);
+              pageEl.appendChild(tile);
+            });
+            moduleTrack.appendChild(pageEl);
+          }
+          updateModuleTrack();
+          revealPage(0, function () { modulesRevealDone = true; maybeShowHardwareTitle(gen); });
+        }
+
+        moduleArrow.addEventListener('click', function () {
+          var total = moduleTrack.children.length;
+          if (!total) return;
+          moduleCurrent = (moduleCurrent + 1) % total;
+          updateModuleTrack();
+          revealPage(moduleCurrent);
+        });
+
+        moduleArrowBack.addEventListener('click', function () {
+          var total = moduleTrack.children.length;
+          if (!total) return;
+          moduleCurrent = (moduleCurrent - 1 + total) % total;
+          updateModuleTrack();
+          revealPage(moduleCurrent);
+        });
 
         tiles.forEach(function (tile) {
           tile.addEventListener('click', function () {
@@ -215,10 +411,28 @@
             ];
 
             generation++;
+            var gen = generation;
+            titleTypingDone = false;
+            modulesRevealDone = false;
             cursor.style.animation = '';
             cursor.style.opacity = '';
             titleEl.classList.add('is-visible');
-            tick(segments, 0, generation);
+            tick(segments, 0, gen, textEl, cursor, function () {
+              titleTypingDone = true;
+              maybeShowHardwareTitle(gen);
+            });
+
+            hwTitleEl.classList.remove('is-visible');
+            hwTextEl.textContent = '';
+            hardwareRow.classList.remove('is-visible');
+            hardwareOptions.forEach(function (o) { o.classList.remove('is-selected'); });
+            sensorsRow.classList.remove('is-visible');
+            sensorOptions.forEach(function (o) { o.classList.remove('is-selected'); });
+            payloadsRow.classList.remove('is-visible');
+            payloadOptions.forEach(function (o) { o.classList.remove('is-selected'); });
+
+            moduleWrap.classList.add('is-visible');
+            buildModules(missionName, gen);
           });
         });
       })();
